@@ -67,30 +67,6 @@ export function Hero() {
               />
             </div>
 
-            {/* Lime glow behind the headline */}
-            <motion.img
-              src={`${IMG}/home-bubble.webp`}
-              alt=""
-              aria-hidden="true"
-              width={435}
-              height={429}
-              fetchPriority="low"
-              decoding="async"
-              className="hero-bubble hidden xs:block"
-              animate={reducedMotion ? undefined : { opacity: [0.75, 1, 0.75], scale: [1, 1.04, 1] }}
-              transition={{ duration: 6, repeat: Infinity, ease: 'easeInOut' }}
-            />
-            <img
-              src={`${IMG}/home-bubble-mobile.webp`}
-              alt=""
-              aria-hidden="true"
-              width={176}
-              height={174}
-              fetchPriority="low"
-              decoding="async"
-              className="hero-bubble xs:hidden"
-            />
-
             {/* Trust badge */}
             <motion.div {...reveal(0)} className="trusted-craft above-glow">
               <div className="flex items-center gap-3">

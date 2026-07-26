@@ -805,14 +805,6 @@
     }
   }
 
-  .hero-bubble {
-    position: absolute;
-    top: -48px;
-    left: 0;
-    z-index: -1;
-    pointer-events: none;
-  }
-
   .typewriter-caret {
     display: inline-block;
     margin-left: 1px;
