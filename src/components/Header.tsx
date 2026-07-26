@@ -2,7 +2,7 @@ import { useEffect, useRef, useState } from 'react';
 import { X, ChevronDown } from 'lucide-react';
 import { ServicesMegaMenu } from './ServicesMegaMenu';
 import { primaryNav, trailingNav } from '../data/navigation';
-import { ORIGIN, SVG } from '../lib/assets';
+import { ORIGIN } from '../lib/assets';
 import { useMediaQuery } from '../hooks/useMediaQuery';
 import { cn } from '../lib/cn';
 
@@ -133,7 +133,7 @@ export function Header() {
         <nav aria-label="Main" className="flex items-center justify-between">
           <a href={ORIGIN} aria-label="ZeeFrames home" className="shrink-0">
             <img
-              src={`${SVG}/logo.svg`}
+              src="/svgs/logo.svg"
               alt="ZeeFrames"
               width={179}
               height={36}
