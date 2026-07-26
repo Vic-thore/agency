@@ -644,6 +644,14 @@
     z-index: 0;
     pointer-events: none;
   }
+  .hero-bg-overlay {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    background-color: var(--color-black-300);
+    opacity: 0.25;
+    pointer-events: none;
+  }
   .hero-content-wrap {
     position: relative;
     z-index: 1;
@@ -1595,30 +1603,6 @@
     background-color: var(--color-black-450);
   }
 
-  /* Ambient lime cursor glow that sits behind content */
-  .cursor-glow {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 80px;
-    height: 80px;
-    border-radius: 50%;
-    filter: blur(25px);
-    pointer-events: none;
-    transform: translate(-50%, -50%);
-    z-index: 1;
-    background: radial-gradient(
-      circle at center,
-      var(--color-primary) 0,
-      color-mix(in srgb, var(--color-primary) 60%, transparent) 40%,
-      color-mix(in srgb, var(--color-primary) 30%, transparent) 70%,
-      transparent 100%
-    );
-    mix-blend-mode: lighten;
-    opacity: 0.6;
-    transition: transform 0.1s linear;
-    will-change: transform;
-  }
   .above-glow {
     position: relative;
     z-index: 2;

@@ -9,7 +9,6 @@ import { FAQ } from './components/FAQ';
 import { Insights } from './components/Insights';
 import { Contact } from './components/Contact';
 import { Footer } from './components/Footer';
-import { CursorGlow } from './components/CursorGlow';
 
 export default function App() {
   return (
@@ -36,7 +35,6 @@ export default function App() {
       </main>
 
       <Footer />
-      <CursorGlow />
     </>
   );
 }

@@ -38,7 +38,7 @@ export function Hero() {
           is unaffected if the effect fails to init. The animated particle
           wave replaces the static photo background; reduced-motion users
           get that original static image instead of a continuous WebGL
-          animation, matching how CursorGlow is disabled site-wide. */}
+          animation. */}
       {reducedMotion ? (
         <HeroBgImg />
       ) : (
@@ -46,6 +46,7 @@ export function Hero() {
           <ParticleWave className="hero-bg-img" />
         </Suspense>
       )}
+      <div className="hero-bg-overlay" aria-hidden="true" />
 
       <div className="container-zf">
         <div className="hero-content-wrap">
