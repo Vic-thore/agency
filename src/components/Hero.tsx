@@ -1,3 +1,4 @@
+import { lazy, Suspense } from 'react';
 import { motion } from 'framer-motion';
 import { IMG, SVG } from '../lib/assets';
 import { heroToolIcons, typewriterWords } from '../data/content';
@@ -5,7 +6,27 @@ import { useTypewriter } from '../hooks/useTypewriter';
 import { useMediaQuery } from '../hooks/useMediaQuery';
 import { ClientLogos } from './ClientLogos';
 import { reveal } from '../hooks/useReveal';
-import { ParticleWave } from './ui/particle-wave';
+
+// Dynamically imported so three.js (~500kB) ships in its own chunk instead
+// of bloating the main bundle everyone downloads on first paint.
+const ParticleWave = lazy(() =>
+  import('./ui/particle-wave').then((m) => ({ default: m.ParticleWave }))
+);
+
+function HeroBgImg() {
+  return (
+    <img
+      src={`${IMG}/home-hero-bg-mobile.webp`}
+      srcSet={`${IMG}/home-hero-bg-mobile.webp 400w, ${IMG}/home-hero-bg-new.webp 1600w`}
+      sizes="100vw"
+      alt=""
+      aria-hidden="true"
+      fetchPriority="high"
+      decoding="async"
+      className="hero-bg-img"
+    />
+  );
+}
 
 export function Hero() {
   const reducedMotion = useMediaQuery('(prefers-reduced-motion: reduce)');
@@ -19,18 +40,11 @@ export function Hero() {
           get that original static image instead of a continuous WebGL
           animation, matching how CursorGlow is disabled site-wide. */}
       {reducedMotion ? (
-        <img
-          src={`${IMG}/home-hero-bg-mobile.webp`}
-          srcSet={`${IMG}/home-hero-bg-mobile.webp 400w, ${IMG}/home-hero-bg-new.webp 1600w`}
-          sizes="100vw"
-          alt=""
-          aria-hidden="true"
-          fetchPriority="high"
-          decoding="async"
-          className="hero-bg-img"
-        />
+        <HeroBgImg />
       ) : (
-        <ParticleWave className="hero-bg-img" />
+        <Suspense fallback={<HeroBgImg />}>
+          <ParticleWave className="hero-bg-img" />
+        </Suspense>
       )}
 
       <div className="container-zf">
