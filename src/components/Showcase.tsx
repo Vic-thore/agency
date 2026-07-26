@@ -2,7 +2,7 @@ import { motion } from 'framer-motion';
 import { projects } from '../data/content';
 import { SectionHeading } from './SectionHeading';
 import { ProjectCard } from './ProjectCard';
-import { CALENDLY, ORIGIN } from '../lib/assets';
+import { SITE_NAME } from '../lib/assets';
 import { reveal } from '../hooks/useReveal';
 
 export function Showcase() {
@@ -34,19 +34,17 @@ export function Showcase() {
             <p className="mb-6 mt-4 font-inter text-[15px] leading-normal text-gray-495 max-[575px]:text-[14px]">
               The proof is in our work. Check out{' '}
               <a
-                href={`${ORIGIN}/work`}
+                href="#work"
                 className="font-bold text-primary underline"
               >
-                ZeeFrames&apos; case studies
+                {SITE_NAME}&apos;s case studies
               </a>{' '}
               to learn how our product development services can transform your
               business.
             </p>
             <div className="flex justify-center">
               <a
-                href={CALENDLY}
-                target="_blank"
-                rel="noreferrer noopener"
+                href="#contact"
                 className="btn btn-primary btn-swap font-inter"
               >
                 <span className="swap-out">Book a discovery call</span>

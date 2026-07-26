@@ -1,16 +1,15 @@
 /**
- * The original site serves its artwork from a public CDN path. We point at it
- * directly rather than re-hosting the files. Every consumer of these URLs sets
- * an explicit width/height (or a fixed-height container), so a failed request
- * leaves a coloured box instead of shifting the layout.
+ * Layout artwork (photos, background art, icon sets) is still served from the
+ * source site's public CDN path rather than re-hosted locally. Every consumer
+ * of these URLs sets an explicit width/height (or a fixed-height container),
+ * so a failed request leaves a coloured box instead of shifting the layout.
+ * This is purely an asset host, not a link out — nothing on the page should
+ * ever navigate a visitor to `ORIGIN` itself; in-page anchors and `#`
+ * placeholders are used for that instead (see navigation.ts / content.ts).
  */
 export const ORIGIN = 'https://zeeframes.com';
 export const IMG = `${ORIGIN}/frontend-assets/images`;
 export const SVG = `${IMG}/svgs`;
 export const SERVICE_ICON = `${IMG}/services-icons`;
 
-export const CALENDLY =
-  'https://calendly.com/contact-zeeframes/30min?month=2025-11';
-
-export const FIGMA_PROTO =
-  'https://www.figma.com/proto/Wvc5EAdw0leAMdlJ3tF6Be/ZeeFrames-Portfolio-New-Branding';
+export const SITE_NAME = 'Metron Studio';

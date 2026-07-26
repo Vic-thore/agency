@@ -2,7 +2,7 @@ import { useEffect, useRef, useState } from 'react';
 import { X, ChevronDown } from 'lucide-react';
 import { ServicesMegaMenu } from './ServicesMegaMenu';
 import { primaryNav, trailingNav } from '../data/navigation';
-import { ORIGIN } from '../lib/assets';
+import { SITE_NAME } from '../lib/assets';
 import { useMediaQuery } from '../hooks/useMediaQuery';
 import { cn } from '../lib/cn';
 
@@ -82,7 +82,7 @@ export function Header() {
       >
         <div className="flex items-center justify-center">
           <a
-            href={`${ORIGIN}/services`}
+            href="#services"
             onClick={onClick}
             className="nav-link pr-2"
           >
@@ -131,14 +131,22 @@ export function Header() {
     <header className="zf-header">
       <div className="container-zf">
         <nav aria-label="Main" className="flex items-center justify-between">
-          <a href={ORIGIN} aria-label="ZeeFrames home" className="shrink-0">
+          <a
+            href="#hero"
+            aria-label={`${SITE_NAME} home`}
+            className="flex shrink-0 items-center gap-2"
+          >
             <img
-              src="/svgs/logo.svg"
-              alt="ZeeFrames"
-              width={179}
-              height={36}
-              className="h-9 w-auto"
+              src="/svgs/favicon.svg"
+              alt=""
+              aria-hidden="true"
+              width={30}
+              height={33}
+              className="h-8 w-auto"
             />
+            <span className="font-display text-[22px] font-semibold leading-none text-primary">
+              {SITE_NAME}
+            </span>
           </a>
 
           {/* Desktop navigation */}
@@ -148,7 +156,7 @@ export function Header() {
 
           <div className="flex items-center gap-3">
             <a
-              href={`${ORIGIN}/work-with-us`}
+              href="#contact"
               className="btn btn-header hidden font-inter text-[14px] font-medium leading-5 xs:inline-flex"
             >
               <span className="flex items-center gap-3">
@@ -207,7 +215,7 @@ export function Header() {
             {navLinks()}
           </ul>
           <a
-            href={`${ORIGIN}/work-with-us`}
+            href="#contact"
             onClick={closeAll}
             className="btn btn-primary mt-2 self-center xs:hidden"
           >

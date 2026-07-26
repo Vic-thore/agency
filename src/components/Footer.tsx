@@ -12,7 +12,7 @@ import {
   awards,
   socialLinks,
 } from '../data/content';
-import { IMG, ORIGIN } from '../lib/assets';
+import { SITE_NAME } from '../lib/assets';
 
 import type { ReactElement } from 'react';
 
@@ -38,7 +38,7 @@ function SocialList({ className = '' }: { className?: string }) {
               target="_blank"
               rel="noreferrer noopener"
               className="social-item"
-              aria-label={`ZeeFrames on ${social.label}`}
+              aria-label={`${SITE_NAME} on ${social.label}`}
             >
               <Icon size={18} className="text-white" />
             </a>
@@ -90,25 +90,12 @@ export function Footer() {
 
       <footer className="zf-footer above-glow relative">
         <div className="container-zf">
-          <picture>
-            <source
-              media="(min-width:575px)"
-              srcSet={`${IMG}/footer-large-logo.webp`}
-            />
-            <source
-              media="(min-width:300px)"
-              srcSet={`${IMG}/footer-logo-mobile.webp`}
-            />
-            <img
-              src={`${IMG}/footer-large-logo.webp`}
-              width={1240}
-              height={180}
-              alt="ZeeFrames"
-              loading="lazy"
-              decoding="async"
-              className="h-auto max-w-full object-contain"
-            />
-          </picture>
+          <p
+            aria-hidden="true"
+            className="font-display text-[15vw] font-semibold uppercase leading-none tracking-tight text-white/10 max-[575px]:text-[22vw]"
+          >
+            {SITE_NAME}
+          </p>
 
           <div className="footer-grid">
             <div className="footer-text">
@@ -176,10 +163,10 @@ export function Footer() {
 
           <div className="flex flex-wrap items-center justify-between gap-5">
             <p className="font-inter text-[14px] leading-[21px] text-gray-200">
-              © 2026 Copyright ZeeFrames Private Limited. All rights reserved.
+              © 2026 Copyright {SITE_NAME}. All rights reserved.
             </p>
             <a
-              href={`${ORIGIN}/privacy-policy`}
+              href="#"
               className="arrow-hover font-inter text-[14px] leading-[21px] text-gray-200"
             >
               Privacy Policy

@@ -1,7 +1,7 @@
 import { useId, useState } from 'react';
 import { motion } from 'framer-motion';
 import { faqs } from '../data/content';
-import { CALENDLY, SVG } from '../lib/assets';
+import { SITE_NAME } from '../lib/assets';
 import { reveal } from '../hooks/useReveal';
 import { cn } from '../lib/cn';
 
@@ -27,15 +27,13 @@ export function FAQ() {
               Questions? We&rsquo;ve Got Answers
             </h2>
             <p className="section-sub text-gray-495">
-              ZeeFrames reduces design complexity &amp; speeds up product
+              {SITE_NAME} reduces design complexity &amp; speeds up product
               launches with clear UX workflows, scalable visual systems, and
               no-code execution.
             </p>
             <div className="mt-8 flex items-center gap-8 max-[575px]:flex-wrap">
               <a
-                href={CALENDLY}
-                target="_blank"
-                rel="noreferrer noopener"
+                href="#contact"
                 className="btn btn-light btn-swap font-inter"
               >
                 <span className="swap-out">Book a free call</span>
@@ -53,15 +51,6 @@ export function FAQ() {
                 </svg>
                 <span className="swap-in">Lets Talk</span>
               </a>
-
-              <img
-                src={`${SVG}/clutch-reviews.svg`}
-                alt="Clutch reviews"
-                width={164}
-                height={47}
-                loading="lazy"
-                className="h-[47px] w-[164px] object-contain"
-              />
             </div>
           </motion.div>
 

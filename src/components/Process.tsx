@@ -75,7 +75,7 @@ export function Process() {
             <div className="process-image-wrap above-glow hidden md:block">
               <img
                 src={`${IMG}/home-process-1.webp`}
-                alt="ZeeFrames design process artwork"
+                alt="Design process artwork"
                 width={527}
                 height={506}
                 loading="lazy"

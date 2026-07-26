@@ -1,8 +1,6 @@
 import { motion } from 'framer-motion';
 import type { ProjectData } from '../data/content';
 import { reveal } from '../hooks/useReveal';
-import { ORIGIN } from '../lib/assets';
-
 export function ProjectCard({
   project,
   index,
@@ -12,7 +10,7 @@ export function ProjectCard({
 }) {
   return (
     <motion.article {...reveal((index % 2) * 0.08)} className="portfolio-card">
-      <a href={`${ORIGIN}/work`} className="block group">
+      <a href="#work" className="block group">
         <div className="portfolio-thumb">
           <img
             src={project.image}

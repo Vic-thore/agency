@@ -5,6 +5,8 @@ import { clientLogos } from '../data/content';
  * translated by -50%, which loops seamlessly at any content width.
  */
 export function ClientLogos() {
+  if (clientLogos.length === 0) return null;
+
   const loop = [...clientLogos, ...clientLogos];
 
   return (

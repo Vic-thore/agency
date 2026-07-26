@@ -1,8 +1,9 @@
-# ZeeFrames — high-fidelity frontend recreation
+# Metron Studio — frontend build
 
-A React + Vite + TypeScript + Tailwind recreation of the ZeeFrames homepage
-(`https://zeeframes.com`), built by reading the live site's DOM and stylesheets
-rather than eyeballing screenshots.
+A React + Vite + TypeScript + Tailwind site for Metron Studio, originally
+built as a high-fidelity recreation of another agency's homepage and since
+rebranded: colors, copy, and every outbound link have been reworked so the
+page stands on its own rather than pointing back at the site it started from.
 
 ## Running it
 
@@ -15,14 +16,12 @@ npm run preview  # serve the production build
 
 ## Design system
 
-Every token below is transcribed from the original `colors.css`, `style.css`,
-`common.css`, `home.css` and `custom-animations.css`. They live as CSS custom
-properties at the top of `src/index.css`, so the whole palette is re-themable
-from one block.
+Tokens live as CSS custom properties at the top of `src/index.css`, so the
+whole palette is re-themable from one block.
 
 | Token | Value | Used for |
 | --- | --- | --- |
-| `--color-primary` | `#F3FE00` | Lime accent, active states, rail |
+| `--color-primary` | `#FF5C1A` | Orange accent, active states, rail |
 | `--color-black-300` | `#0B0B0B` | Page background |
 | `--color-black-200` | `#0D0D0D` | Header background |
 | `--color-cream-white` | `#FAF9F4` | Light sections |
@@ -31,9 +30,8 @@ from one block.
 | `--border-light` | `#D7D8D4` | Hairlines on cream service rows |
 
 **Typefaces** — Geologica (display, 800, hero headline and FAQ questions),
-Inter Tight (default body), Inter (utility and captions). All three are the
-originals, loaded from Google Fonts, with metric-matched local fallbacks so
-nothing reflows during the swap.
+Inter Tight (default body), Inter (utility and captions), loaded from Google
+Fonts with metric-matched local fallbacks so nothing reflows during the swap.
 
 **Layout** — container `max-width: 1400px`, padding stepping 80 → 60 → 40 → 16px
 at the 1204 / 991 / 575px breakpoints. Sections are `80px 0`, collapsing to
@@ -43,7 +41,7 @@ at the 1204 / 991 / 575px breakpoints. Sections are `80px 0`, collapsing to
 
 ```
 src/
-  index.css                 tokens + component classes mirroring the original CSS
+  index.css                 tokens + component classes
   App.tsx                   section composition only
   lib/            assets.ts, cn.ts
   hooks/          useMediaQuery, useTypewriter, useReveal
@@ -52,7 +50,7 @@ src/
     Header.tsx              sticky header, desktop nav, mobile drawer
     ServicesMegaMenu.tsx    tabbed mega menu, shared desktop + mobile
     Hero.tsx                layered hero composition
-    ClientLogos.tsx         seamless logo marquee
+    ClientLogos.tsx         seamless logo marquee (empty until real clients exist)
     Showreel.tsx            lazy-attached process video
     SectionHeading.tsx      shared eyebrow / title / description
     Services.tsx            hairline service rows
@@ -60,10 +58,10 @@ src/
     ProcessStep.tsx
     Showcase.tsx            staggered portfolio grid
     ProjectCard.tsx
-    CTASection.tsx          lime band
+    CTASection.tsx          orange band
     FAQ.tsx                 accessible accordion
     Insights.tsx / InsightCard.tsx
-    Testimonials.tsx        autoplaying review slider
+    Testimonials.tsx        autoplaying review slider (placeholder quotes)
     Contact.tsx             validated form, local submit state
     Footer.tsx              offices, wordmark, link columns, socials
     SocialIcons.tsx         inline brand glyphs
@@ -90,37 +88,45 @@ Semantic landmarks, one `<h1>`, skip link, visible focus rings, `aria-expanded` 
 `prefers-reduced-motion` honoured globally (it also disables the typewriter and
 the cursor glow).
 
-## Assets
+## Links and placeholder content
 
-Artwork is referenced from the original public CDN paths rather than re-hosted.
-Every image carries explicit `width`/`height` or sits in a fixed-height container
-with a placeholder background, so a failed request leaves a coloured box and never
-shifts the layout. Below-the-fold images use `loading="lazy"`.
+This started as a clone of a real agency's homepage, so a pass was made to
+disconnect it from that source rather than silently keep pointing at it:
 
-## Known differences from the original
+- **Navigation** (header, mobile drawer, footer columns, mega menu) now
+  anchors to sections that exist on this single page (`#hero`, `#services`,
+  `#work`, `#insights`, `#contact`), or uses an inert `#` where no matching
+  page/section exists yet (About, individual service subpages, blog posts,
+  Privacy Policy).
+- **Calendly and Figma links** were replaced with in-page anchors to the
+  Contact form / Showcase section.
+- **Social links** (Dribbble, YouTube, Facebook, LinkedIn, Instagram) are `#`
+  placeholders until Metron Studio's real accounts are wired in.
+- **Testimonials** are clearly generic placeholder quotes ("Client Name,
+  Founder, Example Co."), not real reviews — the original page quoted real,
+  named clients, and swapping the company name in their quotes would have
+  misattributed an endorsement to real people who never gave one.
+- **Client logos, office addresses/phone numbers, and third-party award
+  badges** (ISO/Clutch/GoodFirms) were removed rather than rebranded, since
+  they belonged to the site this was cloned from and would misrepresent
+  Metron Studio's actual clients, locations, and credentials.
+- **Visual assets** (photos, background art, icon sets) still load from the
+  original site's public CDN — there's no local copy of that artwork, so
+  removing it would leave the page broken rather than just less accurate.
+  The recolored logo mark and hero star are the exception: those are hosted
+  locally at `public/svgs/`.
 
-1. **No screenshot diffing.** The build environment had no headless browser and
-   the network allowlist blocked `zeeframes.com`, so fidelity comes from reading
-   the site's actual CSS rather than pixel comparison. Values are transcribed,
-   not estimated, but a side-by-side eye check is still worth doing.
-2. **Marquee timing.** The original hard-codes `translateX(-1150px)`, tied to one
-   specific track width. This uses a duplicated track and `-50%`, which loops
-   seamlessly at any width; speed is tuned to match (~77px/s).
-3. **Social icons.** `lucide-react` has dropped brand icons, so the five footer
-   glyphs are inlined in `SocialIcons.tsx` and are close but not identical to the
-   originals.
-4. **Contact form.** No backend, so submission settles into a local confirmation
-   state that says plainly that nothing was sent.
-5. **Two deliberate fixes.** The original's "Explore More" arrow is `#463F3F` on a
-   black button (effectively invisible) — recoloured to white. The original hero
-   headline is a `<p>` and its only `<h1>` is in the services section; this uses a
-   single `<h1>` on the hero for correct hierarchy.
-6. **Omitted.** The third-party Clutch review widget (a remote script) is
-   represented by the static badge the original keeps commented out beside it, and
-   the AI chatbot widget and WhatsApp float are not reproduced.
+## Known differences from a pixel-perfect clone
 
-## Ownership note
-
-The logo, client logos, testimonials, office addresses and case-study imagery all
-belong to ZeeFrames. This is a technique study; anything client-facing would need
-that content replaced.
+1. **No screenshot diffing.** The build environment had no headless browser
+   and the network allowlist blocked the source site, so fidelity comes from
+   reading its actual CSS rather than pixel comparison.
+2. **Marquee timing.** Uses a duplicated track and `-50%` transform, which
+   loops seamlessly at any width.
+3. **Social icons.** `lucide-react` has dropped brand icons, so the five
+   footer glyphs are inlined in `SocialIcons.tsx`.
+4. **Contact form.** No backend, so submission settles into a local
+   confirmation state that says plainly that nothing was sent.
+5. **Two deliberate fixes carried over.** The "Explore More" arrow was
+   recoloured from a near-invisible dark grey to white; the hero uses a
+   single `<h1>` for correct heading hierarchy.

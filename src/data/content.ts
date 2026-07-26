@@ -1,4 +1,4 @@
-import { IMG, SVG, ORIGIN } from '../lib/assets';
+import { IMG, SVG, ORIGIN, SITE_NAME } from '../lib/assets';
 
 /* ---------------- Hero ---------------- */
 export const typewriterWords = [
@@ -19,32 +19,12 @@ export const heroToolIcons = [
 ];
 
 /* ---------------- Client logos ---------------- */
-export const clientLogos = [
-  { src: `${SVG}/trafilea.svg`, alt: 'Trafilea', width: 138, height: 32 },
-  { src: `${SVG}/yallaMotor.svg`, alt: 'YallaMotor', width: 152, height: 32 },
-  {
-    src: `${SVG}/nissan-motor-corporation.svg`,
-    alt: 'Nissan Motor Corporation',
-    width: 143,
-    height: 32,
-  },
-  { src: `${SVG}/repurpose.svg`, alt: 'Repurpose', width: 198, height: 32 },
-  { src: `${SVG}/handshake.svg`, alt: 'Handshake', width: 176, height: 30 },
-  { src: `${SVG}/METutors.svg`, alt: 'METutors', width: 149, height: 24 },
-  { src: `${SVG}/tree.svg`, alt: 'Tree', width: 68, height: 24 },
-  {
-    src: `${SVG}/BankofNamibia.svg`,
-    alt: 'Bank of Namibia',
-    width: 94,
-    height: 80,
-  },
-  {
-    src: `${SVG}/Ministry-of-Human-Resources-and-Emiratisation.svg`,
-    alt: 'Ministry of Human Resources and Emiratisation',
-    width: 137,
-    height: 40,
-  },
-];
+// Emptied out: the original list was real companies (Nissan Motor
+// Corporation, Bank of Namibia, a government ministry, etc.) that are
+// clients of the site this was cloned from, not of Metron Studio. Showing
+// their logos under a "trusted by" banner here would falsely claim them as
+// Metron's clients — same reasoning as the testimonials placeholder.
+export const clientLogos: { src: string; alt: string; width: number; height: number }[] = [];
 
 /* ---------------- Service rows ---------------- */
 export interface ServiceRow {
@@ -57,32 +37,32 @@ export const serviceRows: ServiceRow[] = [
   {
     eyebrow: 'FOR DIGITAL EXPERIENCES',
     title: 'Saas UI UX Design',
-    href: `${ORIGIN}/services/saas-ui-ux-design-agency`,
+    href: '#contact',
   },
   {
     eyebrow: 'For Startups & Existing Companies',
     title: 'Product Revamp',
-    href: `${ORIGIN}/services/product-revamp`,
+    href: '#contact',
   },
   {
     eyebrow: 'FOR VISUAL STORYTELLERS',
     title: 'Brand Design',
-    href: `${ORIGIN}/services/brand-design`,
+    href: '#contact',
   },
   {
     eyebrow: 'FOR RAPID APP BUILDERS',
     title: 'No Code Development',
-    href: `${ORIGIN}/services/no-code-development`,
+    href: '#contact',
   },
   {
     eyebrow: 'FOR STARTUPS & FOUNDERS',
     title: 'MVP Design',
-    href: `${ORIGIN}/services/mvp-design`,
+    href: '#contact',
   },
   {
     eyebrow: 'Dedicated ux ui Team',
     title: 'Team Extension',
-    href: `${ORIGIN}/services/team-extension`,
+    href: '#contact',
   },
 ];
 
@@ -203,18 +183,16 @@ export const faqs: FaqData[] = [
     ],
   },
   {
-    question:
-      'How does ZeeFrames UI UX Design differ from other design solutions?',
+    question: `How does ${SITE_NAME} differ from other design studios?`,
     answer: [
-      'At ZeeFrames, we believe in the power of Human-Computer Interaction and leverage it to make informed, data-driven design decisions that set us apart from the competition. As a leading UI UX design studio in Pakistan, we follow a design strategy that begins with discovering the needs and pain points of users and ends with real user testing for direct feedback. This approach enables us to create user-centric designs that enhance usability, accessibility, and overall user satisfaction.',
-      "Our design philosophy is simple: put users at the center of everything we do. Whether it's UX research or designing User Flows, Wireframing or Prototyping our team of expert UI UX designers ensure that your users are considered in every phase of designing to deliver outstanding results that meet the unique needs of your business.",
+      `${SITE_NAME} treats every engagement as a data-driven partnership rather than a template. We start by digging into the actual problem your users have, not just the brief, and we close the loop with real user testing instead of guessing at what "good" looks like.`,
+      "That means user research, flows, wireframes, and prototypes are all treated as one continuous conversation with your users, not separate hand-offs, so the final product actually matches how people want to use it.",
     ],
   },
   {
-    question:
-      'Are there any customer reviews or case studies available for ZeeFrames UI UX Design?',
+    question: `Can I see ${SITE_NAME}'s past work or client feedback?`,
     answer: [
-      "At ZeeFrames, we take pride in our customer reviews and case studies that showcase our expertise in the UI UX design industry. You can easily access them on our website to get a glimpse of our work and the impact it has had on our clients' businesses. As a top-class UI UX design firm, we have worked with a diverse range of clients worldwide, helping them create engaging and intuitive digital experiences for their customers. With our expertise and user-centered design approach, you can be rest assured as we will take your website design to the next level.",
+      `Yes — a sample of our case studies is in the Showcase section above, and a few client quotes are further down the page. We're happy to walk through more detail on a call once we understand what you're building.`,
     ],
   },
 ];
@@ -234,7 +212,7 @@ export const insights: InsightData[] = [
     title: 'OpenAI vs Anthropic in 2026: Consumer King or Enterprise Challenger?',
     excerpt:
       'OpenAI vs Anthropic 2026: founding stories, valuations, revenue, products, safety philosophy, and a clear pick for consumers, developers, and enterprise teams.',
-    href: `${ORIGIN}/insights/openai-vs-anthropic-in-2026-consumer-king-or-enterprise-challenger`,
+    href: '#',
     image: `${ORIGIN}/storage/363/openai-vs-anthropic-in-2026-consumer-king-or-enterprise-challenger-%282%29_upscaled.webp`,
   },
   {
@@ -242,7 +220,7 @@ export const insights: InsightData[] = [
     title: 'Cursor vs OpenAI Codex 2026: Which AI Coding Agent Wins?',
     excerpt:
       'Cursor vs OpenAI Codex in 2026: full comparison for custom development, and which AI coding tool wins for solo developers, teams, and enterprise.',
-    href: `${ORIGIN}/insights/cursor-vs-openai-codex-2026-which-ai-coding-agent-wins`,
+    href: '#',
     image: `${ORIGIN}/storage/368/cursor-vs-openai-codex-2026-which-ai-coding-agent-wins-%284%29_upscaled.webp`,
   },
   {
@@ -250,78 +228,64 @@ export const insights: InsightData[] = [
     title: "WordPress vs Webflow 2026: The Startup Founder's Decision Guide",
     excerpt:
       'WordPress vs Webflow in 2026 for startup founders and businesses. 10 key differences, library ecosystems, security incidents, cost analysis, and risk map.',
-    href: `${ORIGIN}/insights/wordpress-vs-webflow-2026-the-startup-founder-s-decision-guide`,
+    href: '#',
     image: `${ORIGIN}/storage/372/wordpress-vs-webflow-2026-the-startup-founder-s-decision-guide-%284%29_upscaled.webp`,
   },
 ];
 
 /* ---------------- Testimonials ---------------- */
+// Placeholder copy only — no real clients yet, so these are clearly example
+// quotes (fictional names/companies) rather than attributed endorsements.
 export interface TestimonialData {
   quote: string;
   name: string;
   role: string;
-  avatar: string;
 }
 
 export const testimonials: TestimonialData[] = [
   {
     quote:
-      '"ZeeFrames delivered on time with exceptional commitment and dedication. The team managed the project exemplarily, provided daily updates, and responded swiftly to every need. Their innovative, user-centric approach and ability to blend modern design trends with intuitive functionality results in seamless digital experiences that truly impressed us"',
-    name: 'Manuel J.',
-    role: 'Founder, Dot.simple',
-    avatar: `${IMG}/manuel.png`,
+      '"This is example testimonial copy. Swap it out for a real client quote once you have one — short, specific praise reads far better than generic marketing language."',
+    name: 'Client Name',
+    role: 'Founder, Example Co.',
   },
   {
     quote:
-      '"What impressed me most about ZeeFrames was their ability to truly understand my vision. They delivered the complete design within the agreed timeline, and users responded positively to the app\'s ease of use and visual appeal during testing. The team demonstrated excellent project management and stayed highly organized throughout the entire engagement."',
-    name: 'Daahir Ibraahim',
-    role: 'Project Managemer, E Salaax',
-    avatar: `${IMG}/daahir.png`,
+      '"Another placeholder quote. A good testimonial names the specific problem that got solved, not just that the team was great to work with."',
+    name: 'Client Name',
+    role: 'Product Lead, Sample Inc.',
   },
   {
     quote:
-      '"The designers at ZeeFrames are always responsive and quick to react. They successfully designed our buyer and seller side chat sections, maintaining perfect consistency with our website\'s theme. Their attention to detail, friendly approach, and cost-effective pricing made them a standout partner."',
-    name: 'Hisham Taha',
-    role: 'Founder & CEO, Kobray',
-    avatar: `${IMG}/hisham.png`,
-  },
-  {
-    quote:
-      '"We were impressed with their quickness. ZeeFrames delivered high-quality wireframes that met our expectations, demonstrating professionalism and solid project management throughout. Their fast turnaround and clear communication via Figma made the entire engagement a positive experience."',
-    name: 'Armando Jimeno',
-    role: 'Founder, TropicDrive',
-    avatar: `${IMG}/armando.png`,
-  },
-  {
-    quote:
-      '"The abilities of the UX designer were impressive. ZeeFrames delivered high-quality wireframes with an excellent understanding of our needs, resulting in a truly successful engagement. The team was professional, timely, and brought a positive attitude their UX/UI expertise genuinely stood out throughout the collaboration."',
-    name: 'Philip Leth-Sørensen',
-    role: 'CEO, PredictHire',
-    avatar: `${IMG}/philip.jpg`,
+      '"Third placeholder slot, kept so the slider still has something to autoplay through before real reviews are in."',
+    name: 'Client Name',
+    role: 'CEO, Placeholder Ltd.',
   },
 ];
 
 /* ---------------- Offices ---------------- */
+// Placeholder locations/numbers — replace with Metron Studio's real office
+// details; the `tel` links are inert ('#') until then.
 export const offices = [
   {
     region: 'North America',
-    address: '1832 Norfolk st Houston Texas 77098',
-    phone: '+1 (480) 920-1123',
-    tel: 'tel:+17372775447',
+    address: 'Address on request',
+    phone: 'Available on request',
+    tel: '#',
     icon: `${SVG}/address-north-america.svg`,
   },
   {
     region: 'Europe',
-    address: 'West Tower, 371 Deansgate, Manchester M15 4UP, United Kingdom',
-    phone: '+44 (746) 0766-922',
-    tel: 'tel:+447460766922',
+    address: 'Address on request',
+    phone: 'Available on request',
+    tel: '#',
     icon: `${SVG}/address-europe.svg`,
   },
   {
     region: 'Asia',
-    address: '144/2, Block B, Bankers Society Near DHA Phase 4, Lahore, 54792',
-    phone: '+1 (737) 277 5447',
-    tel: 'tel:+17372775447',
+    address: 'Address on request',
+    phone: 'Available on request',
+    tel: '#',
     icon: `${SVG}/address-asia.svg`,
   },
 ];
@@ -331,24 +295,21 @@ export const footerColumns = [
   {
     heading: 'Company',
     links: [
-      { label: 'Home', href: `${ORIGIN}` },
-      { label: 'About', href: `${ORIGIN}/about` },
-      { label: 'Work', href: `${ORIGIN}/work` },
-      { label: 'Contact', href: `${ORIGIN}/work-with-us` },
-      { label: 'Insights', href: `${ORIGIN}/insights` },
+      { label: 'Home', href: '#hero' },
+      { label: 'About', href: '#' },
+      { label: 'Work', href: '#work' },
+      { label: 'Contact', href: '#contact' },
+      { label: 'Insights', href: '#insights' },
     ],
   },
   {
     heading: 'Services',
     links: [
-      { label: 'UI UX Design', href: `${ORIGIN}/services/ui-ux-design` },
-      { label: 'UX Research', href: `${ORIGIN}/services/ux-research-insights` },
-      {
-        label: 'Design System',
-        href: `${ORIGIN}/services/design-systems-guidelines`,
-      },
-      { label: 'Web App Design', href: `${ORIGIN}/services/web-design` },
-      { label: 'Mobile App Design', href: `${ORIGIN}/services/mobile-design` },
+      { label: 'UI UX Design', href: '#services' },
+      { label: 'UX Research', href: '#services' },
+      { label: 'Design System', href: '#services' },
+      { label: 'Web App Design', href: '#services' },
+      { label: 'Mobile App Design', href: '#services' },
     ],
   },
 ];
@@ -362,22 +323,17 @@ export const industries = [
   'Real Estate',
 ];
 
-export const awards = [
-  { src: `${SVG}/iso.svg`, alt: 'ISO certified', width: 62, height: 62 },
-  { src: `${SVG}/top_clutch.svg`, alt: 'Top Clutch', width: 57, height: 62 },
-  { src: `${SVG}/goodfirm.svg`, alt: 'GoodFirms', width: 62, height: 62 },
-  {
-    src: `${SVG}/custom-software-development.svg`,
-    alt: 'Custom software development award',
-    width: 62,
-    height: 62,
-  },
-];
+// Third-party certification/review badges (ISO, Clutch, GoodFirms, etc.)
+// were removed here — those accreditations belong to the site this was
+// cloned from, not to Metron Studio, so showing them would misrepresent
+// credentials Metron doesn't actually hold.
+export const awards: { src: string; alt: string; width: number; height: number }[] = [];
 
+// Placeholder until Metron Studio's real social accounts exist.
 export const socialLinks = [
-  { label: 'Dribbble', href: 'https://dribbble.com/zeeframes' },
-  { label: 'YouTube', href: 'https://youtube.com/@zeeframes.design' },
-  { label: 'Facebook', href: 'https://www.facebook.com/zeeframes.design' },
-  { label: 'LinkedIn', href: 'https://www.linkedin.com/company/zeeframes/' },
-  { label: 'Instagram', href: 'https://www.instagram.com/zeeframes.design/' },
+  { label: 'Dribbble', href: '#' },
+  { label: 'YouTube', href: '#' },
+  { label: 'Facebook', href: '#' },
+  { label: 'LinkedIn', href: '#' },
+  { label: 'Instagram', href: '#' },
 ];

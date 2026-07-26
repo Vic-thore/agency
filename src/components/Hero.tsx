@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import { IMG, SVG, CALENDLY, FIGMA_PROTO } from '../lib/assets';
+import { IMG, SVG } from '../lib/assets';
 import { heroToolIcons, typewriterWords } from '../data/content';
 import { useTypewriter } from '../hooks/useTypewriter';
 import { useMediaQuery } from '../hooks/useMediaQuery';
@@ -126,9 +126,7 @@ export function Hero() {
               className="mt-12 flex flex-wrap justify-center gap-5 max-[575px]:mt-6"
             >
               <a
-                href={CALENDLY}
-                target="_blank"
-                rel="noreferrer noopener"
+                href="#contact"
                 className="btn btn-light btn-slide-in font-inter"
               >
                 {/* Keeps the button at its natural width while both
@@ -142,9 +140,7 @@ export function Hero() {
               </a>
 
               <a
-                href={FIGMA_PROTO}
-                target="_blank"
-                rel="noreferrer noopener"
+                href="#work"
                 className="btn btn-outlined anim-translate font-inter"
               >
                 <span className="anim-translate-content">© 2025 Work</span>

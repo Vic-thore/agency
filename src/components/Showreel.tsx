@@ -1,5 +1,4 @@
 import { useEffect, useRef, useState } from 'react';
-import { ORIGIN } from '../lib/assets';
 
 /**
  * Full-bleed process video with a cursor-tracking "All Works" pill.
@@ -38,7 +37,7 @@ export function Showreel() {
     <section
       ref={sectionRef}
       className="above-glow relative overflow-hidden bg-ink"
-      aria-label="ZeeFrames process reel"
+      aria-label="Metron Studio process reel"
       onMouseMove={(e) => {
         const rect = e.currentTarget.getBoundingClientRect();
         setPos({ x: e.clientX - rect.left, y: e.clientY - rect.top });
@@ -57,13 +56,13 @@ export function Showreel() {
         loop
         playsInline
         preload="none"
-        aria-label="ZeeFrames process video"
+        aria-label="Metron Studio process video"
       />
 
       {/* Keyboard and screen-reader route to the same destination as the
           cursor-following pill, which is decorative only. */}
       <a
-        href={`${ORIGIN}/work`}
+        href="#work"
         className="sr-only focus:not-sr-only focus:absolute focus:left-6 focus:top-6 focus:z-20 focus:rounded-full focus:bg-white focus:px-4 focus:py-2 focus:text-black"
       >
         View all works

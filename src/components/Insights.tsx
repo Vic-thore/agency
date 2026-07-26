@@ -1,7 +1,6 @@
 import { motion } from 'framer-motion';
 import { insights } from '../data/content';
 import { InsightCard } from './InsightCard';
-import { ORIGIN } from '../lib/assets';
 import { reveal } from '../hooks/useReveal';
 
 export function Insights() {
@@ -27,7 +26,7 @@ export function Insights() {
           </div>
 
           <a
-            href={`${ORIGIN}/insights`}
+            href="#insights"
             className="btn btn-black btn-swap h-fit"
           >
             <span className="swap-out">Explore More</span>
@@ -51,7 +50,7 @@ export function Insights() {
 
         <div className="insights-grid">
           {insights.map((insight, i) => (
-            <InsightCard key={insight.href} insight={insight} index={i} />
+            <InsightCard key={insight.title} insight={insight} index={i} />
           ))}
         </div>
       </div>

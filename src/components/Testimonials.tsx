@@ -1,7 +1,6 @@
 import { useEffect, useState } from 'react';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
 import { testimonials } from '../data/content';
-import { SVG } from '../lib/assets';
 import { cn } from '../lib/cn';
 
 const AUTOPLAY_MS = 6000;
@@ -38,7 +37,7 @@ export function Testimonials() {
         <div className="slides-viewport">
           {testimonials.map((item, i) => (
             <figure
-              key={item.name}
+              key={i}
               className={cn('slide', i === index && 'is-active')}
               aria-hidden={i !== index}
             >
@@ -63,15 +62,12 @@ export function Testimonials() {
 
               <figcaption className="flex items-end justify-between gap-4">
                 <div className="flex items-center gap-3">
-                  <img
-                    src={item.avatar}
-                    alt=""
-                    width={52}
-                    height={52}
-                    loading="lazy"
-                    decoding="async"
-                    className="cf-avatar"
-                  />
+                  <span
+                    aria-hidden="true"
+                    className="cf-avatar flex items-center justify-center bg-primary font-tight text-[18px] font-semibold text-black"
+                  >
+                    {item.name.charAt(0)}
+                  </span>
                   <div>
                     <p className="mb-1 font-inter text-[16px] font-medium leading-6 text-black">
                       {item.name}
@@ -81,13 +77,6 @@ export function Testimonials() {
                     </p>
                   </div>
                 </div>
-                <img
-                  src={`${SVG}/clutch.svg`}
-                  alt="Reviewed on Clutch"
-                  width={56}
-                  height={16}
-                  loading="lazy"
-                />
               </figcaption>
             </figure>
           ))}
@@ -114,9 +103,9 @@ export function Testimonials() {
           </div>
 
           <div className="cf-dot-wrapper">
-            {testimonials.map((item, i) => (
+            {testimonials.map((_, i) => (
               <button
-                key={item.name}
+                key={i}
                 type="button"
                 className={cn('cf-dot', i === index && 'is-active')}
                 aria-label={`Show review ${i + 1} of ${testimonials.length}`}
