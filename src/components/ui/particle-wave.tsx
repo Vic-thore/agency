@@ -5,11 +5,10 @@ interface ParticleWaveProps {
   className?: string;
 }
 
-// Site accent color (--color-primary, #FF5C1A) as an RGB vector for the
-// particle shader. This project has a single fixed dark theme (no
-// light/dark toggle), so the color is a constant rather than derived from
-// a `.dark` class that nothing in this app ever sets.
-const PARTICLE_COLOR = new THREE.Vector3(1.0, 0.361, 0.102);
+// White particles for the dark hero background. This project has a single
+// fixed dark theme (no light/dark toggle), so the color is a constant
+// rather than derived from a `.dark` class that nothing in this app sets.
+const PARTICLE_COLOR = new THREE.Vector3(1.0, 1.0, 1.0);
 
 const ParticleWave: React.FC<ParticleWaveProps> = ({ className = '' }) => {
   const containerRef = useRef<HTMLDivElement>(null);
