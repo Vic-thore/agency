@@ -1,0 +1,55 @@
+/** @type {import('tailwindcss').Config} */
+export default {
+  content: ['./index.html', './src/**/*.{ts,tsx}'],
+  theme: {
+    // Breakpoints mirror the original stylesheet's max-width queries,
+    // re-expressed as min-width so Tailwind's mobile-first model applies.
+    screens: {
+      xs: '576px',
+      sm: '576px',
+      md: '769px',
+      lg: '992px',
+      xl: '1205px',
+      '2xl': '1440px',
+    },
+    extend: {
+      colors: {
+        primary: 'var(--color-primary)',
+        'primary-2': 'var(--color-primary-2)',
+        'primary-3': 'var(--color-primary-3)',
+        cream: 'var(--color-cream-white)',
+        ink: 'var(--color-black-300)',
+        'ink-200': 'var(--color-black-200)',
+        'ink-800': 'var(--color-black-800)',
+        'ink-750': 'var(--color-black-750)',
+        'ink-850': 'var(--color-black-850)',
+        'ink-170': 'var(--color-black-170)',
+        'ink-180': 'var(--color-black-180)',
+        'ink-400': 'var(--color-black-400)',
+        'ink-450': 'var(--color-black-450)',
+        'ink-650': 'var(--color-black-650)',
+        'gray-02': 'var(--color-dark-gray-02)',
+        'gray-03': 'var(--color-dark-gray-03)',
+        'gray-muted-dark': 'var(--color-gray-muted-dark)',
+        'gray-muted-light': 'var(--color-gray-muted-light)',
+        'gray-200': 'var(--color-gray-200)',
+        'gray-250': 'var(--color-gray-250)',
+        'gray-300': 'var(--color-gray-300)',
+        'gray-400': 'var(--color-gray-400)',
+        'gray-495': 'var(--color-gray-495)',
+        'gray-800': 'var(--color-gray-800)',
+        'gray-900': 'var(--color-gray-900)',
+      },
+      fontFamily: {
+        display: ['Geologica', 'Geologica-fallback', 'sans-serif'],
+        tight: ['"Inter Tight"', 'Inter-fallback', 'sans-serif'],
+        inter: ['Inter', 'Inter-fallback', 'sans-serif'],
+      },
+      maxWidth: {
+        container: '1400px',
+        hero: '978px',
+      },
+    },
+  },
+  plugins: [],
+};
