@@ -5,6 +5,7 @@ import { useTypewriter } from '../hooks/useTypewriter';
 import { useMediaQuery } from '../hooks/useMediaQuery';
 import { ClientLogos } from './ClientLogos';
 import { reveal } from '../hooks/useReveal';
+import { ParticleWave } from './ui/particle-wave';
 
 export function Hero() {
   const reducedMotion = useMediaQuery('(prefers-reduced-motion: reduce)');
@@ -12,18 +13,25 @@ export function Hero() {
 
   return (
     <section className="hero-section" id="hero" aria-labelledby="hero-heading">
-      {/* Background artwork. Absolutely positioned and aria-hidden, so the
-          layout is unaffected if it fails to load. */}
-      <img
-        src={`${IMG}/home-hero-bg-mobile.webp`}
-        srcSet={`${IMG}/home-hero-bg-mobile.webp 400w, ${IMG}/home-hero-bg-new.webp 1600w`}
-        sizes="100vw"
-        alt=""
-        aria-hidden="true"
-        fetchPriority="high"
-        decoding="async"
-        className="hero-bg-img"
-      />
+      {/* Background. Absolutely positioned and aria-hidden, so the layout
+          is unaffected if the effect fails to init. The animated particle
+          wave replaces the static photo background; reduced-motion users
+          get that original static image instead of a continuous WebGL
+          animation, matching how CursorGlow is disabled site-wide. */}
+      {reducedMotion ? (
+        <img
+          src={`${IMG}/home-hero-bg-mobile.webp`}
+          srcSet={`${IMG}/home-hero-bg-mobile.webp 400w, ${IMG}/home-hero-bg-new.webp 1600w`}
+          sizes="100vw"
+          alt=""
+          aria-hidden="true"
+          fetchPriority="high"
+          decoding="async"
+          className="hero-bg-img"
+        />
+      ) : (
+        <ParticleWave className="hero-bg-img" />
+      )}
 
       <div className="container-zf">
         <div className="hero-content-wrap">
