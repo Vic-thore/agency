@@ -72,7 +72,7 @@ export function Process() {
               </ol>
             </div>
 
-            <div className="process-image-wrap above-glow hidden md:block">
+            <div className="process-image-wrap hidden md:block">
               <img
                 src={`${IMG}/home-process-1.webp`}
                 alt="Design process artwork"
