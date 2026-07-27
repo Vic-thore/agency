@@ -1,13 +1,15 @@
 import { useEffect, useRef, useState } from 'react';
+import { AnimatePresence, motion } from 'framer-motion';
 import { processSteps } from '../data/content';
-import { IMG } from '../lib/assets';
 import { SectionHeading } from './SectionHeading';
 import { ProcessStep } from './ProcessStep';
+import { useMediaQuery } from '../hooks/useMediaQuery';
 
 export function Process() {
   const listRef = useRef<HTMLDivElement>(null);
   const itemRefs = useRef<Array<HTMLLIElement | null>>([]);
   const [activeIndex, setActiveIndex] = useState(0);
+  const reducedMotion = useMediaQuery('(prefers-reduced-motion: reduce)');
 
   useEffect(() => {
     const list = listRef.current;
@@ -73,15 +75,24 @@ export function Process() {
             </div>
 
             <div className="process-image-wrap hidden md:block">
-              <img
-                src={`${IMG}/home-process-1.webp`}
-                alt="Design process artwork"
-                width={527}
-                height={506}
-                loading="lazy"
-                decoding="async"
-                className="max-w-full rounded-2xl object-contain"
-              />
+              <div className="relative h-[506px] w-[527px] max-w-full overflow-hidden rounded-2xl bg-ink-800">
+                <AnimatePresence>
+                  <motion.img
+                    key={processSteps[activeIndex].index}
+                    src={processSteps[activeIndex].image}
+                    alt={`${processSteps[activeIndex].title} — ${processSteps[activeIndex].tag}`}
+                    width={527}
+                    height={506}
+                    loading="lazy"
+                    decoding="async"
+                    className="absolute inset-0 h-full w-full object-cover"
+                    initial={reducedMotion ? false : { opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    exit={reducedMotion ? undefined : { opacity: 0 }}
+                    transition={{ duration: 0.4, ease: 'easeInOut' }}
+                  />
+                </AnimatePresence>
+              </div>
             </div>
           </div>
         </div>
