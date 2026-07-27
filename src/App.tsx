@@ -26,8 +26,8 @@ export default function App() {
       <main id="main">
         <Hero />
         <WorkSlider />
-        <Showreel />
         <Services />
+        <Showreel />
         <Process />
         <Showcase />
         <CTASection />
