@@ -1,5 +1,6 @@
 import { Header } from './components/Header';
 import { Hero } from './components/Hero';
+import { WorkSlider } from './components/WorkSlider';
 import { Showreel } from './components/Showreel';
 import { Services } from './components/Services';
 import { Process } from './components/Process';
@@ -24,6 +25,7 @@ export default function App() {
 
       <main id="main">
         <Hero />
+        <WorkSlider />
         <Showreel />
         <Services />
         <Process />
