@@ -1,4 +1,4 @@
-import { IMG, SVG, ORIGIN, SITE_NAME } from '../lib/assets';
+import { SVG, ORIGIN, SITE_NAME } from '../lib/assets';
 
 /* ---------------- Hero ---------------- */
 export const typewriterWords = [
@@ -82,7 +82,7 @@ export const processSteps: ProcessStepData[] = [
     tag: 'Research & Domain Analysis',
     description:
       "Don't ignore the crucial step of Research & Development in the UX Design Process! Discover and solve user problems to launch a successful product. Gather data on the target audience and analyze customer feedback. Improve user experience",
-    image: `${IMG}/home-process-mob-1.webp`,
+    image: '/images/process/discovery.jpg',
   },
   {
     index: '02',
@@ -90,7 +90,7 @@ export const processSteps: ProcessStepData[] = [
     tag: 'User Journey Map Sitemap',
     description:
       'Create successful user flows for your product in the UX design process by mapping user journeys and interactions. Define product ideas and goals, tailored to user needs, behavior, and expectations. Test with real users for optimization.',
-    image: `${IMG}/home-process-mob-2.webp`,
+    image: '/images/process/flows.jpg',
   },
   {
     index: '03',
@@ -98,7 +98,7 @@ export const processSteps: ProcessStepData[] = [
     tag: 'Low - Fidelity Design',
     description:
       'Define the content and functionality of your product with wireframes in the UX Design process. Brainstorm multiple ideas, get feedback, and refine for high fidelity wireframes. Enhance the user interface for a natural and intuitive look.',
-    image: `${IMG}/home-process-mob-3.webp`,
+    image: '/images/process/wireframes.jpg',
   },
   {
     index: '04',
@@ -106,7 +106,7 @@ export const processSteps: ProcessStepData[] = [
     tag: 'High - Fidelity Design',
     description:
       "Visualize your product's appearance with mockups in the UX Design. Detailed design for every screen gets reviewed by stakeholders and the design team. Get it tested with users for improved design based on their needs and expectations.",
-    image: `${IMG}/home-process-mob-4.webp`,
+    image: '/images/process/mockups.jpg',
   },
   {
     index: '05',
@@ -114,7 +114,7 @@ export const processSteps: ProcessStepData[] = [
     tag: 'Interaction Design',
     description:
       'UX Designers create clickable prototypes for your product using tools like Invision to assess product functionality. Gather user feedback and collaborate with development team to create improved version of the design for implementation.',
-    image: `${IMG}/home-process-mob-5.webp`,
+    image: '/images/process/prototyping.jpg',
   },
   {
     index: '06',
@@ -122,7 +122,7 @@ export const processSteps: ProcessStepData[] = [
     tag: 'Usability Testing',
     description:
       'UX designers focus on improving product usability by testing with real users. Define the testing goals and scenarios and recruit a target audience. Conduct usability tests, analyze results, and make changes for optimal user experience.',
-    image: `${IMG}/home-process-mob-6.webp`,
+    image: '/images/process/testing.jpg',
   },
 ];
 
