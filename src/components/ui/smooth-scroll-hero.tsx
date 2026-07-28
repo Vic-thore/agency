@@ -23,6 +23,8 @@ interface SmoothScrollHeroProps {
   initialClipPercentage?: number;
   /** Final clip path percentage. @default 75 */
   finalClipPercentage?: number;
+  /** Optional content overlaid on top of the sticky background (e.g. a CTA). */
+  children?: React.ReactNode;
 }
 
 const DEFAULT_DESKTOP_IMAGE =
@@ -45,6 +47,7 @@ const SmoothScrollHeroBackground: React.FC<
   video,
   initialClipPercentage,
   finalClipPercentage,
+  children,
 }) => {
   const { scrollY } = useScroll();
 
@@ -111,6 +114,7 @@ const SmoothScrollHeroBackground: React.FC<
           />
         </>
       )}
+      {children}
     </motion.div>
   );
 };
@@ -127,6 +131,7 @@ const SmoothScrollHero: React.FC<SmoothScrollHeroProps> = ({
   video,
   initialClipPercentage = 25,
   finalClipPercentage = 75,
+  children,
 }) => {
   return (
     <div
@@ -140,7 +145,9 @@ const SmoothScrollHero: React.FC<SmoothScrollHeroProps> = ({
         video={video}
         initialClipPercentage={initialClipPercentage}
         finalClipPercentage={finalClipPercentage}
-      />
+      >
+        {children}
+      </SmoothScrollHeroBackground>
     </div>
   );
 };
