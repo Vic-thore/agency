@@ -155,33 +155,33 @@ export function Hero() {
                   >
                     <path
                       d="M12.5 12.5C13.8807 12.5 15 11.3807 15 10C15 8.61929 13.8807 7.5 12.5 7.5C11.1193 7.5 10 8.61929 10 10C10 11.3807 11.1193 12.5 12.5 12.5Z"
-                      stroke="#0964DA"
+                      stroke="#FFFFFF"
                       strokeWidth="1.5"
                       strokeLinejoin="round"
                     />
                     <path
                       d="M7.5 17.5C8.88075 17.5 10 16.3807 10 15V12.5H7.5C6.11929 12.5 5 13.6192 5 15C5 16.3807 6.11929 17.5 7.5 17.5Z"
-                      stroke="#0964DA"
+                      stroke="#FFFFFF"
                       strokeWidth="1.5"
                       strokeLinejoin="round"
                     />
                     <path
                       d="M10 7.5V12.5H7.5C6.11929 12.5 5 11.3807 5 10C5 8.61925 6.11929 7.5 7.5 7.5H10Z"
-                      stroke="#0964DA"
+                      stroke="#FFFFFF"
                       strokeWidth="1.5"
                       strokeLinecap="round"
                       strokeLinejoin="round"
                     />
                     <path
                       d="M10 2.5V7.5H7.5C6.11929 7.5 5 6.38071 5 5C5 3.61929 6.11929 2.5 7.5 2.5H10Z"
-                      stroke="#0964DA"
+                      stroke="#FFFFFF"
                       strokeWidth="1.5"
                       strokeLinecap="round"
                       strokeLinejoin="round"
                     />
                     <path
                       d="M10 2.5V7.5H12.5C13.8807 7.5 15 6.38071 15 5C15 3.61929 13.8807 2.5 12.5 2.5H10Z"
-                      stroke="#0964DA"
+                      stroke="#FFFFFF"
                       strokeWidth="1.5"
                       strokeLinecap="round"
                       strokeLinejoin="round"
