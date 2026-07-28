@@ -1,7 +1,7 @@
 import { Header } from './components/Header';
 import { Hero } from './components/Hero';
 import { WorkSlider } from './components/WorkSlider';
-import { Showreel } from './components/Showreel';
+import SmoothScrollHero from './components/ui/smooth-scroll-hero';
 import { Services } from './components/Services';
 import { Process } from './components/Process';
 import { Showcase } from './components/Showcase';
@@ -27,7 +27,12 @@ export default function App() {
         <Hero />
         <WorkSlider />
         <Services />
-        <Showreel />
+        <SmoothScrollHero
+          video="/videos/hero-showreel.mp4"
+          scrollHeight={600}
+          initialClipPercentage={25}
+          finalClipPercentage={75}
+        />
         <Process />
         <Showcase />
         <CTASection />
