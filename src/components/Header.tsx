@@ -144,8 +144,9 @@ export function Header() {
               height={33}
               className="h-8 w-auto"
             />
-            <span className="font-display text-[22px] font-semibold leading-none text-primary">
-              {SITE_NAME}
+            <span className="flex flex-col font-display font-semibold leading-none text-primary">
+              <span className="text-[22px]">Metron</span>
+              <span className="text-[12px]">Studio</span>
             </span>
           </a>
 
