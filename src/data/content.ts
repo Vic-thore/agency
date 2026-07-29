@@ -295,21 +295,21 @@ export const footerColumns = [
   {
     heading: 'Company',
     links: [
-      { label: 'Home', href: '#hero' },
-      { label: 'About', href: '#' },
-      { label: 'Work', href: '#work' },
-      { label: 'Contact', href: '#contact' },
-      { label: 'Insights', href: '#insights' },
+      { label: 'Home', href: '/' },
+      { label: 'About', href: '/about' },
+      { label: 'Work', href: '/#work' },
+      { label: 'Contact', href: '/#contact' },
+      { label: 'Insights', href: '/#insights' },
     ],
   },
   {
     heading: 'Services',
     links: [
-      { label: 'UI UX Design', href: '#services' },
-      { label: 'UX Research', href: '#services' },
-      { label: 'Design System', href: '#services' },
-      { label: 'Web App Design', href: '#services' },
-      { label: 'Mobile App Design', href: '#services' },
+      { label: 'UI UX Design', href: '/#services' },
+      { label: 'UX Research', href: '/#services' },
+      { label: 'Design System', href: '/#services' },
+      { label: 'Web App Design', href: '/#services' },
+      { label: 'Mobile App Design', href: '/#services' },
     ],
   },
 ];

@@ -5,16 +5,16 @@ export interface NavItem {
   href: string;
 }
 
-// Every href below stays on this page: it either anchors to a section that
-// exists here, or is a `#` placeholder for a page that hasn't been built yet.
+// Home/About are real routes; Work/Insights anchor to sections on the
+// homepage (ScrollToHash handles the cross-page case).
 export const primaryNav: NavItem[] = [
-  { label: 'Home', href: '#hero' },
-  { label: 'About', href: '#' },
+  { label: 'Home', href: '/' },
+  { label: 'About', href: '/about' },
 ];
 
 export const trailingNav: NavItem[] = [
-  { label: 'Work', href: '#work' },
-  { label: 'Insights', href: '#insights' },
+  { label: 'Work', href: '/#work' },
+  { label: 'Insights', href: '/#insights' },
 ];
 
 export interface MegaService {

@@ -1,4 +1,5 @@
 import { useEffect, useRef, useState } from 'react';
+import { Link, useLocation } from 'react-router-dom';
 import { X, ChevronDown } from 'lucide-react';
 import { ServicesMegaMenu } from './ServicesMegaMenu';
 import { primaryNav, trailingNav } from '../data/navigation';
@@ -26,6 +27,7 @@ function BurgerIcon() {
 
 export function Header() {
   const isDesktop = useMediaQuery('(min-width: 992px)');
+  const { pathname } = useLocation();
   const [drawerOpen, setDrawerOpen] = useState(false);
   const [servicesOpen, setServicesOpen] = useState(false);
   const dropdownRef = useRef<HTMLLIElement>(null);
@@ -61,18 +63,21 @@ export function Header() {
 
   const navLinks = (onClick?: () => void) => (
     <>
-      {primaryNav.map((item, i) => (
-        <li key={item.label}>
-          <a
-            href={item.href}
-            onClick={onClick}
-            className={cn('nav-link', i === 0 && 'is-active')}
-            aria-current={i === 0 ? 'page' : undefined}
-          >
-            {item.label}
-          </a>
-        </li>
-      ))}
+      {primaryNav.map((item) => {
+        const active = pathname === item.href;
+        return (
+          <li key={item.label}>
+            <Link
+              to={item.href}
+              onClick={onClick}
+              className={cn('nav-link', active && 'is-active')}
+              aria-current={active ? 'page' : undefined}
+            >
+              {item.label}
+            </Link>
+          </li>
+        );
+      })}
 
       <li
         ref={dropdownRef}
@@ -81,13 +86,9 @@ export function Header() {
         onMouseLeave={isDesktop ? () => setServicesOpen(false) : undefined}
       >
         <div className="flex items-center justify-center">
-          <a
-            href="#services"
-            onClick={onClick}
-            className="nav-link pr-2"
-          >
+          <Link to="/#services" onClick={onClick} className="nav-link pr-2">
             Services
-          </a>
+          </Link>
           <button
             type="button"
             aria-label="Toggle services menu"
@@ -119,9 +120,9 @@ export function Header() {
 
       {trailingNav.map((item) => (
         <li key={item.label}>
-          <a href={item.href} onClick={onClick} className="nav-link">
+          <Link to={item.href} onClick={onClick} className="nav-link">
             {item.label}
-          </a>
+          </Link>
         </li>
       ))}
     </>
@@ -131,8 +132,8 @@ export function Header() {
     <header className="zf-header">
       <div className="container-zf">
         <nav aria-label="Main" className="flex items-center justify-between">
-          <a
-            href="#hero"
+          <Link
+            to="/"
             aria-label={`${SITE_NAME} home`}
             className="flex shrink-0 items-center gap-2"
           >
@@ -148,7 +149,7 @@ export function Header() {
               <span className="text-[22px]">Metron</span>
               <span className="text-[12px]">Studio</span>
             </span>
-          </a>
+          </Link>
 
           {/* Desktop navigation */}
           {isDesktop && (
@@ -157,7 +158,7 @@ export function Header() {
 
           <div className="flex items-center gap-3">
             <a
-              href="#contact"
+              href="/#contact"
               className="btn btn-header hidden font-inter text-[14px] font-medium leading-5 xs:inline-flex"
             >
               <span className="flex items-center gap-3">
@@ -216,7 +217,7 @@ export function Header() {
             {navLinks()}
           </ul>
           <a
-            href="#contact"
+            href="/#contact"
             onClick={closeAll}
             className="btn btn-primary mt-2 self-center xs:hidden"
           >
