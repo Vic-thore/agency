@@ -24,7 +24,7 @@ export function CTASection() {
               us might tell you why.And more often than not, we&apos;re exactly
               the team to fix it.
             </p>
-            <a href="#contact" className="insight-btn">
+            <a href="/#contact" className="insight-btn">
               Book a Free Discovery Call
               <svg
                 xmlns="http://www.w3.org/2000/svg"

@@ -86,7 +86,7 @@ export function Header() {
         onMouseLeave={isDesktop ? () => setServicesOpen(false) : undefined}
       >
         <div className="flex items-center justify-center">
-          <Link to="/#services" onClick={onClick} className="nav-link pr-2">
+          <Link to="/services" onClick={onClick} className="nav-link pr-2">
             Services
           </Link>
           <button
