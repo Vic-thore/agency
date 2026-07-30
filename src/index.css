@@ -1314,6 +1314,17 @@
       display: none;
     }
   }
+  /* Same slider, used on its own instead of beside the contact form:
+     centered, wider, and — unlike .testimonial-side — never hidden. */
+  .testimonial-side-standalone {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: 640px;
+    margin: 0 auto;
+    border-radius: 12px;
+    overflow: hidden;
+  }
   .testimonial-panel {
     flex: 1;
     background-color: var(--color-white);

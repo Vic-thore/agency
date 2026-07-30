@@ -250,7 +250,7 @@ export default function Services() {
       {/* Testimonials */}
       <section className="section-pad bg-cream" aria-label="What clients say">
         <div className="container-zf">
-          <Testimonials />
+          <Testimonials standalone />
         </div>
       </section>
 

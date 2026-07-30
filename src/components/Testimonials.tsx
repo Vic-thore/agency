@@ -5,7 +5,18 @@ import { cn } from '../lib/cn';
 
 const AUTOPLAY_MS = 6000;
 
-export function Testimonials() {
+interface TestimonialsProps {
+  /**
+   * The default layout (`.testimonial-side`) is built to sit beside the
+   * contact form: capped at 542px and hidden below 768px, since the form
+   * takes over the mobile layout there. `standalone` is for using this
+   * slider on its own — full width, centered, and visible on every
+   * breakpoint.
+   */
+  standalone?: boolean;
+}
+
+export function Testimonials({ standalone = false }: TestimonialsProps) {
   const [index, setIndex] = useState(0);
   const [paused, setPaused] = useState(false);
 
@@ -23,7 +34,9 @@ export function Testimonials() {
 
   return (
     <div
-      className="testimonial-side"
+      className={cn(
+        standalone ? 'testimonial-side-standalone' : 'testimonial-side'
+      )}
       onMouseEnter={() => setPaused(true)}
       onMouseLeave={() => setPaused(false)}
       onFocusCapture={() => setPaused(true)}
