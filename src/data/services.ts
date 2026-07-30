@@ -29,10 +29,6 @@ export interface ServiceCard {
 export interface ServiceGroup {
   slug: string;
   tabLabel: string;
-  /** Icon color, e.g. "text-blue-400" */
-  accentClass: string;
-  /** Icon chip background, e.g. "bg-blue-400/10" */
-  accentBgClass: string;
   heroTitle: string;
   heroBody: string;
   comingSoon?: boolean;
@@ -43,8 +39,6 @@ export const serviceGroups: ServiceGroup[] = [
   {
     slug: 'ui-ux-design',
     tabLabel: 'UI/UX Design',
-    accentClass: 'text-blue-400',
-    accentBgClass: 'bg-blue-400/10',
     heroTitle: 'Interfaces designed around how people actually work.',
     heroBody:
       'We design digital products for SaaS, dashboards, and mobile apps, starting with how real users behave, not assumptions.',
@@ -74,8 +68,6 @@ export const serviceGroups: ServiceGroup[] = [
   {
     slug: 'brand-design',
     tabLabel: 'Brand Design',
-    accentClass: 'text-pink-400',
-    accentBgClass: 'bg-pink-400/10',
     heroTitle: 'A brand that holds up under scrutiny.',
     heroBody:
       'Naming, logo design, and color systems built to survive a real trademark check, not just look good in a moodboard.',
@@ -105,8 +97,6 @@ export const serviceGroups: ServiceGroup[] = [
   {
     slug: 'web-development',
     tabLabel: 'Web Development',
-    accentClass: 'text-emerald-400',
-    accentBgClass: 'bg-emerald-400/10',
     heroTitle: 'Websites built to convert, not just look good.',
     heroBody:
       'Custom sites on Webflow, WordPress, and Shopify. Every build starts with UI/UX design in Figma, so you approve the design before a single page gets built.',
@@ -136,8 +126,6 @@ export const serviceGroups: ServiceGroup[] = [
   {
     slug: 'motion-scroll-3d',
     tabLabel: 'Motion & Scroll-Driven 3D',
-    accentClass: 'text-orange-400',
-    accentBgClass: 'bg-orange-400/10',
     heroTitle: 'Motion that makes a site memorable.',
     heroBody:
       'Logo animation, Lottie micro-interactions, and scroll-triggered 3D experiences built with Three.js and GSAP, our sharpest technical differentiator.',
@@ -162,8 +150,6 @@ export const serviceGroups: ServiceGroup[] = [
   {
     slug: 'workflow-automation',
     tabLabel: 'Workflow Automation (n8n)',
-    accentClass: 'text-violet-400',
-    accentBgClass: 'bg-violet-400/10',
     heroTitle: 'Connecting your site to the rest of your business.',
     heroBody:
       'n8n-powered automation linking your website, CRM, and internal tools. Currently in development, client-ready builds launching soon.',

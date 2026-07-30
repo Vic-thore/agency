@@ -70,13 +70,8 @@ export function ServicesMegaMenu({
                 tabIndex={open ? 0 : -1}
                 onClick={onNavigate}
               >
-                <span
-                  className={cn(
-                    'flex h-10 w-10 shrink-0 items-center justify-center rounded-lg',
-                    current.accentBgClass
-                  )}
-                >
-                  <card.icon size={20} className={current.accentClass} aria-hidden="true" />
+                <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-white/10">
+                  <card.icon size={20} className="text-primary" aria-hidden="true" />
                 </span>
                 <span>
                   <span className="flex items-center gap-2">

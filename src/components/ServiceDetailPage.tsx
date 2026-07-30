@@ -1,7 +1,6 @@
 import { motion } from 'framer-motion';
 import { SectionHeading } from './SectionHeading';
 import { reveal } from '../hooks/useReveal';
-import { cn } from '../lib/cn';
 import type { ServiceGroup } from '../data/services';
 
 /** Shared template for the five /services/* pages. */
@@ -33,13 +32,8 @@ export function ServiceDetailPage({ group }: { group: ServiceGroup }) {
           <div className="mega-panel max-[575px]:grid-cols-1">
             {group.cards.map((card) => (
               <motion.div key={card.title} {...reveal()} className="service-item-card">
-                <span
-                  className={cn(
-                    'flex h-10 w-10 shrink-0 items-center justify-center rounded-lg',
-                    group.accentBgClass
-                  )}
-                >
-                  <card.icon size={20} className={group.accentClass} aria-hidden="true" />
+                <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-white/10">
+                  <card.icon size={20} className="text-primary" aria-hidden="true" />
                 </span>
                 <span>
                   <span className="block text-[16px] leading-6 font-semibold text-white">
