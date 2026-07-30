@@ -1,5 +1,6 @@
 import { useState } from 'react';
-import { megaMenuTabs } from '../data/navigation';
+import { Link } from 'react-router-dom';
+import { serviceGroups } from '../data/services';
 import { cn } from '../lib/cn';
 
 interface ServicesMegaMenuProps {
@@ -16,9 +17,9 @@ export function ServicesMegaMenu({
   id,
   onNavigate,
 }: ServicesMegaMenuProps) {
-  const [activeTab, setActiveTab] = useState(megaMenuTabs[0].id);
+  const [activeTab, setActiveTab] = useState(serviceGroups[0].slug);
   const current =
-    megaMenuTabs.find((tab) => tab.id === activeTab) ?? megaMenuTabs[0];
+    serviceGroups.find((group) => group.slug === activeTab) ?? serviceGroups[0];
 
   return (
     <div
@@ -33,32 +34,24 @@ export function ServicesMegaMenu({
       <div className={variant === 'desktop' ? 'container-zf' : ''}>
         <div className="mega-menu-grid">
           <div className="mega-menu-tabs" role="tablist" aria-label="Service categories">
-            {megaMenuTabs.map((tab) => (
+            {serviceGroups.map((group) => (
               <button
-                key={tab.id}
+                key={group.slug}
                 type="button"
                 role="tab"
-                id={`tab-${tab.id}`}
-                aria-selected={tab.id === activeTab}
-                aria-controls={`panel-${tab.id}`}
+                id={`tab-${group.slug}`}
+                aria-selected={group.slug === activeTab}
+                aria-controls={`panel-${group.slug}`}
                 tabIndex={open ? 0 : -1}
-                className={cn('mega-tab', tab.id === activeTab && 'is-active')}
-                onMouseEnter={() => setActiveTab(tab.id)}
-                onFocus={() => setActiveTab(tab.id)}
-                onClick={() => setActiveTab(tab.id)}
+                className={cn('mega-tab', group.slug === activeTab && 'is-active')}
+                onMouseEnter={() => setActiveTab(group.slug)}
+                onFocus={() => setActiveTab(group.slug)}
+                onClick={() => setActiveTab(group.slug)}
               >
-                <img
-                  src={tab.icon}
-                  alt=""
-                  width={24}
-                  height={24}
-                  className="shrink-0"
-                  loading="lazy"
-                  decoding="async"
-                />
                 <span className="text-[16px] leading-6 font-semibold text-white">
-                  {tab.label}
+                  {group.tabLabel}
                 </span>
+                {group.comingSoon && <span className="badge">Coming soon</span>}
               </button>
             ))}
           </div>
@@ -66,36 +59,37 @@ export function ServicesMegaMenu({
           <div
             className="mega-panel"
             role="tabpanel"
-            id={`panel-${current.id}`}
-            aria-labelledby={`tab-${current.id}`}
+            id={`panel-${current.slug}`}
+            aria-labelledby={`tab-${current.slug}`}
           >
-            {current.services.map((service) => (
-              <a
-                key={service.title}
-                href={service.href}
+            {current.cards.map((card) => (
+              <Link
+                key={card.title}
+                to={`/services/${current.slug}`}
                 className="service-item-card"
                 tabIndex={open ? 0 : -1}
                 onClick={onNavigate}
               >
-                <span className="shrink-0">
-                  <img
-                    src={service.icon}
-                    alt=""
-                    width={24}
-                    height={24}
-                    loading="lazy"
-                    decoding="async"
-                  />
+                <span
+                  className={cn(
+                    'flex h-10 w-10 shrink-0 items-center justify-center rounded-lg',
+                    current.accentBgClass
+                  )}
+                >
+                  <card.icon size={20} className={current.accentClass} aria-hidden="true" />
                 </span>
                 <span>
-                  <span className="block text-[16px] leading-6 font-semibold text-white">
-                    {service.title}
+                  <span className="flex items-center gap-2">
+                    <span className="block text-[16px] leading-6 font-semibold text-white">
+                      {card.title}
+                    </span>
+                    {current.comingSoon && <span className="badge">Coming soon</span>}
                   </span>
                   <span className="mt-1 block text-[16px] leading-6 font-normal text-white/70">
-                    {service.description}
+                    {card.description}
                   </span>
                 </span>
-              </a>
+              </Link>
             ))}
           </div>
         </div>
