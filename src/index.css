@@ -94,7 +94,6 @@
   html {
     scroll-behavior: smooth;
     scroll-padding-top: var(--header-height);
-    overflow-x: hidden;
   }
 
   body {
@@ -103,7 +102,6 @@
     background: var(--color-black-300);
     color: var(--color-white);
     -webkit-font-smoothing: antialiased;
-    overflow-x: hidden;
   }
 
   h1,
