@@ -1,6 +1,6 @@
 import { lazy, Suspense } from 'react';
 import { motion } from 'framer-motion';
-import { IMG, SVG } from '../lib/assets';
+import { SVG } from '../lib/assets';
 import { heroToolIcons, typewriterWords } from '../data/content';
 import { useTypewriter } from '../hooks/useTypewriter';
 import { useMediaQuery } from '../hooks/useMediaQuery';
@@ -14,18 +14,12 @@ const ParticleWave = lazy(() =>
 );
 
 function HeroBgImg() {
-  return (
-    <img
-      src={`${IMG}/home-hero-bg-mobile.webp`}
-      srcSet={`${IMG}/home-hero-bg-mobile.webp 400w, ${IMG}/home-hero-bg-new.webp 1600w`}
-      sizes="100vw"
-      alt=""
-      aria-hidden="true"
-      fetchPriority="high"
-      decoding="async"
-      className="hero-bg-img"
-    />
-  );
+  // Was the remote home-hero-bg-mobile.webp asset, but that image has the
+  // original site's yellow glow baked directly into its pixels — no way to
+  // recolor a raster image we don't host. A flat token-matched background
+  // keeps the Suspense fallback (and the permanent reduced-motion view)
+  // consistent with the rest of the site instead of flashing yellow-on-white.
+  return <div aria-hidden="true" className="hero-bg-img bg-ink" />;
 }
 
 export function Hero() {
