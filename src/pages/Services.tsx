@@ -1,10 +1,12 @@
 import { motion } from 'framer-motion';
+import { Link } from 'react-router-dom';
 import {
   Compass,
   PenTool,
   Hammer,
   Rocket,
   CheckCircle2,
+  ArrowRight,
 } from 'lucide-react';
 import { SectionHeading } from '../components/SectionHeading';
 import { FaqAccordion } from '../components/FaqAccordion';
@@ -123,23 +125,28 @@ export default function Services() {
           <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
             {serviceGroups.flatMap((group) =>
               group.cards.map((card, i) => (
-                <motion.div
-                  key={`${group.slug}-${card.title}`}
-                  {...reveal(Math.min(i, 3) * 0.05)}
-                  className="service-item-card flex-col items-start"
-                >
-                  <div className="flex w-full items-center justify-between">
-                    <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-white/10">
-                      <card.icon size={20} className="text-primary" aria-hidden="true" />
+                <motion.div key={`${group.slug}-${card.title}`} {...reveal(Math.min(i, 3) * 0.05)}>
+                  <Link
+                    to={`/?service=${encodeURIComponent(card.title)}#contact`}
+                    className="service-item-card flex-col items-start"
+                  >
+                    <div className="flex w-full items-center justify-between">
+                      <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-white/10">
+                        <card.icon size={20} className="text-primary" aria-hidden="true" />
+                      </span>
+                      <span className="badge">{group.tabLabel}</span>
+                    </div>
+                    <span className="mt-4 block text-[16px] leading-6 font-semibold text-white">
+                      {card.title}
                     </span>
-                    <span className="badge">{group.tabLabel}</span>
-                  </div>
-                  <span className="mt-4 block text-[16px] leading-6 font-semibold text-white">
-                    {card.title}
-                  </span>
-                  <span className="mt-1 block text-[16px] leading-6 font-normal text-white/70">
-                    {card.description}
-                  </span>
+                    <span className="mt-1 block text-[16px] leading-6 font-normal text-white/70">
+                      {card.description}
+                    </span>
+                    <span className="mt-4 inline-flex items-center gap-1.5 font-inter text-[14px] font-medium text-primary">
+                      Enquire about this
+                      <ArrowRight size={14} aria-hidden="true" />
+                    </span>
+                  </Link>
                 </motion.div>
               ))
             )}

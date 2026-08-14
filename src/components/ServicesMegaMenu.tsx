@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { Link } from 'react-router-dom';
 import { serviceGroups } from '../data/services';
 import { cn } from '../lib/cn';
 
@@ -62,15 +63,12 @@ export function ServicesMegaMenu({
             aria-labelledby={`tab-${current.slug}`}
           >
             {current.cards.map((card) => (
-              <a
+              <Link
                 key={card.title}
-                href="#"
+                to={`/?service=${encodeURIComponent(card.title)}#contact`}
                 className="service-item-card"
                 tabIndex={open ? 0 : -1}
-                onClick={(e) => {
-                  e.preventDefault();
-                  onNavigate?.();
-                }}
+                onClick={() => onNavigate?.()}
               >
                 <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-white/10">
                   <card.icon size={20} className="text-primary" aria-hidden="true" />
@@ -86,7 +84,7 @@ export function ServicesMegaMenu({
                     {card.description}
                   </span>
                 </span>
-              </a>
+              </Link>
             ))}
           </div>
         </div>

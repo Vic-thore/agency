@@ -1,4 +1,5 @@
 import { useEffect, useId, useRef, useState } from 'react';
+import { useSearchParams } from 'react-router-dom';
 import { ChevronDown, Check } from 'lucide-react';
 import { Testimonials } from './Testimonials';
 import { countries } from '../data/countries';
@@ -9,6 +10,7 @@ const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
 
 export function Contact() {
   const ids = useId();
+  const [searchParams] = useSearchParams();
   const [values, setValues] = useState({
     fullName: '',
     email: '',
@@ -18,6 +20,26 @@ export function Contact() {
   });
   const [errors, setErrors] = useState<Errors>({});
   const [submitted, setSubmitted] = useState(false);
+
+  // Service cards elsewhere on the site link here as /?service=Name#contact
+  // so a click turns straight into a scoped inquiry instead of a dead end.
+  // Clicking a second card while already on this page updates the URL
+  // without remounting the component, so this has to react to param
+  // changes rather than only reading them once — but only when the visitor
+  // hasn't typed their own message over the auto-filled one.
+  const lastAppliedService = useRef<string | null>(null);
+  useEffect(() => {
+    const service = searchParams.get('service');
+    if (!service || service === lastAppliedService.current) return;
+    setValues((v) => {
+      const previousAutofill = lastAppliedService.current
+        ? `I'm interested in: ${lastAppliedService.current}\n\n`
+        : '';
+      if (v.message !== '' && v.message !== previousAutofill) return v;
+      return { ...v, message: `I'm interested in: ${service}\n\n` };
+    });
+    lastAppliedService.current = service;
+  }, [searchParams]);
 
   const [countryOpen, setCountryOpen] = useState(false);
   const [countryQuery, setCountryQuery] = useState('');
