@@ -1,104 +1,249 @@
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
+import type { LucideIcon } from 'lucide-react';
 import {
-  Compass,
-  PenTool,
-  Hammer,
-  Rocket,
-  CheckCircle2,
   ArrowRight,
+  MessageCircle,
+  Search,
+  Boxes,
+  PenTool,
+  LayoutGrid,
+  FlaskConical,
+  Sparkles,
+  Fingerprint,
+  Palette,
+  Film,
+  Shapes,
+  Heart,
+  Bot,
+  Smartphone,
+  Globe,
+  Layers,
+  Triangle,
+  Compass,
+  Users,
+  Repeat,
+  Puzzle,
+  Handshake,
+  UserCheck,
+  CheckCircle2,
 } from 'lucide-react';
 import { SectionHeading } from '../components/SectionHeading';
-import { FaqAccordion } from '../components/FaqAccordion';
-import { Testimonials } from '../components/Testimonials';
 import { CTASection } from '../components/CTASection';
+import { Contact } from '../components/Contact';
 import { reveal } from '../hooks/useReveal';
-import { serviceGroups } from '../data/services';
+import { cn } from '../lib/cn';
 import { SITE_NAME } from '../lib/assets';
 
-const processSteps = [
+interface Card {
+  icon: LucideIcon;
+  title: string;
+  description: string;
+}
+
+const uiuxCards: Card[] = [
   {
-    icon: Compass,
-    phase: 'Discover',
-    description: 'Research, stakeholder interviews, and competitive review before anything gets designed.',
+    icon: MessageCircle,
+    title: 'UX Consultation',
+    description: 'Shape your product vision with insights, market analysis, and growth strategies.',
+  },
+  {
+    icon: Search,
+    title: 'UX Research',
+    description: 'Uncover user needs and behaviors through research that drives design decisions.',
+  },
+  {
+    icon: Boxes,
+    title: 'Experience Architecture',
+    description: 'Design intuitive structures and user flows that make products effortless.',
   },
   {
     icon: PenTool,
-    phase: 'Design',
-    description: 'Flows, wireframes, and high-fidelity screens, reviewed with you at every stage.',
+    title: 'User Experience Design',
+    description: 'Information architecture, user flows, wireframes, and interaction design.',
   },
   {
-    icon: Hammer,
-    phase: 'Build',
-    description: 'Development on the right platform for the job, matched to the approved design.',
+    icon: LayoutGrid,
+    title: 'Design Systems',
+    description: 'Develop scalable ecosystems that ensure brand consistency across platforms.',
   },
   {
-    icon: Rocket,
-    phase: 'Launch & Support',
-    description: 'QA, handoff, and ongoing care so the work keeps working after launch.',
+    icon: FlaskConical,
+    title: 'Prototyping & Usability Testing',
+    description: 'Turn ideas into prototypes, validate with users, and refine before launch.',
   },
 ];
 
-const stack = [
-  'Figma',
-  'FigJam',
-  'Framer',
-  'Webflow',
-  'WordPress',
-  'Shopify',
-  'Three.js',
-  'GSAP',
-  'n8n',
-  'Claude',
-  'Cursor',
-  'ChatGPT',
-  'Vercel',
-  'Supabase',
-  'Notion',
+const brandCards: Card[] = [
+  {
+    icon: Fingerprint,
+    title: 'Brand Strategy',
+    description: 'Define brand direction through strategy, positioning, and guiding decisions.',
+  },
+  {
+    icon: Palette,
+    title: 'Visual Communication Design',
+    description: "Deliver cohesive assets from social to campaigns, reinforcing consistency.",
+  },
+  {
+    icon: Film,
+    title: 'Motion Design',
+    description: 'Evolve brands with scalable systems that ensure clarity, consistency, and relevance.',
+  },
+  {
+    icon: Shapes,
+    title: 'Graphic Design',
+    description: 'Creative graphic designs for impactful brand communication.',
+  },
 ];
 
-const useCases = [
-  'Pre-launch product design',
-  'Confusing dashboard redesign',
-  'New company naming & identity',
-  'Ecommerce store launch',
-  'Scroll-triggered storytelling homepage',
-  'Internal workflow automation',
+const nocodeCards: Card[] = [
+  {
+    icon: Heart,
+    title: 'Lovable Development',
+    description: 'Building AI-powered apps with Lovable for rapid product development.',
+  },
+  {
+    icon: Bot,
+    title: 'Claude AI Development',
+    description: 'Developing intelligent AI solutions powered by Claude models.',
+  },
+  {
+    icon: Smartphone,
+    title: 'Flutter Development',
+    description: 'Building fast, cross-platform mobile apps with Flutter.',
+  },
+  {
+    icon: Globe,
+    title: 'WebFlow Development',
+    description: 'Creating responsive, no-code websites with Webflow.',
+  },
+  {
+    icon: Layers,
+    title: 'Framer Development',
+    description: 'Designing and developing modern, interactive websites with Framer.',
+  },
+  {
+    icon: Triangle,
+    title: 'Vercel Development',
+    description: 'Deploying high-performance web apps with Vercel infrastructure.',
+  },
+];
+
+const approach = [
+  {
+    icon: Compass,
+    title: 'Strategic Vision',
+    description: 'Partners that help define goals and a unified roadmap for long-term business growth.',
+  },
+  {
+    icon: Users,
+    title: 'Expert Designers',
+    description: 'Design experts from diverse practice areas who flex as projects and goals change.',
+  },
+  {
+    icon: Repeat,
+    title: 'Build to Learn',
+    description: 'Hit the ground running with proven methods, rapid prototyping, and lean deliverables.',
+  },
+  {
+    icon: Puzzle,
+    title: 'Seamless Integration',
+    description: 'An embedded team that understands the ins and outs of your business and goals.',
+  },
 ];
 
 const whyUs = [
-  'One team designs and builds, so nothing gets lost in handoff.',
-  'Research before visuals, always.',
-  'Direct access to the person doing the work.',
-  'Honest scoping — we tell you if something is a bad fit.',
+  {
+    icon: Handshake,
+    title: 'One accountable team',
+    description: 'Design and build live under one roof, so nothing gets lost in handoff.',
+  },
+  {
+    icon: Search,
+    title: 'Research before visuals, always',
+    description: "We start with the problem your users have, not just the brief you bring in.",
+  },
+  {
+    icon: Sparkles,
+    title: 'AI-native workflow',
+    description: 'Modern AI tooling is part of our daily practice — used to accelerate, not replace craft.',
+  },
+  {
+    icon: UserCheck,
+    title: 'Direct access to the work',
+    description: "You talk to the person doing the work, not an account manager relaying it.",
+  },
+  {
+    icon: CheckCircle2,
+    title: 'Honest scoping',
+    description: "We'll tell you plainly if something is a bad fit for what you actually need.",
+  },
+  {
+    icon: Repeat,
+    title: 'Built to learn',
+    description: 'Rapid prototyping and lean, testable deliverables over big up-front bets.',
+  },
 ];
 
-const servicesFaqs = [
-  {
-    question: 'How do you scope a new project?',
-    answer: [
-      'We start with a short discovery call to understand the problem, not just the deliverable you have in mind. From there we send a written scope covering timeline, price, and what "done" looks like before any work starts.',
-    ],
-  },
-  {
-    question: 'Do you work with early-stage startups?',
-    answer: [
-      "Yes — a good chunk of our work is pre-launch product and brand design. We're used to moving fast on limited information and revisiting decisions as things firm up.",
-    ],
-  },
-  {
-    question: 'Can you just design, or just build?',
-    answer: [
-      "Either. Most clients use us for both since it removes the handoff gap, but design-only and development-only engagements are both common and scoped the same honest way.",
-    ],
-  },
-  {
-    question: 'What does an ongoing retainer look like?',
-    answer: [
-      'A fixed monthly block of design or development time, used for whatever comes up — new features, care-plan maintenance, or continued iteration on something we already shipped.',
-    ],
-  },
-];
+function ServiceCard({ card, accent = false }: { card: Card; accent?: boolean }) {
+  return (
+    <Link
+      to={`/?service=${encodeURIComponent(card.title)}#contact`}
+      className={cn(
+        'service-item-card flex-col items-start',
+        accent && 'bg-primary'
+      )}
+    >
+      <span
+        className={cn(
+          'flex h-10 w-10 shrink-0 items-center justify-center rounded-lg',
+          accent ? 'bg-black/10' : 'bg-white/10'
+        )}
+      >
+        <card.icon size={20} className={accent ? 'text-black' : 'text-primary'} aria-hidden="true" />
+      </span>
+      <span
+        className={cn(
+          'mt-4 block text-[16px] leading-6 font-semibold',
+          accent ? 'text-black' : 'text-white'
+        )}
+      >
+        {card.title}
+      </span>
+      <span
+        className={cn(
+          'mt-1 block text-[16px] leading-6 font-normal',
+          accent ? 'text-black/70' : 'text-white/70'
+        )}
+      >
+        {card.description}
+      </span>
+      <span
+        className={cn(
+          'mt-4 inline-flex items-center gap-1.5 font-inter text-[14px] font-medium',
+          accent ? 'text-black' : 'text-primary'
+        )}
+      >
+        Enquire about this
+        <ArrowRight size={14} aria-hidden="true" />
+      </span>
+    </Link>
+  );
+}
+
+function CategoryPanel({ gradient, label }: { gradient: string; label: string }) {
+  return (
+    <div
+      className={cn(
+        'flex h-[230px] items-end rounded-2xl border border-ink-400 p-5',
+        gradient
+      )}
+    >
+      <span className="font-inter text-[12px] tracking-wide text-black/50">{label}</span>
+    </div>
+  );
+}
 
 export default function Services() {
   return (
@@ -106,76 +251,160 @@ export default function Services() {
       {/* Hero */}
       <section className="section-pad" aria-labelledby="services-heading">
         <div className="container-zf">
-          <SectionHeading
-            id="services-heading"
-            as="h1"
-            eyebrow="What We Do"
-            title="Every service, one accountable team."
-            description={`${SITE_NAME} covers design, brand, build, motion, and automation — under one roof, so nothing gets lost between specialists.`}
-          />
-        </div>
-      </section>
+          <div className="grid grid-cols-1 gap-12 lg:grid-cols-[1.4fr_1fr] lg:items-center">
+            <motion.div {...reveal()}>
+              <p className="eyebrow text-primary">What We Do</p>
+              <h1
+                id="services-heading"
+                className="section-title max-w-[560px] text-white"
+              >
+                Growth-driven product services
+              </h1>
+              <p className="section-sub max-w-[500px] text-gray-495">
+                {SITE_NAME} covers UI/UX design, brand identity, and no-code
+                development under one roof, so nothing gets lost between
+                specialists.
+              </p>
+              <a href="/#contact" className="btn btn-primary mt-8 inline-flex">
+                Work with us
+                <ArrowRight size={16} aria-hidden="true" />
+              </a>
+            </motion.div>
 
-      {/* Services Grid */}
-      <section className="section-pad pt-0" aria-labelledby="services-grid-heading">
-        <div className="container-zf">
-          <h2 id="services-grid-heading" className="sr-only">
-            Services
-          </h2>
-          <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
-            {serviceGroups.flatMap((group) =>
-              group.cards.map((card, i) => (
-                <motion.div key={`${group.slug}-${card.title}`} {...reveal(Math.min(i, 3) * 0.05)}>
-                  <Link
-                    to={`/?service=${encodeURIComponent(card.title)}#contact`}
-                    className="service-item-card flex-col items-start"
-                  >
-                    <div className="flex w-full items-center justify-between">
-                      <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-white/10">
-                        <card.icon size={20} className="text-primary" aria-hidden="true" />
-                      </span>
-                      <span className="badge">{group.tabLabel}</span>
-                    </div>
-                    <span className="mt-4 block text-[16px] leading-6 font-semibold text-white">
-                      {card.title}
-                    </span>
-                    <span className="mt-1 block text-[16px] leading-6 font-normal text-white/70">
-                      {card.description}
-                    </span>
-                    <span className="mt-4 inline-flex items-center gap-1.5 font-inter text-[14px] font-medium text-primary">
-                      Enquire about this
-                      <ArrowRight size={14} aria-hidden="true" />
-                    </span>
-                  </Link>
-                </motion.div>
-              ))
-            )}
+            <motion.aside
+              {...reveal(0.1)}
+              className="rounded-2xl border border-ink-400 bg-ink-800 p-8"
+            >
+              <h3 className="font-tight text-[19px] leading-normal text-white">
+                Ready to build a product users love?
+              </h3>
+              <p className="mt-2 font-inter text-[13px] leading-6 text-gray-495">
+                Book a free 30-minute discovery call and talk through where
+                your product is today.
+              </p>
+              <a href="/#contact" className="btn btn-primary mt-5 inline-flex">
+                Schedule your free call
+                <ArrowRight size={16} aria-hidden="true" />
+              </a>
+            </motion.aside>
           </div>
         </div>
       </section>
 
-      {/* Process Timeline */}
-      <section className="section-pad bg-cream" aria-labelledby="services-process-heading">
+      {/* UI UX Design */}
+      <section className="section-pad pt-0" aria-labelledby="uiux-heading">
+        <div className="container-zf">
+          <div className="grid grid-cols-1 gap-10 lg:grid-cols-[360px_1fr] lg:items-start">
+            <div className="lg:sticky lg:top-24">
+              <h2 id="uiux-heading" className="section-title mt-0 text-white">
+                UI UX Design
+              </h2>
+              <p className="section-sub mb-6 text-gray-495">
+                Create intuitive, user-focused interfaces that deliver
+                seamless and engaging digital experiences.
+              </p>
+              <CategoryPanel
+                gradient="bg-gradient-to-br from-[#f2b3c9] via-[#e8ddff] to-[#cfd6ff]"
+                label="UI/UX Design"
+              />
+            </div>
+            <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
+              {uiuxCards.map((card, i) => (
+                <motion.div key={card.title} {...reveal(Math.min(i, 3) * 0.05)}>
+                  <ServiceCard card={card} />
+                </motion.div>
+              ))}
+              <motion.div {...reveal(3 * 0.05)}>
+                <ServiceCard
+                  accent
+                  card={{
+                    icon: Sparkles,
+                    title: 'Not sure which path fits your project?',
+                    description:
+                      "Tell us where you are and we'll recommend the right approach, honestly.",
+                  }}
+                />
+              </motion.div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Brand Design */}
+      <section className="section-pad pt-0" aria-labelledby="brand-heading">
+        <div className="container-zf">
+          <div className="grid grid-cols-1 gap-10 lg:grid-cols-[360px_1fr] lg:items-start">
+            <div className="lg:sticky lg:top-24">
+              <h2 id="brand-heading" className="section-title mt-0 text-white">
+                Brand Design
+              </h2>
+              <p className="section-sub mb-6 text-gray-495">
+                Build a memorable brand identity with cohesive visuals,
+                messaging, and strategy.
+              </p>
+              <CategoryPanel
+                gradient="bg-gradient-to-br from-[#3d0f16] via-[#7a1626] to-[#20080c]"
+                label="Brand Design"
+              />
+            </div>
+            <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
+              {brandCards.map((card, i) => (
+                <motion.div key={card.title} {...reveal(Math.min(i, 3) * 0.05)}>
+                  <ServiceCard card={card} />
+                </motion.div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* No Code Development */}
+      <section className="section-pad pt-0" aria-labelledby="nocode-heading">
+        <div className="container-zf">
+          <div className="grid grid-cols-1 gap-10 lg:grid-cols-[360px_1fr] lg:items-start">
+            <div className="lg:sticky lg:top-24">
+              <h2 id="nocode-heading" className="section-title mt-0 text-white">
+                No Code Development
+              </h2>
+              <p className="section-sub mb-6 text-gray-495">
+                Launch scalable digital products quickly using modern
+                no-code platforms.
+              </p>
+              <CategoryPanel
+                gradient="bg-gradient-to-br from-[#0e2f52] via-[#1f7ae0] to-[#0a1a2e]"
+                label="No-Code Development"
+              />
+            </div>
+            <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
+              {nocodeCards.map((card, i) => (
+                <motion.div key={card.title} {...reveal(Math.min(i, 3) * 0.05)}>
+                  <ServiceCard card={card} />
+                </motion.div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Approach */}
+      <section className="section-pad bg-cream" aria-labelledby="approach-heading">
         <div className="container-zf">
           <SectionHeading
-            id="services-process-heading"
-            eyebrow="How We Work"
-            title="A process built for accountability"
+            id="approach-heading"
+            eyebrow="Our Approach"
+            title="What sets our approach apart"
+            description="How we partner with teams, from first call to final handoff."
             tone="light"
           />
           <div className="mt-16 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4 max-[575px]:mt-8">
-            {processSteps.map((step, i) => (
-              <motion.div
-                key={step.phase}
-                {...reveal(i * 0.05)}
-                className="rounded-2xl border border-ink-400 bg-ink-800 p-8"
-              >
-                <step.icon size={28} className="text-primary" aria-hidden="true" />
-                <h3 className="mt-5 font-tight text-[22px] leading-normal text-white">
-                  {step.phase}
+            {approach.map((item, i) => (
+              <motion.div key={item.title} {...reveal(i * 0.05)}>
+                <item.icon size={28} className="text-black" aria-hidden="true" />
+                <h3 className="mt-4 font-tight text-[17px] leading-normal text-black">
+                  {item.title}
                 </h3>
-                <p className="mt-2 font-inter text-[15px] leading-6 text-gray-495">
-                  {step.description}
+                <p className="mt-2 font-inter text-[14px] leading-6 text-gray-muted-light">
+                  {item.description}
                 </p>
               </motion.div>
             ))}
@@ -183,99 +412,40 @@ export default function Services() {
         </div>
       </section>
 
-      {/* Technology Stack */}
-      <section className="section-pad" aria-labelledby="services-stack-heading">
+      {/* Why Us */}
+      <section className="section-pad" aria-labelledby="why-heading">
         <div className="container-zf">
           <SectionHeading
-            id="services-stack-heading"
-            eyebrow="Stack"
-            title="Tools we work in"
+            id="why-heading"
+            eyebrow={`Why ${SITE_NAME}`}
+            title={`Why choose ${SITE_NAME} as your product partner`}
+            description="Plenty of agencies can design a screen. Here's what makes us a different kind of partner."
           />
-          <motion.div {...reveal()} className="mt-12 flex flex-wrap justify-center gap-3">
-            {stack.map((tool) => (
-              <span key={tool} className="badge">
-                {tool}
-              </span>
-            ))}
-          </motion.div>
-        </div>
-      </section>
-
-      {/* Use Cases */}
-      <section className="section-pad bg-cream" aria-labelledby="services-usecases-heading">
-        <div className="container-zf">
-          <SectionHeading
-            id="services-usecases-heading"
-            eyebrow="Use Cases"
-            title="Where this fits"
-            tone="light"
-          />
-          <div className="mt-16 grid grid-cols-1 gap-4 sm:grid-cols-2 max-[575px]:mt-8">
-            {useCases.map((useCase, i) => (
+          <div className="mt-16 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3 max-[575px]:mt-8">
+            {whyUs.map((item, i) => (
               <motion.div
-                key={useCase}
+                key={item.title}
                 {...reveal(Math.min(i, 3) * 0.05)}
-                className="flex items-center gap-3 rounded-xl border border-ink-400 bg-ink-800 px-6 py-5"
+                className="rounded-2xl border border-ink-400 bg-ink-800 p-8"
               >
-                <CheckCircle2 size={20} className="shrink-0 text-primary" aria-hidden="true" />
-                <span className="font-inter text-[16px] text-white/90">{useCase}</span>
+                <item.icon size={28} className="text-primary" aria-hidden="true" />
+                <h3 className="mt-5 font-tight text-[19px] leading-normal text-white">
+                  {item.title}
+                </h3>
+                <p className="mt-2 font-inter text-[14px] leading-6 text-gray-495">
+                  {item.description}
+                </p>
               </motion.div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* Why Choose Us */}
-      <section className="section-pad" aria-labelledby="services-why-heading">
-        <div className="container-zf">
-          <SectionHeading
-            id="services-why-heading"
-            eyebrow="Why Us"
-            title={`Why ${SITE_NAME}`}
-          />
-          <div className="mx-auto mt-12 flex max-w-[720px] flex-col gap-4">
-            {whyUs.map((point, i) => (
-              <motion.div
-                key={point}
-                {...reveal(Math.min(i, 3) * 0.05)}
-                className="service-item-card"
-              >
-                <CheckCircle2
-                  size={20}
-                  className="mt-0.5 shrink-0 text-primary"
-                  aria-hidden="true"
-                />
-                <span className="block text-[16px] leading-6 font-normal text-white/90">
-                  {point}
-                </span>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Testimonials */}
-      <section className="section-pad bg-cream" aria-label="What clients say">
-        <div className="container-zf">
-          <Testimonials standalone />
-        </div>
-      </section>
-
-      {/* FAQ */}
-      <section className="section-pad" aria-label="Services FAQs">
-        <div className="container-zf">
-          <FaqAccordion
-            eyebrow="FAQs"
-            title="Questions about working with us"
-            description="Straight answers about scope, timelines, and how an engagement actually runs."
-            items={servicesFaqs}
-            ctaLabel="Book a free call"
-          />
-        </div>
-      </section>
-
-      {/* Contact CTA */}
+      {/* CTA */}
       <CTASection />
+
+      {/* Testimonials + Contact */}
+      <Contact />
     </>
   );
 }
