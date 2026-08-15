@@ -236,7 +236,7 @@ function CategoryPanel({ gradient, label }: { gradient: string; label: string })
   return (
     <div
       className={cn(
-        'flex h-[230px] items-end rounded-2xl border border-ink-400 p-5',
+        'flex h-[330px] items-end rounded-2xl border border-ink-400 p-5',
         gradient
       )}
     >
