@@ -232,7 +232,29 @@ function ServiceCard({ card, accent = false }: { card: Card; accent?: boolean })
   );
 }
 
-function CategoryPanel({ gradient, label }: { gradient: string; label: string }) {
+function CategoryPanel({
+  gradient,
+  label,
+  image,
+}: {
+  gradient: string;
+  label: string;
+  image?: string;
+}) {
+  if (image) {
+    return (
+      <div className="h-[330px] overflow-hidden rounded-2xl border border-ink-400 bg-ink-800">
+        <img
+          src={image}
+          alt={label}
+          loading="lazy"
+          decoding="async"
+          className="h-full w-full object-cover"
+        />
+      </div>
+    );
+  }
+
   return (
     <div
       className={cn(
@@ -306,6 +328,7 @@ export default function Services() {
               <CategoryPanel
                 gradient="bg-gradient-to-br from-[#f2b3c9] via-[#e8ddff] to-[#cfd6ff]"
                 label="UI/UX Design"
+                image="/images/services/uiux-showcase.jpg"
               />
             </div>
             <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
