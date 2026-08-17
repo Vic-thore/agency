@@ -368,6 +368,7 @@ export default function Services() {
               <CategoryPanel
                 gradient="bg-gradient-to-br from-[#3d0f16] via-[#7a1626] to-[#20080c]"
                 label="Brand Design"
+                image="/images/services/brand-showcase.webp"
               />
             </div>
             <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
