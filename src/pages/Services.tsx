@@ -397,6 +397,7 @@ export default function Services() {
               <CategoryPanel
                 gradient="bg-gradient-to-br from-[#0e2f52] via-[#1f7ae0] to-[#0a1a2e]"
                 label="No-Code Development"
+                image="/images/services/nocode-showcase.jpg"
               />
             </div>
             <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
