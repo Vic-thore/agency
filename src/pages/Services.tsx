@@ -142,6 +142,8 @@ interface ServiceSection {
   gradient: string;
   /** Falls back to the gradient panel until a showcase image exists. */
   image?: string;
+  /** Dedicated page for this service, when one exists. */
+  href?: string;
   cards: Card[];
   /** Highlighted card appended after the regular ones. */
   accentCard?: Card;
@@ -156,6 +158,7 @@ const serviceSections: ServiceSection[] = [
       'Build a memorable brand identity with cohesive visuals, messaging, and strategy.',
     gradient: 'bg-gradient-to-br from-[#3d0f16] via-[#7a1626] to-[#20080c]',
     image: '/images/services/brand-showcase.webp',
+    href: '/services/branding',
     cards: brandCards,
   },
   {
@@ -407,7 +410,23 @@ export default function Services() {
                 >
                   {section.title}
                 </h2>
-                <p className="section-sub mb-6 text-gray-495">{section.blurb}</p>
+                <p
+                  className={cn(
+                    'section-sub text-gray-495',
+                    section.href ? 'mb-3' : 'mb-6',
+                  )}
+                >
+                  {section.blurb}
+                </p>
+                {section.href && (
+                  <Link
+                    to={section.href}
+                    className="mb-6 inline-flex items-center gap-1.5 font-inter text-[14px] font-medium text-white underline-offset-4 hover:underline"
+                  >
+                    Explore {section.title.toLowerCase()}
+                    <ArrowRight size={14} aria-hidden="true" />
+                  </Link>
+                )}
                 <CategoryPanel
                   gradient={section.gradient}
                   label={section.title}
