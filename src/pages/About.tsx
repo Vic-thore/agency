@@ -13,7 +13,6 @@ import {
   Sparkles,
   Target,
   TrendingUp,
-  User,
   Users,
   Workflow,
 } from 'lucide-react';
@@ -104,21 +103,6 @@ const steps = [
     description:
       'SEO, reporting, and improvements after launch, because launch day is the start, not the finish.',
   },
-];
-
-// Placeholder profile: replace with real names, roles, bios and photos.
-const team: { name: string; role: string; bio: string; photo?: string }[] = [
-  {
-    name: 'Founder Name',
-    role: 'Founder & Creative Lead',
-    bio: 'A two-line bio goes here: your background, what you’re best at, and why you started Metron Studio.',
-  },
-];
-
-const stats = [
-  { value: '6', label: 'Services under one roof' },
-  { value: '30 min', label: 'Free discovery call' },
-  { value: '1', label: 'Team from brand to launch' },
 ];
 
 export default function About() {
@@ -281,70 +265,6 @@ export default function About() {
               </motion.li>
             ))}
           </ol>
-        </div>
-      </section>
-
-      {/* Team */}
-      <section className="section-pad bg-ink-800" aria-labelledby="about-team-heading">
-        <div className="container-zf">
-          <SectionHeading
-            id="about-team-heading"
-            eyebrow="Team"
-            title={`The people behind ${SITE_NAME}`}
-            description="You work directly with the people doing the work."
-          />
-
-          <div className="mt-16 flex flex-wrap justify-center gap-8 max-[575px]:mt-8">
-            {team.map((member, i) => (
-              <motion.article
-                key={member.name}
-                {...reveal(i * 0.05)}
-                className="w-full max-w-[340px] rounded-2xl border border-ink-400 bg-ink p-8 text-center"
-              >
-                <div className="mx-auto flex h-24 w-24 items-center justify-center overflow-hidden rounded-full border border-ink-400 bg-ink-800">
-                  {member.photo ? (
-                    <img
-                      src={member.photo}
-                      alt={member.name}
-                      width={96}
-                      height={96}
-                      loading="lazy"
-                      className="h-full w-full object-cover"
-                    />
-                  ) : (
-                    <User size={36} className="text-gray-200" aria-hidden="true" />
-                  )}
-                </div>
-                <h3 className="mt-5 font-tight text-[22px] leading-normal text-white">
-                  {member.name}
-                </h3>
-                <p className="mt-1 font-inter text-[13px] uppercase tracking-wide text-gray-200">
-                  {member.role}
-                </p>
-                <p className="mt-4 font-inter text-[15px] leading-6 text-gray-495">
-                  {member.bio}
-                </p>
-              </motion.article>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Numbers */}
-      <section className="lime-band" aria-label="Metron Studio at a glance">
-        <div className="container-zf">
-          <div className="grid grid-cols-1 gap-8 sm:grid-cols-3">
-            {stats.map((stat) => (
-              <motion.div key={stat.label} {...reveal()} className="text-center">
-                <p className="font-display text-[40px] font-semibold leading-none text-black max-[575px]:text-[32px]">
-                  {stat.value}
-                </p>
-                <p className="mt-3 font-inter text-[15px] text-black/70">
-                  {stat.label}
-                </p>
-              </motion.div>
-            ))}
-          </div>
         </div>
       </section>
 

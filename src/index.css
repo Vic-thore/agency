@@ -1102,27 +1102,6 @@
   }
 
   /* ---------------------------------------------------------
-     Lime gradient CTA band
-     --------------------------------------------------------- */
-  .lime-band {
-    background-color: #d4d4d4;
-    background-image: radial-gradient(
-      circle at 30% 40%,
-      var(--color-primary) 0%,
-      #9ca3af 45%,
-      #f5f5f5 100%
-    );
-    background-size: cover;
-    background-position: center;
-    padding: 60px 0;
-  }
-  @media (max-width: 575px) {
-    .lime-band {
-      padding: 24px 0;
-    }
-  }
-
-  /* ---------------------------------------------------------
      FAQ accordion
      --------------------------------------------------------- */
   .accordion {
