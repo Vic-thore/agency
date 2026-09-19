@@ -19,6 +19,8 @@ import {
 } from 'lucide-react';
 import { SectionHeading } from '../components/SectionHeading';
 import { CTASection } from '../components/CTASection';
+import { WorkStrip } from '../components/WorkSlider';
+import { AnimatedMarqueeHero } from '../components/ui/hero-3';
 import { serviceGroups } from '../data/services';
 import { reveal } from '../hooks/useReveal';
 import { SITE_NAME } from '../lib/assets';
@@ -123,18 +125,14 @@ export default function About() {
   return (
     <>
       {/* Hero */}
-      <section className="section-pad" aria-labelledby="about-heading">
-        <div className="container-zf">
-          <SectionHeading
-            id="about-heading"
-            as="h1"
-            eyebrow="About"
-            title="We help businesses look credible, work smarter, and get found online"
-            description={`${SITE_NAME} brings branding, UI/UX design, web development, no-code, automation, and SEO together, so your brand, website, and growth aren’t handled by five people who never talk to each other.`}
-            className="max-w-[760px]"
-          />
-        </div>
-      </section>
+      <AnimatedMarqueeHero
+        headingId="about-heading"
+        tagline="About Metron Studio"
+        title="We help businesses look credible, work smarter, and get found online"
+        description={`${SITE_NAME} brings branding, UI/UX design, web development, no-code, automation, and SEO together, so your brand, website, and growth aren’t handled by five people who never talk to each other.`}
+      >
+        <WorkStrip />
+      </AnimatedMarqueeHero>
 
       {/* Story + mission */}
       <section className="section-pad bg-cream" aria-labelledby="about-story-heading">
