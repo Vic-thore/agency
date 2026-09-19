@@ -37,6 +37,8 @@ export interface ServiceCard {
 export interface ServiceGroup {
   slug: string;
   tabLabel: string;
+  /** One-line description, shown on the About page. */
+  summary: string;
   comingSoon?: boolean;
   cards: ServiceCard[];
 }
@@ -46,6 +48,7 @@ export const serviceGroups: ServiceGroup[] = [
   {
     slug: 'branding',
     tabLabel: 'Branding',
+    summary: 'Identities, logos, and brand systems that make you look credible at first glance.',
     cards: [
       {
         icon: Fingerprint,
@@ -72,6 +75,7 @@ export const serviceGroups: ServiceGroup[] = [
   {
     slug: 'ui-ux-design',
     tabLabel: 'UI/UX Design',
+    summary: 'Intuitive, user-focused interfaces backed by research and testing.',
     cards: [
       {
         icon: Search,
@@ -103,6 +107,7 @@ export const serviceGroups: ServiceGroup[] = [
   {
     slug: 'web-development',
     tabLabel: 'Web Development',
+    summary: 'Fast, secure websites that look sharp and turn visitors into customers.',
     cards: [
       {
         icon: Rocket,
@@ -129,6 +134,7 @@ export const serviceGroups: ServiceGroup[] = [
   {
     slug: 'no-code-development',
     tabLabel: 'No-Code Development',
+    summary: 'Launch websites, MVPs, and internal tools quickly on modern no-code platforms.',
     cards: [
       {
         icon: Globe,
@@ -155,6 +161,7 @@ export const serviceGroups: ServiceGroup[] = [
   {
     slug: 'automation',
     tabLabel: 'Automation',
+    summary: 'Connect the tools your team already uses and cut repetitive work.',
     cards: [
       {
         icon: GitBranch,
@@ -186,6 +193,7 @@ export const serviceGroups: ServiceGroup[] = [
   {
     slug: 'seo',
     tabLabel: 'SEO',
+    summary: 'Get found by the people already searching for what you offer.',
     cards: [
       {
         icon: Gauge,
