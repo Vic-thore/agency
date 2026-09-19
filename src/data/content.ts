@@ -35,33 +35,33 @@ export interface ServiceRow {
 
 export const serviceRows: ServiceRow[] = [
   {
-    eyebrow: 'FOR DIGITAL EXPERIENCES',
-    title: 'Saas UI UX Design',
-    href: '#contact',
-  },
-  {
-    eyebrow: 'For Startups & Existing Companies',
-    title: 'Product Revamp',
-    href: '#contact',
-  },
-  {
     eyebrow: 'FOR VISUAL STORYTELLERS',
-    title: 'Brand Design',
+    title: 'Branding',
+    href: '#contact',
+  },
+  {
+    eyebrow: 'FOR DIGITAL EXPERIENCES',
+    title: 'UI/UX Design',
+    href: '#contact',
+  },
+  {
+    eyebrow: 'FOR BUSINESSES ONLINE',
+    title: 'Web Development',
     href: '#contact',
   },
   {
     eyebrow: 'FOR RAPID APP BUILDERS',
-    title: 'No Code Development',
+    title: 'No-Code Development',
     href: '#contact',
   },
   {
-    eyebrow: 'FOR STARTUPS & FOUNDERS',
-    title: 'MVP Design',
+    eyebrow: 'FOR LEAN, SCALING TEAMS',
+    title: 'Automation',
     href: '#contact',
   },
   {
-    eyebrow: 'Dedicated ux ui Team',
-    title: 'Team Extension',
+    eyebrow: 'FOR BEING FOUND ONLINE',
+    title: 'SEO',
     href: '#contact',
   },
 ];
@@ -177,9 +177,9 @@ export const faqs: FaqData[] = [
     ],
   },
   {
-    question: 'What types of UX design services do you offer?',
+    question: `What services does ${SITE_NAME} offer?`,
     answer: [
-      'We offer various UX design services, including UX research, wireframing, prototyping, usability testing, and graphics design. We work closely with our clients to understand their unique needs and goals and provide customized solutions to help them achieve their objectives.',
+      'We offer six services: branding, UI/UX design, web development, no-code development, automation, and SEO. You can start with one or combine several — we work closely with you to understand your goals and recommend the right mix.',
     ],
   },
   {
@@ -305,11 +305,12 @@ export const footerColumns = [
   {
     heading: 'Services',
     links: [
-      { label: 'UI UX Design', href: '/#services' },
-      { label: 'UX Research', href: '/#services' },
-      { label: 'Design System', href: '/#services' },
-      { label: 'Web App Design', href: '/#services' },
-      { label: 'Mobile App Design', href: '/#services' },
+      { label: 'Branding', href: '/#services' },
+      { label: 'UI/UX Design', href: '/#services' },
+      { label: 'Web Development', href: '/#services' },
+      { label: 'No-Code Development', href: '/#services' },
+      { label: 'Automation', href: '/#services' },
+      { label: 'SEO', href: '/#services' },
     ],
   },
 ];
@@ -317,7 +318,7 @@ export const footerColumns = [
 export const industries = [
   'Technology',
   'Education',
-  'FinTch',
+  'FinTech',
   'Crypto',
   'HealthCare',
   'Real Estate',

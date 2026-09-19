@@ -13,9 +13,9 @@ export function Services() {
       <div className="container-zf">
         <SectionHeading
           id="services-heading"
-          eyebrow="WE are great at"
-          title="UI UX Design and Product Experience Services"
-          description="Designs with Exceptional User Experiences"
+          eyebrow="What we do"
+          title="Design, build, and grow your business online"
+          description="Branding, UI/UX, web development, no-code, automation, and SEO under one roof."
           tone="light"
         />
 

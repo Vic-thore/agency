@@ -13,12 +13,19 @@ import {
   Building2,
   ShoppingCart,
   LifeBuoy,
-  Sparkles,
-  Film,
-  Box,
+  Globe,
+  Layers,
+  Heart,
+  Blocks,
   GitBranch,
   Database,
   Workflow,
+  Mail,
+  Bot,
+  Gauge,
+  FileText,
+  MapPin,
+  TrendingUp,
 } from 'lucide-react';
 
 export interface ServiceCard {
@@ -34,7 +41,34 @@ export interface ServiceGroup {
   cards: ServiceCard[];
 }
 
+// Order here is the order shown in the mega menu and on the Services page.
 export const serviceGroups: ServiceGroup[] = [
+  {
+    slug: 'branding',
+    tabLabel: 'Branding',
+    cards: [
+      {
+        icon: Fingerprint,
+        title: 'Brand naming & trademark screening',
+        description: 'Names checked for availability before you fall in love with one.',
+      },
+      {
+        icon: Shapes,
+        title: 'Logo & monogram design',
+        description: 'A mark that still works at 16px and on a truck.',
+      },
+      {
+        icon: Palette,
+        title: 'Color & typography systems',
+        description: 'A palette and type scale built for consistency across every touchpoint.',
+      },
+      {
+        icon: BookOpen,
+        title: 'Brand guideline documentation',
+        description: 'A reference doc so your brand stays on-brand without you in the room.',
+      },
+    ],
+  },
   {
     slug: 'ui-ux-design',
     tabLabel: 'UI/UX Design',
@@ -67,32 +101,6 @@ export const serviceGroups: ServiceGroup[] = [
     ],
   },
   {
-    slug: 'brand-design',
-    tabLabel: 'Brand Design',
-    cards: [
-      {
-        icon: Fingerprint,
-        title: 'Brand naming & trademark screening',
-        description: 'Names checked for availability before you fall in love with one.',
-      },
-      {
-        icon: Shapes,
-        title: 'Logo & monogram design',
-        description: 'A mark that still works at 16px and on a truck.',
-      },
-      {
-        icon: Palette,
-        title: 'Color & typography systems',
-        description: 'A palette and type scale built for consistency across every touchpoint.',
-      },
-      {
-        icon: BookOpen,
-        title: 'Brand guideline documentation',
-        description: 'A reference doc so your brand stays on-brand without you in the room.',
-      },
-    ],
-  },
-  {
     slug: 'web-development',
     tabLabel: 'Web Development',
     cards: [
@@ -119,30 +127,34 @@ export const serviceGroups: ServiceGroup[] = [
     ],
   },
   {
-    slug: 'motion-scroll-3d',
-    tabLabel: 'Motion & Scroll-Driven 3D',
+    slug: 'no-code-development',
+    tabLabel: 'No-Code Development',
     cards: [
       {
-        icon: Sparkles,
-        title: 'Logo & UI animation',
-        description: 'Small motion details that make an interface feel considered.',
+        icon: Globe,
+        title: 'Webflow websites',
+        description: 'Responsive, CMS-driven sites your team can edit without a developer.',
       },
       {
-        icon: Film,
-        title: 'Lottie micro-interaction integration',
-        description: 'Lightweight, scalable animation shipped straight into your product.',
+        icon: Layers,
+        title: 'Framer sites',
+        description: 'Interactive, design-forward sites built and launched fast.',
       },
       {
-        icon: Box,
-        title: 'Scroll-driven 3D product experiences (Three.js + GSAP)',
-        description: 'Scenes tied to scroll position for a real showcase moment.',
+        icon: Heart,
+        title: 'AI app building with Lovable',
+        description: 'Turn an idea into a working, AI-powered app quickly.',
+      },
+      {
+        icon: Blocks,
+        title: 'MVPs & internal tools',
+        description: 'Validate a product or replace a spreadsheet without a full engineering build.',
       },
     ],
   },
   {
-    slug: 'workflow-automation',
-    tabLabel: 'Workflow Automation (n8n)',
-    comingSoon: true,
+    slug: 'automation',
+    tabLabel: 'Automation',
     cards: [
       {
         icon: GitBranch,
@@ -158,6 +170,47 @@ export const serviceGroups: ServiceGroup[] = [
         icon: Workflow,
         title: 'Internal workflow automation',
         description: 'Connect the tools your team already uses.',
+      },
+      {
+        icon: Mail,
+        title: 'Email & follow-up sequences',
+        description: 'Timely follow-ups that go out without anyone remembering to send them.',
+      },
+      {
+        icon: Bot,
+        title: 'AI-assisted workflows',
+        description: 'Add summarizing, drafting, and triage steps to the processes you already run.',
+      },
+    ],
+  },
+  {
+    slug: 'seo',
+    tabLabel: 'SEO',
+    cards: [
+      {
+        icon: Gauge,
+        title: 'Technical SEO audit',
+        description: 'Find and fix the crawling, speed, and indexing issues holding your rankings back.',
+      },
+      {
+        icon: Search,
+        title: 'Keyword & competitor research',
+        description: 'Find the searches your buyers actually make and where rivals are winning.',
+      },
+      {
+        icon: FileText,
+        title: 'On-page & content optimization',
+        description: 'Titles, structure, and copy tuned to rank and to convert.',
+      },
+      {
+        icon: MapPin,
+        title: 'Local SEO',
+        description: 'Show up when people nearby search for what you offer.',
+      },
+      {
+        icon: TrendingUp,
+        title: 'Reporting & analytics',
+        description: 'Clear reporting tied to leads and revenue, not vanity rankings.',
       },
     ],
   },

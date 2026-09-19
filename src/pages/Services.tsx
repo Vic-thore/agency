@@ -34,6 +34,7 @@ import { Contact } from '../components/Contact';
 import { reveal } from '../hooks/useReveal';
 import { cn } from '../lib/cn';
 import { SITE_NAME } from '../lib/assets';
+import { serviceGroups } from '../data/services';
 
 interface Card {
   icon: LucideIcon;
@@ -127,6 +128,82 @@ const nocodeCards: Card[] = [
     icon: Triangle,
     title: 'Vercel Development',
     description: 'Deploying high-performance web apps with Vercel infrastructure.',
+  },
+];
+
+/** Cards for the newer categories are shared with the mega menu (data/services.ts). */
+const cardsFor = (slug: string): Card[] =>
+  serviceGroups.find((group) => group.slug === slug)?.cards ?? [];
+
+interface ServiceSection {
+  id: string;
+  title: string;
+  blurb: string;
+  gradient: string;
+  /** Falls back to the gradient panel until a showcase image exists. */
+  image?: string;
+  cards: Card[];
+  /** Highlighted card appended after the regular ones. */
+  accentCard?: Card;
+}
+
+// Order here is the order shown on the page.
+const serviceSections: ServiceSection[] = [
+  {
+    id: 'branding',
+    title: 'Branding',
+    blurb:
+      'Build a memorable brand identity with cohesive visuals, messaging, and strategy.',
+    gradient: 'bg-gradient-to-br from-[#3d0f16] via-[#7a1626] to-[#20080c]',
+    image: '/images/services/brand-showcase.webp',
+    cards: brandCards,
+  },
+  {
+    id: 'ui-ux-design',
+    title: 'UI/UX Design',
+    blurb:
+      'Create intuitive, user-focused interfaces that deliver seamless and engaging digital experiences.',
+    gradient: 'bg-gradient-to-br from-[#f2b3c9] via-[#e8ddff] to-[#cfd6ff]',
+    image: '/images/services/uiux-showcase.jpg',
+    cards: uiuxCards,
+    accentCard: {
+      icon: Sparkles,
+      title: 'Not sure which path fits your project?',
+      description:
+        "Tell us where you are and we'll recommend the right approach, honestly.",
+    },
+  },
+  {
+    id: 'web-development',
+    title: 'Web Development',
+    blurb:
+      'Fast, secure websites that look sharp and turn visitors into customers.',
+    gradient: 'bg-gradient-to-br from-[#0b2a20] via-[#1f8a5b] to-[#07140f]',
+    cards: cardsFor('web-development'),
+  },
+  {
+    id: 'no-code-development',
+    title: 'No-Code Development',
+    blurb:
+      'Launch scalable digital products quickly using modern no-code platforms.',
+    gradient: 'bg-gradient-to-br from-[#0e2f52] via-[#1f7ae0] to-[#0a1a2e]',
+    image: '/images/services/nocode-showcase.jpg',
+    cards: nocodeCards,
+  },
+  {
+    id: 'automation',
+    title: 'Automation',
+    blurb:
+      'Cut repetitive work by connecting the tools your team already uses.',
+    gradient: 'bg-gradient-to-br from-[#2b1a06] via-[#d98a1f] to-[#140b02]',
+    cards: cardsFor('automation'),
+  },
+  {
+    id: 'seo',
+    title: 'SEO',
+    blurb: 'Get found by the people already searching for what you offer.',
+    gradient: 'bg-gradient-to-br from-[#1b1240] via-[#6d4cf0] to-[#0b0820]',
+    cards: cardsFor('seo'),
   },
 ];
 
@@ -262,7 +339,7 @@ function CategoryPanel({
         gradient
       )}
     >
-      <span className="font-inter text-[12px] tracking-wide text-black/50">{label}</span>
+      <span className="font-inter text-[12px] tracking-wide text-white/70">{label}</span>
     </div>
   );
 }
@@ -283,9 +360,9 @@ export default function Services() {
                 Growth-driven product services
               </h1>
               <p className="section-sub max-w-[500px] text-gray-495">
-                {SITE_NAME} covers UI/UX design, brand identity, and no-code
-                development under one roof, so nothing gets lost between
-                specialists.
+                {SITE_NAME} covers branding, UI/UX design, web development,
+                no-code development, automation, and SEO under one roof, so
+                nothing gets lost between specialists.
               </p>
               <a href="/#contact" className="btn btn-primary mt-8 inline-flex">
                 Work with us
@@ -313,103 +390,46 @@ export default function Services() {
         </div>
       </section>
 
-      {/* UI UX Design */}
-      <section className="section-pad pt-0" aria-labelledby="uiux-heading">
-        <div className="container-zf">
-          <div className="grid grid-cols-1 gap-10 lg:grid-cols-[360px_1fr] lg:items-start">
-            <div className="lg:sticky lg:top-24">
-              <h2 id="uiux-heading" className="section-title mt-0 text-white">
-                UI UX Design
-              </h2>
-              <p className="section-sub mb-6 text-gray-495">
-                Create intuitive, user-focused interfaces that deliver
-                seamless and engaging digital experiences.
-              </p>
-              <CategoryPanel
-                gradient="bg-gradient-to-br from-[#f2b3c9] via-[#e8ddff] to-[#cfd6ff]"
-                label="UI/UX Design"
-                image="/images/services/uiux-showcase.jpg"
-              />
-            </div>
-            <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
-              {uiuxCards.map((card, i) => (
-                <motion.div key={card.title} {...reveal(Math.min(i, 3) * 0.05)}>
-                  <ServiceCard card={card} />
-                </motion.div>
-              ))}
-              <motion.div {...reveal(3 * 0.05)}>
-                <ServiceCard
-                  accent
-                  card={{
-                    icon: Sparkles,
-                    title: 'Not sure which path fits your project?',
-                    description:
-                      "Tell us where you are and we'll recommend the right approach, honestly.",
-                  }}
+      {/* Service categories */}
+      {serviceSections.map((section) => (
+        <section
+          key={section.id}
+          id={section.id}
+          className="section-pad pt-0"
+          aria-labelledby={`${section.id}-heading`}
+        >
+          <div className="container-zf">
+            <div className="grid grid-cols-1 gap-10 lg:grid-cols-[360px_1fr] lg:items-start">
+              <div className="lg:sticky lg:top-24">
+                <h2
+                  id={`${section.id}-heading`}
+                  className="section-title mt-0 text-white"
+                >
+                  {section.title}
+                </h2>
+                <p className="section-sub mb-6 text-gray-495">{section.blurb}</p>
+                <CategoryPanel
+                  gradient={section.gradient}
+                  label={section.title}
+                  image={section.image}
                 />
-              </motion.div>
+              </div>
+              <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
+                {section.cards.map((card, i) => (
+                  <motion.div key={card.title} {...reveal(Math.min(i, 3) * 0.05)}>
+                    <ServiceCard card={card} />
+                  </motion.div>
+                ))}
+                {section.accentCard && (
+                  <motion.div {...reveal(3 * 0.05)}>
+                    <ServiceCard accent card={section.accentCard} />
+                  </motion.div>
+                )}
+              </div>
             </div>
           </div>
-        </div>
-      </section>
-
-      {/* Brand Design */}
-      <section className="section-pad pt-0" aria-labelledby="brand-heading">
-        <div className="container-zf">
-          <div className="grid grid-cols-1 gap-10 lg:grid-cols-[360px_1fr] lg:items-start">
-            <div className="lg:sticky lg:top-24">
-              <h2 id="brand-heading" className="section-title mt-0 text-white">
-                Brand Design
-              </h2>
-              <p className="section-sub mb-6 text-gray-495">
-                Build a memorable brand identity with cohesive visuals,
-                messaging, and strategy.
-              </p>
-              <CategoryPanel
-                gradient="bg-gradient-to-br from-[#3d0f16] via-[#7a1626] to-[#20080c]"
-                label="Brand Design"
-                image="/images/services/brand-showcase.webp"
-              />
-            </div>
-            <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
-              {brandCards.map((card, i) => (
-                <motion.div key={card.title} {...reveal(Math.min(i, 3) * 0.05)}>
-                  <ServiceCard card={card} />
-                </motion.div>
-              ))}
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* No Code Development */}
-      <section className="section-pad pt-0" aria-labelledby="nocode-heading">
-        <div className="container-zf">
-          <div className="grid grid-cols-1 gap-10 lg:grid-cols-[360px_1fr] lg:items-start">
-            <div className="lg:sticky lg:top-24">
-              <h2 id="nocode-heading" className="section-title mt-0 text-white">
-                No Code Development
-              </h2>
-              <p className="section-sub mb-6 text-gray-495">
-                Launch scalable digital products quickly using modern
-                no-code platforms.
-              </p>
-              <CategoryPanel
-                gradient="bg-gradient-to-br from-[#0e2f52] via-[#1f7ae0] to-[#0a1a2e]"
-                label="No-Code Development"
-                image="/images/services/nocode-showcase.jpg"
-              />
-            </div>
-            <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
-              {nocodeCards.map((card, i) => (
-                <motion.div key={card.title} {...reveal(Math.min(i, 3) * 0.05)}>
-                  <ServiceCard card={card} />
-                </motion.div>
-              ))}
-            </div>
-          </div>
-        </div>
-      </section>
+        </section>
+      ))}
 
       {/* Approach */}
       <section className="section-pad bg-cream" aria-labelledby="approach-heading">

@@ -100,9 +100,9 @@ export function Footer() {
           <div className="footer-grid">
             <div className="footer-text">
               <p className="font-inter text-[18px] leading-[27px] text-gray-495">
-                We transform ideas into user-centered digital experiences for
-                businesses worldwide, from Fortune 500s to startups, using
-                Figma, Webflow, and no-code solutions.
+                Branding, UI/UX design, web development, no-code, automation,
+                and SEO: everything your business needs to launch, run, and
+                grow online.
               </p>
 
               <div className="mt-8 flex flex-wrap items-center gap-5">
