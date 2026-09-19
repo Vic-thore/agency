@@ -15,6 +15,11 @@ export default {
     extend: {
       colors: {
         primary: 'var(--color-primary)',
+        // shadcn/ui semantic colors (see tokens at the top of index.css)
+        background: 'var(--background)',
+        'primary-foreground': 'var(--primary-foreground)',
+        'muted-foreground': 'var(--muted-foreground)',
+        ring: 'var(--ring)',
         'primary-2': 'var(--color-primary-2)',
         'primary-3': 'var(--color-primary-3)',
         cream: 'var(--color-cream-white)',

@@ -1,68 +1,57 @@
 import { motion } from 'framer-motion';
-import { IMG } from '../lib/assets';
+import { ArrowUpRight } from 'lucide-react';
+import { Button } from '@/components/ui/button';
+import { GridVignetteBackground } from '@/components/ui/vignette-grid-background';
 import { reveal } from '../hooks/useReveal';
 
-/** The bright lime band between the showcase and the FAQ. */
+/** Closing call-to-action: a centred message over a vignetted grid. */
 export function CTASection() {
   return (
-    <section className="lime-band" aria-labelledby="cta-heading">
-      <div className="container-zf">
-        <div className="flex items-center justify-between gap-6 max-[575px]:flex-col max-[575px]:gap-6">
-          <motion.div
-            {...reveal()}
-            className="flex w-full max-w-[646px] flex-col items-start gap-4 font-tight"
-          >
-            <h2
-              id="cta-heading"
-              className="text-[36px] font-medium leading-[48px] text-black max-[575px]:text-[32px] max-[575px]:leading-9"
-              style={{ letterSpacing: '-0.8px' }}
-            >
-              Your next great product decision starts with one conversation.
-            </h2>
-            <p className="text-[16px] leading-6 text-black">
-              If your product isn&apos;t where you want it to be, 30 minutes with
-              us might tell you why.And more often than not, we&apos;re exactly
-              the team to fix it.
-            </p>
-            <a href="/#contact" className="insight-btn">
-              Book a Free Discovery Call
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="16"
-                height="16"
-                viewBox="0 0 16 16"
-                fill="none"
-                aria-hidden="true"
-              >
-                <path
-                  d="M4.19617 11.7628L3.5 11.0667L10.0603 4.5H4.09617V3.5H11.7628V11.1667H10.7628V5.2025L4.19617 11.7628Z"
-                  fill="#3F3F46"
-                />
-              </svg>
-            </a>
-          </motion.div>
+    <section
+      className="relative isolate overflow-hidden border-y border-ink-400 bg-ink py-[100px] max-[575px]:py-16"
+      aria-labelledby="cta-heading"
+    >
+      {/* Decorative. The component defaults to `fixed` (full-viewport), so it
+          is switched to `absolute` to stay inside this band. */}
+      <div aria-hidden="true" className="pointer-events-none absolute inset-0">
+        <GridVignetteBackground
+          className="absolute opacity-80"
+          size={48}
+          x={50}
+          y={50}
+          intensity={100}
+          horizontalVignetteSize={55}
+          verticalVignetteSize={80}
+        />
+      </div>
 
-          <div className="gif-wrapper flex max-[768px]:w-full max-[768px]:justify-center">
-            <img
-              className="star-gif h-auto max-w-full object-contain"
-              width={294}
-              height={294}
-              src={`${IMG}/services/gif-icon.gif`}
-              alt=""
-              aria-hidden="true"
-              loading="lazy"
-            />
-            <img
-              className="star-gif absolute right-0 top-0 h-auto max-w-full object-contain"
-              width={103}
-              height={103}
-              src={`${IMG}/services/gif-icon.gif`}
-              alt=""
-              aria-hidden="true"
-              loading="lazy"
-            />
-          </div>
-        </div>
+      <div className="container-zf relative">
+        <motion.div
+          {...reveal()}
+          className="mx-auto flex max-w-[720px] flex-col items-center gap-4 text-center font-tight"
+        >
+          <h2
+            id="cta-heading"
+            className="text-[36px] font-medium leading-[48px] text-white max-[575px]:text-[32px] max-[575px]:leading-9"
+            style={{ letterSpacing: '-0.8px' }}
+          >
+            Your next great product decision starts with one conversation.
+          </h2>
+          <p className="text-[16px] leading-6 text-muted-foreground">
+            If your product isn&apos;t where you want it to be, 30 minutes with
+            us might tell you why. And more often than not, we&apos;re exactly
+            the team to fix it.
+          </p>
+          <Button
+            asChild
+            className="mt-4 h-11 gap-2 rounded-full px-6 hover:bg-primary-2"
+          >
+            <a href="/#contact">
+              Book a Free Discovery Call
+              <ArrowUpRight className="h-4 w-4" aria-hidden="true" />
+            </a>
+          </Button>
+        </motion.div>
       </div>
     </section>
   );

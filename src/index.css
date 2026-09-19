@@ -64,6 +64,13 @@
   --border-light: #d7d8d4;
 
   --header-height: 80px;
+
+  /* shadcn/ui semantic tokens, consumed by components in src/components/ui.
+     Mapped onto the palette above so they follow any re-theme. */
+  --background: var(--color-black-300);
+  --primary-foreground: var(--color-black-300);
+  --muted-foreground: var(--color-gray-200);
+  --ring: var(--color-primary-3);
 }
 
 /* Metric-matched fallbacks: keep layout stable before webfonts land. */
@@ -1113,15 +1120,6 @@
     .lime-band {
       padding: 24px 0;
     }
-  }
-  .gif-wrapper {
-    position: relative;
-    width: 100%;
-    max-width: 294px;
-    height: 294px;
-  }
-  .gif-wrapper .star-gif {
-    background-blend-mode: hard-light;
   }
 
   /* ---------------------------------------------------------
