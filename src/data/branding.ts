@@ -1,4 +1,3 @@
-import type { LucideIcon } from 'lucide-react';
 import {
   Compass,
   MessageCircleQuestion,
@@ -10,12 +9,12 @@ import {
   TrendingDown,
 } from 'lucide-react';
 import type { FaqItem } from '../components/FaqAccordion';
-
-export interface IconItem {
-  icon: LucideIcon;
-  title: string;
-  description: string;
-}
+import type {
+  IconItem,
+  ProcessStep,
+  ServiceConcept,
+  ServicePackage,
+} from '../components/service-page/types';
 
 /** What poor branding costs: the "problem" section. */
 export const brandingProblems: IconItem[] = [
@@ -79,7 +78,7 @@ export const brandingIncludes: IconItem[] = [
   },
 ];
 
-export const brandingSteps = [
+export const brandingSteps: ProcessStep[] = [
   {
     title: 'Audit & discovery',
     description:
@@ -112,18 +111,8 @@ export const brandingSteps = [
   },
 ];
 
-export interface BrandingConcept {
-  name: string;
-  category: string;
-  image: string;
-  alt: string;
-  brief: string;
-  approach: string;
-  delivered: string[];
-}
-
 /** Concept projects: original work made to show how we approach a brand. */
-export const brandingConcepts: BrandingConcept[] = [
+export const brandingConcepts: ServiceConcept[] = [
   {
     name: 'Ember',
     category: 'Specialty coffee roaster',
@@ -170,15 +159,7 @@ export const brandingDeliverables = [
 
 export const brandingFileFormats = ['SVG', 'PNG', 'PDF', 'JPG'];
 
-export interface BrandingPackage {
-  name: string;
-  blurb: string;
-  features: string[];
-  highlight?: boolean;
-  badge?: string;
-}
-
-export const brandingPackages: BrandingPackage[] = [
+export const brandingPackages: ServicePackage[] = [
   {
     name: 'Essentials',
     blurb: 'For new businesses that need a solid foundation.',
