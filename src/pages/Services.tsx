@@ -168,6 +168,7 @@ const serviceSections: ServiceSection[] = [
       'Create intuitive, user-focused interfaces that deliver seamless and engaging digital experiences.',
     gradient: 'bg-gradient-to-br from-[#f2b3c9] via-[#e8ddff] to-[#cfd6ff]',
     image: '/images/services/uiux-showcase.jpg',
+    href: '/services/ui-ux-design',
     cards: uiuxCards,
     accentCard: {
       icon: Sparkles,

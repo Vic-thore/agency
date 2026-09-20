@@ -492,7 +492,7 @@ export default function Branding() {
               return (
                 <motion.div key={group.slug} {...reveal(i * 0.06)}>
                   <Link
-                    to={`/services#${group.slug}`}
+                    to={group.href ?? `/services#${group.slug}`}
                     className="group flex h-full flex-col rounded-2xl border border-[var(--border-light)] p-8 transition-colors duration-300 hover:bg-white"
                   >
                     <Icon size={28} className="text-black" aria-hidden="true" />

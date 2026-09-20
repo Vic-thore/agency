@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import {
   DribbbleIcon,
   YoutubeIcon,
@@ -133,12 +134,21 @@ export function Footer() {
                 <ul className="mt-5 flex list-none flex-col gap-3.5">
                   {column.links.map((link) => (
                     <li key={link.label}>
-                      <a
-                        href={link.href}
-                        className="arrow-hover font-inter text-[15px] leading-5 text-gray-200"
-                      >
-                        {link.label}
-                      </a>
+                      {link.href.startsWith('/') && !link.href.includes('#') ? (
+                        <Link
+                          to={link.href}
+                          className="arrow-hover font-inter text-[15px] leading-5 text-gray-200"
+                        >
+                          {link.label}
+                        </Link>
+                      ) : (
+                        <a
+                          href={link.href}
+                          className="arrow-hover font-inter text-[15px] leading-5 text-gray-200"
+                        >
+                          {link.label}
+                        </a>
+                      )}
                     </li>
                   ))}
                 </ul>

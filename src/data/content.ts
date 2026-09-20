@@ -37,12 +37,12 @@ export const serviceRows: ServiceRow[] = [
   {
     eyebrow: 'FOR VISUAL STORYTELLERS',
     title: 'Branding',
-    href: '#contact',
+    href: '/services/branding',
   },
   {
     eyebrow: 'FOR DIGITAL EXPERIENCES',
     title: 'UI/UX Design',
-    href: '#contact',
+    href: '/services/ui-ux-design',
   },
   {
     eyebrow: 'FOR BUSINESSES ONLINE',
@@ -305,8 +305,8 @@ export const footerColumns = [
   {
     heading: 'Services',
     links: [
-      { label: 'Branding', href: '/#services' },
-      { label: 'UI/UX Design', href: '/#services' },
+      { label: 'Branding', href: '/services/branding' },
+      { label: 'UI/UX Design', href: '/services/ui-ux-design' },
       { label: 'Web Development', href: '/#services' },
       { label: 'No-Code Development', href: '/#services' },
       { label: 'Automation', href: '/#services' },

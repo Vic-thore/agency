@@ -39,6 +39,8 @@ export interface ServiceGroup {
   tabLabel: string;
   /** One-line description, shown on the About page. */
   summary: string;
+  /** Dedicated page for this service, when one exists. */
+  href?: string;
   comingSoon?: boolean;
   cards: ServiceCard[];
 }
@@ -48,6 +50,7 @@ export const serviceGroups: ServiceGroup[] = [
   {
     slug: 'branding',
     tabLabel: 'Branding',
+    href: '/services/branding',
     summary: 'Identities, logos, and brand systems that make you look credible at first glance.',
     cards: [
       {
@@ -75,6 +78,7 @@ export const serviceGroups: ServiceGroup[] = [
   {
     slug: 'ui-ux-design',
     tabLabel: 'UI/UX Design',
+    href: '/services/ui-ux-design',
     summary: 'Intuitive, user-focused interfaces backed by research and testing.',
     cards: [
       {

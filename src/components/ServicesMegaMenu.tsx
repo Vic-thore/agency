@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
+import { ArrowRight } from 'lucide-react';
 import { serviceGroups } from '../data/services';
 import { cn } from '../lib/cn';
 
@@ -62,6 +63,17 @@ export function ServicesMegaMenu({
             id={`panel-${current.slug}`}
             aria-labelledby={`tab-${current.slug}`}
           >
+            {current.href && (
+              <Link
+                to={current.href}
+                className="col-span-full flex items-center justify-between rounded-md border border-white/15 px-5 py-3.5 text-[16px] font-semibold leading-6 text-white transition-colors duration-300 hover:bg-white/5"
+                tabIndex={open ? 0 : -1}
+                onClick={() => onNavigate?.()}
+              >
+                Explore {current.tabLabel}
+                <ArrowRight size={18} aria-hidden="true" />
+              </Link>
+            )}
             {current.cards.map((card) => (
               <Link
                 key={card.title}

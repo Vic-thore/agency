@@ -1,7 +1,10 @@
 import { motion } from 'framer-motion';
+import { Link } from 'react-router-dom';
 import { serviceRows } from '../data/content';
 import { SectionHeading } from './SectionHeading';
 import { reveal } from '../hooks/useReveal';
+
+const MotionLink = motion.create(Link);
 
 export function Services() {
   return (
@@ -20,13 +23,8 @@ export function Services() {
         />
 
         <div className="services-grid mt-16 max-[575px]:mt-8">
-          {serviceRows.map((service, i) => (
-            <motion.a
-              key={service.title}
-              {...reveal(Math.min(i, 3) * 0.05)}
-              href={service.href}
-              className="service-card"
-            >
+          {serviceRows.map((service, i) => {
+            const content = (
               <div className="flex items-center justify-between gap-4">
                 <div className="min-w-0">
                   <p className="service-eyebrow font-inter text-[18px] uppercase leading-[27px] text-gray-02 transition-colors duration-500 max-[575px]:text-[16px]">
@@ -43,8 +41,28 @@ export function Services() {
                   </svg>
                 </span>
               </div>
-            </motion.a>
-          ))}
+            );
+            // Pages of their own navigate in-app; the rest jump to a section.
+            return service.href.startsWith('/') ? (
+              <MotionLink
+                key={service.title}
+                {...reveal(Math.min(i, 3) * 0.05)}
+                to={service.href}
+                className="service-card"
+              >
+                {content}
+              </MotionLink>
+            ) : (
+              <motion.a
+                key={service.title}
+                {...reveal(Math.min(i, 3) * 0.05)}
+                href={service.href}
+                className="service-card"
+              >
+                {content}
+              </motion.a>
+            );
+          })}
         </div>
       </div>
     </section>
