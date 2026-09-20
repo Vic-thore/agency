@@ -6,6 +6,7 @@ import About from './pages/About';
 import Services from './pages/Services';
 import Branding from './pages/Branding';
 import UiUx from './pages/UiUx';
+import WebDevelopment from './pages/WebDevelopment';
 
 export default function App() {
   return (
@@ -18,6 +19,7 @@ export default function App() {
           <Route path="services" element={<Services />} />
           <Route path="services/branding" element={<Branding />} />
           <Route path="services/ui-ux-design" element={<UiUx />} />
+          <Route path="services/web-development" element={<WebDevelopment />} />
         </Route>
       </Routes>
     </BrowserRouter>

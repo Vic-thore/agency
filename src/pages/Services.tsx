@@ -180,6 +180,7 @@ const serviceSections: ServiceSection[] = [
   {
     id: 'web-development',
     title: 'Web Development',
+    href: '/services/web-development',
     blurb:
       'Fast, secure websites that look sharp and turn visitors into customers.',
     gradient: 'bg-gradient-to-br from-[#0b2a20] via-[#1f8a5b] to-[#07140f]',

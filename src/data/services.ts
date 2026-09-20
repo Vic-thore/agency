@@ -111,6 +111,7 @@ export const serviceGroups: ServiceGroup[] = [
   {
     slug: 'web-development',
     tabLabel: 'Web Development',
+    href: '/services/web-development',
     summary: 'Fast, secure websites that look sharp and turn visitors into customers.',
     cards: [
       {
