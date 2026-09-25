@@ -17,6 +17,7 @@ import {
   Layers,
   Heart,
   Blocks,
+  Layers3,
   GitBranch,
   Database,
   Workflow,
@@ -140,6 +141,7 @@ export const serviceGroups: ServiceGroup[] = [
     slug: 'no-code-development',
     tabLabel: 'No-Code Development',
     summary: 'Launch websites, MVPs, and internal tools quickly on modern no-code platforms.',
+    href: '/services/no-code-development',
     cards: [
       {
         icon: Globe,
@@ -153,13 +155,18 @@ export const serviceGroups: ServiceGroup[] = [
       },
       {
         icon: Heart,
-        title: 'AI app building with Lovable',
+        title: 'Lovable app building',
         description: 'Turn an idea into a working, AI-powered app quickly.',
       },
       {
+        icon: Layers3,
+        title: 'Bubble apps',
+        description: 'Full web apps with logic, databases, and accounts, built without code.',
+      },
+      {
         icon: Blocks,
-        title: 'MVPs & internal tools',
-        description: 'Validate a product or replace a spreadsheet without a full engineering build.',
+        title: 'MVPs & prototypes',
+        description: 'Validate a product before committing to a full engineering build.',
       },
     ],
   },

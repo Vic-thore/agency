@@ -52,7 +52,7 @@ export const serviceRows: ServiceRow[] = [
   {
     eyebrow: 'FOR RAPID APP BUILDERS',
     title: 'No-Code Development',
-    href: '#contact',
+    href: '/services/no-code-development',
   },
   {
     eyebrow: 'FOR LEAN, SCALING TEAMS',
@@ -308,7 +308,7 @@ export const footerColumns = [
       { label: 'Branding', href: '/services/branding' },
       { label: 'UI/UX Design', href: '/services/ui-ux-design' },
       { label: 'Web Development', href: '/services/web-development' },
-      { label: 'No-Code Development', href: '/#services' },
+      { label: 'No-Code Development', href: '/services/no-code-development' },
       { label: 'Automation', href: '/#services' },
       { label: 'SEO', href: '/#services' },
     ],

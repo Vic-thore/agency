@@ -15,11 +15,9 @@ import {
   Film,
   Shapes,
   Heart,
-  Bot,
-  Smartphone,
   Globe,
   Layers,
-  Triangle,
+  Layers3,
   Compass,
   Users,
   Repeat,
@@ -100,34 +98,24 @@ const brandCards: Card[] = [
 
 const nocodeCards: Card[] = [
   {
-    icon: Heart,
-    title: 'Lovable Development',
-    description: 'Building AI-powered apps with Lovable for rapid product development.',
-  },
-  {
-    icon: Bot,
-    title: 'Claude AI Development',
-    description: 'Developing intelligent AI solutions powered by Claude models.',
-  },
-  {
-    icon: Smartphone,
-    title: 'Flutter Development',
-    description: 'Building fast, cross-platform mobile apps with Flutter.',
-  },
-  {
     icon: Globe,
-    title: 'WebFlow Development',
-    description: 'Creating responsive, no-code websites with Webflow.',
+    title: 'Webflow websites',
+    description: 'Responsive, CMS-driven sites your team can edit without a developer.',
   },
   {
     icon: Layers,
-    title: 'Framer Development',
-    description: 'Designing and developing modern, interactive websites with Framer.',
+    title: 'Framer sites',
+    description: 'Design-forward, animated sites and landing pages, launched fast.',
   },
   {
-    icon: Triangle,
-    title: 'Vercel Development',
-    description: 'Deploying high-performance web apps with Vercel infrastructure.',
+    icon: Heart,
+    title: 'Lovable app building',
+    description: 'Turn an idea into a working, AI-powered app quickly.',
+  },
+  {
+    icon: Layers3,
+    title: 'Bubble apps',
+    description: 'Full web apps with logic, databases, and accounts, built without code.',
   },
 ];
 
@@ -189,6 +177,7 @@ const serviceSections: ServiceSection[] = [
   {
     id: 'no-code-development',
     title: 'No-Code Development',
+    href: '/services/no-code-development',
     blurb:
       'Launch scalable digital products quickly using modern no-code platforms.',
     gradient: 'bg-gradient-to-br from-[#0e2f52] via-[#1f7ae0] to-[#0a1a2e]',
