@@ -8,6 +8,7 @@ import Branding from './pages/Branding';
 import UiUx from './pages/UiUx';
 import WebDevelopment from './pages/WebDevelopment';
 import NoCodeDevelopment from './pages/NoCodeDevelopment';
+import Automation from './pages/Automation';
 
 export default function App() {
   return (
@@ -22,6 +23,7 @@ export default function App() {
           <Route path="services/ui-ux-design" element={<UiUx />} />
           <Route path="services/web-development" element={<WebDevelopment />} />
           <Route path="services/no-code-development" element={<NoCodeDevelopment />} />
+          <Route path="services/automation" element={<Automation />} />
         </Route>
       </Routes>
     </BrowserRouter>
