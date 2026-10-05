@@ -122,7 +122,7 @@ export default function Branding() {
 
       <WhySection
         idPrefix="branding"
-        eyebrow="Why Metron Studio"
+        eyebrow="Why Varoq"
         title="A brand is only as good as how consistently it shows up"
         items={brandingWhyUs}
       />

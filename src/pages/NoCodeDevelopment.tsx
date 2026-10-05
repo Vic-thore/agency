@@ -126,7 +126,7 @@ export default function NoCodeDevelopment() {
 
       <WhySection
         idPrefix="nocode"
-        eyebrow="Why Metron Studio"
+        eyebrow="Why Varoq"
         title="Fast doesn’t have to mean generic"
         items={nocodeWhyUs}
       />

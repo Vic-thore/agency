@@ -130,7 +130,7 @@ export default function Seo() {
 
       <WhySection
         idPrefix="seo"
-        eyebrow="Why Metron Studio"
+        eyebrow="Why Varoq"
         title="SEO that earns its keep"
         items={seoWhyUs}
       />

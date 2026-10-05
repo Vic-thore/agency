@@ -1,6 +1,6 @@
-# Metron Studio — frontend build
+# Varoq — frontend build
 
-A React + Vite + TypeScript + Tailwind site for Metron Studio, originally
+A React + Vite + TypeScript + Tailwind site for Varoq, originally
 built as a high-fidelity recreation of another agency's homepage and since
 rebranded: colors, copy, and every outbound link have been reworked so the
 page stands on its own rather than pointing back at the site it started from.
@@ -101,7 +101,7 @@ disconnect it from that source rather than silently keep pointing at it:
 - **Calendly and Figma links** were replaced with in-page anchors to the
   Contact form / Showcase section.
 - **Social links** (Dribbble, YouTube, Facebook, LinkedIn, Instagram) are `#`
-  placeholders until Metron Studio's real accounts are wired in.
+  placeholders until Varoq's real accounts are wired in.
 - **Testimonials** are clearly generic placeholder quotes ("Client Name,
   Founder, Example Co."), not real reviews — the original page quoted real,
   named clients, and swapping the company name in their quotes would have
@@ -109,7 +109,7 @@ disconnect it from that source rather than silently keep pointing at it:
 - **Client logos, office addresses/phone numbers, and third-party award
   badges** (ISO/Clutch/GoodFirms) were removed rather than rebranded, since
   they belonged to the site this was cloned from and would misrepresent
-  Metron Studio's actual clients, locations, and credentials.
+  Varoq's actual clients, locations, and credentials.
 - **Visual assets** (photos, background art, icon sets) still load from the
   original site's public CDN — there's no local copy of that artwork, so
   removing it would leave the page broken rather than just less accurate.

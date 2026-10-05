@@ -132,7 +132,7 @@ export default function WebDevelopment() {
 
       <WhySection
         idPrefix="webdev"
-        eyebrow="Why Metron Studio"
+        eyebrow="Why Varoq"
         title="A great website keeps working long after launch"
         items={webdevWhyUs}
       />

@@ -12,4 +12,4 @@ export const IMG = `${ORIGIN}/frontend-assets/images`;
 export const SVG = `${IMG}/svgs`;
 export const SERVICE_ICON = `${IMG}/services-icons`;
 
-export const SITE_NAME = 'Metron Studio';
+export const SITE_NAME = 'Varoq';

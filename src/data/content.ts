@@ -21,9 +21,9 @@ export const heroToolIcons = [
 /* ---------------- Client logos ---------------- */
 // Emptied out: the original list was real companies (Nissan Motor
 // Corporation, Bank of Namibia, a government ministry, etc.) that are
-// clients of the site this was cloned from, not of Metron Studio. Showing
+// clients of the site this was cloned from, not of Varoq. Showing
 // their logos under a "trusted by" banner here would falsely claim them as
-// Metron's clients — same reasoning as the testimonials placeholder.
+// Varoq's clients — same reasoning as the testimonials placeholder.
 export const clientLogos: { src: string; alt: string; width: number; height: number }[] = [];
 
 /* ---------------- Service rows ---------------- */
@@ -264,7 +264,7 @@ export const testimonials: TestimonialData[] = [
 ];
 
 /* ---------------- Offices ---------------- */
-// Placeholder locations/numbers — replace with Metron Studio's real office
+// Placeholder locations/numbers — replace with Varoq's real office
 // details; the `tel` links are inert ('#') until then.
 export const offices = [
   {
@@ -326,11 +326,11 @@ export const industries = [
 
 // Third-party certification/review badges (ISO, Clutch, GoodFirms, etc.)
 // were removed here — those accreditations belong to the site this was
-// cloned from, not to Metron Studio, so showing them would misrepresent
-// credentials Metron doesn't actually hold.
+// cloned from, not to Varoq, so showing them would misrepresent
+// credentials Varoq doesn't actually hold.
 export const awards: { src: string; alt: string; width: number; height: number }[] = [];
 
-// Placeholder until Metron Studio's real social accounts exist.
+// Placeholder until Varoq's real social accounts exist.
 export const socialLinks = [
   { label: 'Dribbble', href: '#' },
   { label: 'YouTube', href: '#' },

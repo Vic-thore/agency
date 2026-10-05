@@ -207,7 +207,7 @@ export default function UiUx() {
 
       <WhySection
         idPrefix="uiux"
-        eyebrow="Why Metron Studio"
+        eyebrow="Why Varoq"
         title="The best interface is the one nobody has to think about"
         items={uiuxWhyUs}
       />

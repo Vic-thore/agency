@@ -111,7 +111,7 @@ export default function About() {
       {/* Hero */}
       <AnimatedMarqueeHero
         headingId="about-heading"
-        tagline="About Metron Studio"
+        tagline="About Varoq"
         title="We help businesses look credible, work smarter, and get found online"
         description={`${SITE_NAME} brings branding, UI/UX design, web development, no-code, automation, and SEO together, so your brand, website, and growth aren’t handled by five people who never talk to each other.`}
       >

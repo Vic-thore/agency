@@ -145,9 +145,8 @@ export function Header() {
               height={33}
               className="h-8 w-auto"
             />
-            <span className="flex flex-col font-display font-semibold leading-none text-primary">
-              <span className="text-[22px]">Metron</span>
-              <span className="text-[12px]">Studio</span>
+            <span className="font-display text-[26px] font-semibold leading-none tracking-tight text-primary">
+              Varoq
             </span>
           </Link>
 
