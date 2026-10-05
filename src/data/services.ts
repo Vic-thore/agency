@@ -205,6 +205,7 @@ export const serviceGroups: ServiceGroup[] = [
   {
     slug: 'seo',
     tabLabel: 'SEO',
+    href: '/services/seo',
     summary: 'Get found by the people already searching for what you offer.',
     cards: [
       {

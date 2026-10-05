@@ -62,7 +62,7 @@ export const serviceRows: ServiceRow[] = [
   {
     eyebrow: 'FOR BEING FOUND ONLINE',
     title: 'SEO',
-    href: '#contact',
+    href: '/services/seo',
   },
 ];
 
@@ -310,7 +310,7 @@ export const footerColumns = [
       { label: 'Web Development', href: '/services/web-development' },
       { label: 'No-Code Development', href: '/services/no-code-development' },
       { label: 'Automation', href: '/#services' },
-      { label: 'SEO', href: '/#services' },
+      { label: 'SEO', href: '/services/seo' },
     ],
   },
 ];

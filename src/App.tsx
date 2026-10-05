@@ -9,6 +9,7 @@ import UiUx from './pages/UiUx';
 import WebDevelopment from './pages/WebDevelopment';
 import NoCodeDevelopment from './pages/NoCodeDevelopment';
 import Automation from './pages/Automation';
+import Seo from './pages/Seo';
 
 export default function App() {
   return (
@@ -24,6 +25,7 @@ export default function App() {
           <Route path="services/web-development" element={<WebDevelopment />} />
           <Route path="services/no-code-development" element={<NoCodeDevelopment />} />
           <Route path="services/automation" element={<Automation />} />
+          <Route path="services/seo" element={<Seo />} />
         </Route>
       </Routes>
     </BrowserRouter>
