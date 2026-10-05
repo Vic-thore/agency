@@ -955,11 +955,13 @@
   .process-layout {
     display: flex;
     justify-content: space-between;
-    gap: 80px;
+    gap: clamp(32px, 6vw, 80px);
     position: relative;
   }
   .process-list-wrap {
     position: relative;
+    flex: 1 1 0;
+    min-width: 0;
     width: 100%;
     max-width: 609px;
     padding-left: 50px;
@@ -1047,6 +1049,10 @@
     position: sticky;
     top: 20vh;
     height: fit-content;
+    /* Scales with the viewport so the step list keeps a readable measure
+       on tablets instead of being squeezed beside a full-size image. */
+    flex: 0 1 clamp(260px, 40vw, 527px);
+    min-width: 0;
   }
 
   /* ---------------------------------------------------------
@@ -1054,12 +1060,18 @@
      --------------------------------------------------------- */
   .portfolio-grid {
     display: grid;
+    /* minmax(0, 1fr) lets columns shrink below the image's intrinsic width
+       so the grid can never push the page wider than the viewport. */
+    grid-template-columns: minmax(0, 1fr);
     column-gap: 40px;
     row-gap: 48px;
   }
+  .portfolio-card {
+    min-width: 0;
+  }
   @media (min-width: 769px) {
     .portfolio-grid {
-      grid-template-columns: 1fr 1fr;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
     }
     .portfolio-card:nth-child(2n) {
       margin-top: 100px;
@@ -1523,7 +1535,7 @@
     gap: 48px;
     margin: 72px 0;
   }
-  @media (max-width: 768px) {
+  @media (max-width: 991px) {
     .footer-grid {
       grid-template-columns: 1fr 1fr;
       gap: 32px;
@@ -1544,7 +1556,7 @@
   .footer-text p {
     max-width: 393px;
   }
-  @media (max-width: 768px) {
+  @media (max-width: 991px) {
     .footer-text p {
       max-width: 100%;
     }
