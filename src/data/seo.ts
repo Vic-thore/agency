@@ -13,6 +13,7 @@ import {
 } from 'lucide-react';
 import type { FaqItem } from '../components/FaqAccordion';
 import type {
+  DeepDive,
   IconItem,
   ProcessStep,
   ServiceConcept,
@@ -257,4 +258,98 @@ export const seoFaqs: FaqItem[] = [
       'Yes. We can focus on a single city, several regions, or whole countries, and plan content in more than one language where your customers need it.',
     ],
   },
+];
+
+const dive = (name: string, alt: string) => ({
+  src: `/images/seo/dive-${name}.svg`,
+  alt,
+  width: 600,
+  height: 400,
+});
+
+/** Deep-dives into the four parts of an SEO engagement. */
+export const seoDeepDives: DeepDive[] = [
+  {
+    eyebrow: 'Keyword research',
+    title: 'Target the searches that bring buyers',
+    description:
+      'We map what your customers actually type, how hard each term is to win, and which ones are worth your time.',
+    points: [
+      {
+        title: 'Research with the right tools',
+        description:
+          'Search volume, difficulty and intent, checked across the major SEO platforms, then sorted by commercial value.',
+      },
+      {
+        title: 'Competitor and content gap analysis',
+        description:
+          'We find where rivals rank and you don’t, and which pages would close the gap fastest.',
+      },
+    ],
+    image: dive('keywords', 'Placeholder: a keyword research view with a rising rankings line'),
+  },
+  {
+    eyebrow: 'Authority',
+    title: 'Earn trust from sites your customers already read',
+    description:
+      'Links from relevant, respected sites tell search engines you’re worth ranking. We earn them the slow, safe way.',
+    points: [
+      {
+        title: 'Finding the right sites',
+        description:
+          'A shortlist of relevant publications, directories and partners, vetted for quality before we reach out.',
+      },
+      {
+        title: 'Outreach and relationships',
+        description:
+          'Personal outreach and useful content, never link schemes or paid networks that risk a penalty.',
+      },
+    ],
+    image: dive('authority', 'Placeholder: an authority growth chart'),
+  },
+  {
+    eyebrow: 'Conversion',
+    title: 'Turn visitors into enquiries',
+    description:
+      'Traffic only matters if people act on it. We improve the pages and journeys that sit between a search and a sale.',
+    points: [
+      {
+        title: 'Landing pages that convert',
+        description:
+          'Clearer messages, stronger calls to action and faster pages on the places visitors land.',
+      },
+      {
+        title: 'A smoother experience',
+        description:
+          'Better navigation, mobile layout and forms, so the next step is always obvious.',
+      },
+    ],
+    image: dive('conversion', 'Placeholder: a conversion funnel chart'),
+  },
+  {
+    eyebrow: 'Local visibility',
+    title: 'Be the obvious choice nearby',
+    description:
+      'For businesses that win customers in a particular area, local search is often the quickest route to new enquiries.',
+    points: [
+      {
+        title: 'A complete Google Business Profile',
+        description:
+          'Accurate details, photos, services and a steady stream of genuine reviews, managed properly.',
+      },
+      {
+        title: 'Consistent local citations',
+        description:
+          'Your name, address and phone number matched across the directories that count.',
+      },
+    ],
+    image: dive('local', 'Placeholder: a local ranking map'),
+  },
+];
+
+export const seoTrustFacts = [
+  'Free audit, no obligation',
+  'Plain-English reports',
+  'Reply within 24 hours',
+  'No lock-in contracts',
 ];

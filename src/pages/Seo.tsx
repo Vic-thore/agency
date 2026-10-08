@@ -5,6 +5,7 @@ import { Button } from '@/components/ui/button';
 import { CTASection } from '../components/CTASection';
 import {
   ConceptWorkSection,
+  DeepDiveSection,
   DeliverablesSection,
   FaqSection,
   IncludesSection,
@@ -16,12 +17,14 @@ import {
 } from '../components/service-page/sections';
 import {
   seoConcepts,
+  seoDeepDives,
   seoDeliverables,
   seoFaqs,
   seoIncludes,
   seoPackages,
   seoProblems,
   seoSteps,
+  seoTrustFacts,
   seoWhyUs,
 } from '../data/seo';
 
@@ -35,8 +38,8 @@ export default function Seo() {
         }
         title={
           <>
-            Be the business <br className="hidden md:block" />
-            people find first
+            Get a free SEO audit,<br className="hidden md:block" />
+            and be found first
           </>
         }
         description={
@@ -47,15 +50,24 @@ export default function Seo() {
           </>
         }
         actions={
-          <Button
-            asChild
-            className="h-12 gap-2 rounded-lg bg-transparent bg-gradient-to-b from-white via-white/95 to-white/60 px-8 text-base text-black transition-all hover:scale-105 active:scale-95"
-          >
-            <Link to="/#contact">
-              Book a free call
-              <ArrowRight size={16} aria-hidden="true" />
-            </Link>
-          </Button>
+          <>
+            <Button
+              asChild
+              className="h-12 gap-2 rounded-lg bg-transparent bg-gradient-to-b from-white via-white/95 to-white/60 px-8 text-base text-black transition-all hover:scale-105 active:scale-95"
+            >
+              <Link to="/#contact">
+                Get my free audit
+                <ArrowRight size={16} aria-hidden="true" />
+              </Link>
+            </Button>
+            <Button
+              asChild
+              variant="outline"
+              className="h-12 rounded-lg border-white/20 bg-transparent px-8 text-base text-white hover:bg-white/10 hover:text-white"
+            >
+              <a href="#seo-work-heading">See concept work</a>
+            </Button>
+          </>
         }
         preview={{
           // Original illustration in /public/images/seo. Swap in a real
@@ -66,6 +78,17 @@ export default function Seo() {
           height: 1000,
         }}
       />
+
+      <section aria-label="Why work with us" className="border-y border-ink-400 py-6">
+        <ul className="container-zf flex flex-wrap items-center justify-center gap-x-10 gap-y-3 font-inter text-sm text-gray-495">
+          {seoTrustFacts.map((f) => (
+            <li key={f} className="flex items-center gap-2">
+              <span className="h-1.5 w-1.5 rounded-full bg-primary" aria-hidden="true" />
+              {f}
+            </li>
+          ))}
+        </ul>
+      </section>
 
       <ProblemSection
         idPrefix="seo"
@@ -88,6 +111,8 @@ export default function Seo() {
         description="From the technical foundations to the content and links that move you up, tied to enquiries you can measure."
         items={seoIncludes}
       />
+
+      <DeepDiveSection idPrefix="seo" items={seoDeepDives} />
 
       <ProcessSection
         idPrefix="seo"

@@ -18,6 +18,7 @@ import { serviceGroups } from '../../data/services';
 import { reveal } from '../../hooks/useReveal';
 import { cn } from '../../lib/cn';
 import type {
+  DeepDive,
   IconItem,
   PageImage,
   ProcessStep,
@@ -605,6 +606,73 @@ export function RelatedSection({
             );
           })}
         </div>
+      </div>
+    </section>
+  );
+}
+
+/** Alternating image/text deep-dives into each part of the service. */
+export function DeepDiveSection({
+  idPrefix,
+  items,
+}: {
+  idPrefix: string;
+  items: DeepDive[];
+}) {
+  return (
+    <section aria-label="In depth" className="section-pad">
+      <div className="container-zf flex flex-col gap-24 max-[575px]:gap-16">
+        {items.map((item, i) => (
+          <div
+            key={item.title}
+            className="grid grid-cols-1 items-center gap-12 lg:grid-cols-2 max-[575px]:gap-8"
+          >
+            <motion.div
+              {...reveal()}
+              className={cn(
+                'overflow-hidden rounded-3xl border border-ink-400 bg-ink-800',
+                i % 2 === 1 && 'lg:order-2'
+              )}
+            >
+              <img
+                src={item.image.src}
+                alt={item.image.alt}
+                width={item.image.width}
+                height={item.image.height}
+                loading="lazy"
+                decoding="async"
+                className="h-auto w-full"
+              />
+            </motion.div>
+
+            <div>
+              <SectionHeading
+                id={`${idPrefix}-dive-${i}-heading`}
+                className="!mx-0 !max-w-none !text-left"
+                eyebrow={item.eyebrow}
+                title={item.title}
+                description={item.description}
+              />
+              <ul className="mt-8 flex flex-col gap-6">
+                {item.points.map((p, j) => (
+                  <motion.li key={p.title} {...reveal(j * 0.06)} className="flex gap-4">
+                    <span className="mt-1 flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-white text-black">
+                      <Check size={14} aria-hidden="true" />
+                    </span>
+                    <div>
+                      <h3 className="font-tight text-[20px] leading-normal text-white">
+                        {p.title}
+                      </h3>
+                      <p className="mt-1 font-inter text-[15px] leading-6 text-gray-495">
+                        {p.description}
+                      </p>
+                    </div>
+                  </motion.li>
+                ))}
+              </ul>
+            </div>
+          </div>
+        ))}
       </div>
     </section>
   );

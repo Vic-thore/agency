@@ -37,3 +37,12 @@ export interface PageImage {
   width: number;
   height: number;
 }
+
+/** A feature deep-dive: an eyebrow, heading, intro, two sub-points and a picture. */
+export interface DeepDive {
+  eyebrow: string;
+  title: string;
+  description: string;
+  points: { title: string; description: string }[];
+  image: PageImage;
+}
