@@ -45,4 +45,6 @@ export interface DeepDive {
   description: string;
   points: { title: string; description: string }[];
   image: PageImage;
+  /** Optional Lottie animation shown instead of the image. */
+  lottie?: string;
 }

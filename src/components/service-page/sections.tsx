@@ -13,6 +13,7 @@ import {
 } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { FaqAccordion, type FaqItem } from '../FaqAccordion';
+import { LottiePlayer } from '../LottiePlayer';
 import { SectionHeading } from '../SectionHeading';
 import { serviceGroups } from '../../data/services';
 import { reveal } from '../../hooks/useReveal';
@@ -634,15 +635,23 @@ export function DeepDiveSection({
                 i % 2 === 1 && 'lg:order-2'
               )}
             >
-              <img
-                src={item.image.src}
-                alt={item.image.alt}
-                width={item.image.width}
-                height={item.image.height}
-                loading="lazy"
-                decoding="async"
-                className="h-auto w-full"
-              />
+              {item.lottie ? (
+                <LottiePlayer
+                  src={item.lottie}
+                  label={item.image.alt}
+                  className="w-full"
+                />
+              ) : (
+                <img
+                  src={item.image.src}
+                  alt={item.image.alt}
+                  width={item.image.width}
+                  height={item.image.height}
+                  loading="lazy"
+                  decoding="async"
+                  className="h-auto w-full"
+                />
+              )}
             </motion.div>
 
             <div>

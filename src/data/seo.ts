@@ -286,7 +286,8 @@ export const seoDeepDives: DeepDive[] = [
           'We find where rivals rank and you don’t, and which pages would close the gap fastest.',
       },
     ],
-    image: dive('keywords', 'Placeholder: a keyword research view with a rising rankings line'),
+    image: dive('keywords', 'A keyword search typing in, with keyword rows growing and a rankings line climbing'),
+    lottie: '/lottie/keywords.json',
   },
   {
     eyebrow: 'Authority',
@@ -305,7 +306,8 @@ export const seoDeepDives: DeepDive[] = [
           'Personal outreach and useful content, never link schemes or paid networks that risk a penalty.',
       },
     ],
-    image: dive('authority', 'Placeholder: an authority growth chart'),
+    image: dive('authority', 'A brand at the centre of a network, with trusted sites linking in one by one'),
+    lottie: '/lottie/authority.json',
   },
   {
     eyebrow: 'Conversion',
@@ -324,7 +326,8 @@ export const seoDeepDives: DeepDive[] = [
           'Better navigation, mobile layout and forms, so the next step is always obvious.',
       },
     ],
-    image: dive('conversion', 'Placeholder: a conversion funnel chart'),
+    image: dive('conversion', 'Visitors dropping through a funnel and ending in a completed enquiry'),
+    lottie: '/lottie/conversion.json',
   },
   {
     eyebrow: 'Local visibility',
@@ -343,7 +346,8 @@ export const seoDeepDives: DeepDive[] = [
           'Your name, address and phone number matched across the directories that count.',
       },
     ],
-    image: dive('local', 'Placeholder: a local ranking map'),
+    image: dive('local', 'A map with location pins dropping in, a ripple from the top result, and five review stars'),
+    lottie: '/lottie/local.json',
   },
 ];
 
