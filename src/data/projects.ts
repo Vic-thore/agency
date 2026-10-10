@@ -18,7 +18,7 @@ export const pastProjects: Past[] = [
     ...web,
     name: 'Everscribn',
     category: 'Legal SEO content agency',
-    image: `${CDN}/6a55117e59bcad2488974e66_Frame%202147226848.png`,
+    image: '/images/projects/everscribn.webp',
     alt: 'Screenshot of the Everscribn website, a legal SEO content agency for law firms',
     brief: 'A website for a legal SEO content agency that serves law firms and the agencies that work with them.',
     approach:
