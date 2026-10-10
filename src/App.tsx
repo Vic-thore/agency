@@ -12,6 +12,7 @@ import Automation from './pages/Automation';
 import Seo from './pages/Seo'
 import Work from './pages/Work';
 import CaseStudy from './pages/CaseStudy';
+import AiSolutions from './pages/AiSolutions';
 
 export default function App() {
   return (
@@ -30,6 +31,7 @@ export default function App() {
           <Route path="services/no-code-development" element={<NoCodeDevelopment />} />
           <Route path="services/automation" element={<Automation />} />
           <Route path="services/seo" element={<Seo />} />
+          <Route path="services/ai-solutions" element={<AiSolutions />} />
         </Route>
       </Routes>
     </BrowserRouter>

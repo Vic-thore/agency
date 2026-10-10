@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import type { LucideIcon } from 'lucide-react';
@@ -782,6 +783,158 @@ export function SplitCalloutSection({
               </Link>
             </Button>
           </div>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+/** Tabs of use cases, each with a short pitch and a three-step flow. */
+export function UseCaseTabsSection({
+  idPrefix,
+  eyebrow,
+  title,
+  description,
+  tabs,
+  cta,
+}: HeadingProps & {
+  tabs: {
+    id: string;
+    label: string;
+    title: string;
+    description: string;
+    points: string[];
+    flow: string[];
+  }[];
+  cta: { label: string; to: string };
+}) {
+  const [active, setActive] = useState(tabs[0].id);
+  const tab = tabs.find((t) => t.id === active) ?? tabs[0];
+  return (
+    <section className="section-pad" aria-labelledby={`${idPrefix}-tabs-heading`}>
+      <div className="container-zf">
+        <SectionHeading
+          id={`${idPrefix}-tabs-heading`}
+          className="max-w-[760px]"
+          eyebrow={eyebrow}
+          title={title}
+          description={description}
+        />
+
+        <div
+          role="tablist"
+          aria-label={title}
+          className="mt-12 flex flex-wrap justify-center gap-2.5 max-[575px]:mt-8"
+        >
+          {tabs.map((t) => (
+            <button
+              key={t.id}
+              role="tab"
+              type="button"
+              id={`${idPrefix}-tab-${t.id}`}
+              aria-selected={active === t.id}
+              aria-controls={`${idPrefix}-panel-${t.id}`}
+              onClick={() => setActive(t.id)}
+              className={cn(
+                'rounded-full border px-5 py-2 font-inter text-[14px] transition-colors duration-200',
+                active === t.id
+                  ? 'border-white bg-white text-black'
+                  : 'border-ink-400 text-gray-495 hover:border-white/40 hover:text-white'
+              )}
+            >
+              {t.label}
+            </button>
+          ))}
+        </div>
+
+        <div
+          role="tabpanel"
+          id={`${idPrefix}-panel-${tab.id}`}
+          aria-labelledby={`${idPrefix}-tab-${tab.id}`}
+          className="mt-10 grid grid-cols-1 gap-10 rounded-3xl border border-ink-400 bg-ink-800 p-8 lg:grid-cols-2 lg:p-12 max-[575px]:p-6"
+        >
+          <div>
+            <h3 className="font-tight text-[28px] leading-9 text-white">{tab.title}</h3>
+            <p className="mt-3 font-inter text-[16px] leading-7 text-gray-495">{tab.description}</p>
+            <ul className="mt-6 flex flex-col gap-3">
+              {tab.points.map((p) => (
+                <li key={p} className="flex items-center gap-3 font-inter text-[15px] text-white">
+                  <span className="flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-white text-black">
+                    <Check size={12} aria-hidden="true" />
+                  </span>
+                  {p}
+                </li>
+              ))}
+            </ul>
+            <Button asChild className="mt-8 h-12 gap-2 rounded-lg px-8 text-base">
+              <Link to={cta.to}>
+                {cta.label}
+                <ArrowRight size={16} aria-hidden="true" />
+              </Link>
+            </Button>
+          </div>
+
+          <div className="flex flex-col justify-center gap-3" aria-label="Example flow">
+            {tab.flow.map((step, i) => (
+              <div key={step} className="flex flex-col items-center">
+                <div
+                  className={cn(
+                    'flex w-full items-center gap-4 rounded-2xl border px-5 py-4 font-inter text-[15px] text-white',
+                    i === 1 ? 'border-primary bg-primary/15' : 'border-ink-400 bg-ink'
+                  )}
+                >
+                  <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-white font-inter text-[13px] font-semibold text-black">
+                    {i + 1}
+                  </span>
+                  {step}
+                </div>
+                {i < tab.flow.length - 1 && (
+                  <span className="h-5 w-px bg-ink-400" aria-hidden="true" />
+                )}
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+/** The tools and platforms we work with, grouped. */
+export function ToolsSection({
+  idPrefix,
+  eyebrow,
+  title,
+  description,
+  groups,
+}: HeadingProps & { groups: { label: string; items: string[] }[] }) {
+  return (
+    <section className="section-pad" aria-labelledby={`${idPrefix}-tools-heading`}>
+      <div className="container-zf">
+        <SectionHeading
+          id={`${idPrefix}-tools-heading`}
+          className="max-w-[760px]"
+          eyebrow={eyebrow}
+          title={title}
+          description={description}
+        />
+        <div className="mt-14 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4 max-[575px]:mt-8">
+          {groups.map((g, i) => (
+            <motion.div
+              key={g.label}
+              {...reveal(i * 0.05)}
+              className="rounded-2xl border border-ink-400 bg-ink-800 p-6"
+            >
+              <h3 className="font-inter text-[13px] uppercase tracking-wide text-gray-495">{g.label}</h3>
+              <ul className="mt-4 flex flex-wrap gap-2">
+                {g.items.map((t) => (
+                  <li key={t} className="rounded-full bg-ink px-3.5 py-1.5 font-inter text-[14px] text-white">
+                    {t}
+                  </li>
+                ))}
+              </ul>
+            </motion.div>
+          ))}
         </div>
       </div>
     </section>
