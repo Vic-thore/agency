@@ -1,4 +1,4 @@
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
 import { Layout } from './components/Layout';
 import { ScrollToHash } from './components/ScrollToHash';
 import Home from './pages/Home';
@@ -31,7 +31,8 @@ export default function App() {
           <Route path="services/no-code-development" element={<NoCodeDevelopment />} />
           <Route path="services/automation" element={<Automation />} />
           <Route path="services/seo" element={<Seo />} />
-          <Route path="services/ai-solutions" element={<AiSolutions />} />
+          <Route path="ai-solutions" element={<AiSolutions />} />
+          <Route path="services/ai-solutions" element={<Navigate to="/ai-solutions" replace />} />
         </Route>
       </Routes>
     </BrowserRouter>

@@ -492,6 +492,7 @@
   .nav-link {
     position: relative;
     display: inline-block;
+    white-space: nowrap;
     padding: 8px 16px;
     font-size: 18px;
     line-height: 27px;
@@ -1690,5 +1691,13 @@
   49% {
     border-color: var(--color-primary);
     color: var(--color-primary);
+  }
+}
+
+
+@media (min-width: 992px) and (max-width: 1204px) {
+  .zf-header .nav-link {
+    padding: 8px 10px;
+    font-size: 16px;
   }
 }
