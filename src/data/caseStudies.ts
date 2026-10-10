@@ -1,4 +1,5 @@
 import { workItems, type WorkItem } from './work';
+import { pastProjects } from './projects';
 
 /**
  * Case studies are rendered by one template (src/pages/CaseStudy.tsx) from the
@@ -15,7 +16,8 @@ import { workItems, type WorkItem } from './work';
  *   gallery     extra images: [{ src, alt }]
  *   tools       stack or software used
  *   year        '2026'
- *   isConcept   false once it is real client work (changes the labels)
+ *   isConcept   false for real work (changes the labels); past projects live in
+ *               src/data/projects.ts
  */
 export interface CaseStudyDetails {
   challenge?: string;
@@ -25,6 +27,12 @@ export interface CaseStudyDetails {
   tools?: string[];
   year?: string;
   isConcept?: boolean;
+  /** Your role on the project, shown in the details row. */
+  role?: string;
+  /** Link to the live site; shows a "Visit live site" button. */
+  liveUrl?: string;
+  /** Heading above the description. Defaults to "Our approach". */
+  approachLabel?: string;
 }
 
 export interface CaseStudy extends WorkItem, CaseStudyDetails {
@@ -117,12 +125,17 @@ export const slugify = (name: string) =>
     .replace(/[^a-z0-9]+/g, '-')
     .replace(/^-|-$/g, '');
 
-export const caseStudies: CaseStudy[] = workItems.map((item) => ({
+const withSlug = (isConcept: boolean) => (item: WorkItem & CaseStudyDetails): CaseStudy => ({
   ...item,
-  isConcept: true,
-  ...details[item.name],
+  isConcept,
   slug: slugify(item.name),
-}));
+});
+
+/** Real past projects first, then original concept projects. */
+export const caseStudies: CaseStudy[] = [
+  ...pastProjects.map(withSlug(false)),
+  ...workItems.map((item) => ({ ...item, ...details[item.name] })).map(withSlug(true)),
+];
 
 export const getCaseStudy = (slug: string) =>
   caseStudies.find((c) => c.slug === slug);

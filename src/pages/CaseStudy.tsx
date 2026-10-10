@@ -1,7 +1,7 @@
 import { useEffect } from 'react';
 import { Link, useParams } from 'react-router-dom';
 import { motion } from 'framer-motion';
-import { ArrowLeft, ArrowRight, Check, Quote } from 'lucide-react';
+import { ArrowLeft, ArrowRight, ArrowUpRight, Check, Quote } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { CTASection } from '../components/CTASection';
 import { adjacentStudies, caseStudies, getCaseStudy } from '../data/caseStudies';
@@ -41,12 +41,13 @@ export default function CaseStudy() {
   const more = caseStudies
     .filter((c) => c.serviceId === study.serviceId && c.slug !== study.slug)
     .slice(0, 2);
-  const label = study.isConcept ? 'Concept project' : 'Case study';
+  const label = study.isConcept ? 'Concept project' : 'Project';
 
   const meta = [
     { k: 'Type', v: label },
     { k: 'Industry', v: study.category },
     { k: 'Service', v: study.serviceLabel },
+    ...(study.role ? [{ k: 'My role', v: study.role }] : []),
     ...(study.year ? [{ k: 'Year', v: study.year }] : []),
   ];
 
@@ -74,9 +75,17 @@ export default function CaseStudy() {
             <p className="mt-6 font-inter text-[20px] leading-8 text-gray-495 max-[575px]:text-[17px] max-[575px]:leading-7">
               {study.brief}
             </p>
+            {study.liveUrl && (
+              <Button asChild className="mt-8 h-12 gap-2 rounded-lg px-8 text-base">
+                <a href={study.liveUrl} target="_blank" rel="noopener noreferrer">
+                  Visit live site
+                  <ArrowUpRight size={16} aria-hidden="true" />
+                </a>
+              </Button>
+            )}
           </motion.div>
 
-          <dl className="mt-10 grid grid-cols-2 gap-6 border-y border-ink-400 py-6 md:grid-cols-4">
+          <dl className="mt-10 grid grid-cols-2 gap-6 border-y border-ink-400 py-6 md:grid-cols-[repeat(auto-fit,minmax(150px,1fr))]">
             {meta.map((m) => (
               <div key={m.k}>
                 <dt className="font-inter text-[12px] uppercase tracking-wide text-gray-495">{m.k}</dt>
@@ -95,7 +104,7 @@ export default function CaseStudy() {
               width={1200}
               height={800}
               decoding="async"
-              className="h-auto w-full"
+              className="mx-auto h-auto max-h-[80vh] w-full object-contain"
             />
           </motion.div>
         </div>
@@ -111,7 +120,7 @@ export default function CaseStudy() {
             </motion.div>
           )}
           <motion.div {...reveal(0.06)}>
-            <p className="eyebrow text-primary">Our approach</p>
+            <p className="eyebrow text-primary">{study.approachLabel ?? 'Our approach'}</p>
             <p className="mt-4 font-inter text-[18px] leading-8 text-white">{study.approach}</p>
           </motion.div>
         </div>
@@ -211,7 +220,7 @@ export default function CaseStudy() {
                 <li key={m.slug}>
                   <Link to={`/work/${m.slug}`} className="group block">
                     <div className="overflow-hidden rounded-3xl border border-ink-400 bg-ink-800 transition-colors group-hover:border-white/30">
-                      <img src={m.image} alt={m.alt} width={1200} height={800} loading="lazy" decoding="async" className="h-auto w-full" />
+                      <img src={m.image} alt={m.alt} width={1200} height={800} loading="lazy" decoding="async" className="aspect-[3/2] w-full object-cover object-top" />
                     </div>
                     <h3 className="mt-4 font-display text-[24px] font-semibold text-white">{m.name}</h3>
                     <p className="mt-1 font-inter text-[15px] text-gray-495">{m.brief}</p>

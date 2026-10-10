@@ -36,7 +36,8 @@ export const workFilters = [
   { id: 'seo', label: 'SEO' },
 ];
 
-/** One concept per service, for the homepage showcase and strip. */
-export const featuredWork: WorkItem[] = ['Ember', 'Pulse', 'Kilnworks', 'Fernway']
-  .map((n) => workItems.find((w) => w.name === n))
-  .filter((w): w is WorkItem => Boolean(w));
+/** Extra filters by kind of project. */
+export const workKindFilters = [
+  { id: 'past', label: 'Past projects' },
+  { id: 'concept', label: 'Concepts' },
+];

@@ -127,20 +127,25 @@ export const processSteps: ProcessStepData[] = [
 ];
 
 /* ---------------- Portfolio ---------------- */
-import { featuredWork } from './work';
+import { caseStudies } from './caseStudies';
 
 export interface ProjectData {
   client: string;
   title: string;
   image: string;
+  slug: string;
 }
 
-/** Featured concept work (one per service); the full set lives on /work. */
-export const projects: ProjectData[] = featuredWork.map((w) => ({
-  client: `${w.name} · Concept`,
-  title: w.brief,
-  image: w.image,
-}));
+/** Featured work for the homepage; the full set lives on /work. */
+export const projects: ProjectData[] = ['Everscribn', 'Groupaway', 'Dente', 'Stache.haus']
+  .map((n) => caseStudies.find((c) => c.name === n))
+  .filter((c): c is NonNullable<typeof c> => Boolean(c))
+  .map((c) => ({
+    client: c.isConcept ? `${c.name} · Concept` : c.name,
+    title: c.brief,
+    image: c.image,
+    slug: c.slug,
+  }));
 
 /* ---------------- FAQ ---------------- */
 export interface FaqData {

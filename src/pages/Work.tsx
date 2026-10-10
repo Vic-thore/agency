@@ -4,15 +4,22 @@ import { Link } from 'react-router-dom';
 import { ArrowRight } from 'lucide-react';
 import { CTASection } from '../components/CTASection';
 import { SectionHeading } from '../components/SectionHeading';
-import { workFilters } from '../data/work';
+import { workFilters, workKindFilters } from '../data/work';
 import { caseStudies } from '../data/caseStudies';
 import { reveal } from '../hooks/useReveal';
 import { cn } from '../lib/cn';
 
 export default function Work() {
   const [filter, setFilter] = useState('all');
-  const shown =
-    filter === 'all' ? caseStudies : caseStudies.filter((w) => w.serviceId === filter);
+  const shown = caseStudies.filter((w) =>
+    filter === 'all'
+      ? true
+      : filter === 'past'
+        ? !w.isConcept
+        : filter === 'concept'
+          ? w.isConcept
+          : w.serviceId === filter
+  );
 
   return (
     <>
@@ -23,8 +30,8 @@ export default function Work() {
             as="h1"
             className="max-w-[760px]"
             eyebrow="Our work"
-            title="Concept projects that show how we think"
-            description="Original concepts across branding, design, web, no-code and SEO. Client projects will appear here as they’re published."
+            title="Selected work"
+            description="Projects I’ve built for clients, alongside original concepts that show how we approach branding, design, web, no-code and SEO."
           />
 
           <div
@@ -32,7 +39,7 @@ export default function Work() {
             aria-label="Filter by service"
             className="mt-12 flex flex-wrap justify-center gap-2.5 max-[575px]:mt-8"
           >
-            {workFilters.map((f) => (
+            {[...workFilters, ...workKindFilters].map((f) => (
               <button
                 key={f.id}
                 type="button"
@@ -67,13 +74,13 @@ export default function Work() {
                       height={800}
                       loading="lazy"
                       decoding="async"
-                      className="h-auto w-full transition-transform duration-500 group-hover:scale-[1.02]"
+                      className="aspect-[3/2] w-full object-cover object-top transition-transform duration-500 group-hover:scale-[1.02]"
                     />
                   </div>
                   <div className="mt-5 flex items-start justify-between gap-4">
                     <div className="min-w-0">
                       <p className="font-inter text-[12px] font-medium uppercase tracking-wide text-gray-495">
-                        {item.isConcept ? 'Concept' : 'Case study'} · {item.serviceLabel} · {item.category}
+                        {item.isConcept ? 'Concept' : 'Project'} · {item.serviceLabel} · {item.category}
                       </p>
                       <h2 className="mt-2 font-display text-[30px] font-semibold leading-none tracking-tight text-white">
                         {item.name}
@@ -102,7 +109,7 @@ export default function Work() {
           </ul>
 
           <p className="mx-auto mt-14 max-w-[560px] text-center font-inter text-[14px] leading-6 text-gray-495">
-            Every project above is an original concept made to show our approach, not
+            Projects marked “Concept” are original work made to show our approach, not
             work for a named client.
           </p>
         </div>

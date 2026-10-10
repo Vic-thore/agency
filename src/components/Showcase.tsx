@@ -16,8 +16,8 @@ export function Showcase() {
       <div className="container-zf">
         <SectionHeading
           id="showcase-heading"
-          eyebrow="How we approach a project"
-          title="Concept work"
+          eyebrow="Recent projects"
+          title="Selected work"
           description="We have become experts in creating top-notch digital products. We design beautifully and develop excellently. And we care deeply about what we do."
         />
 
@@ -35,7 +35,7 @@ export function Showcase() {
             <p className="mb-6 mt-4 font-inter text-[15px] leading-normal text-gray-495 max-[575px]:text-[14px]">
               See how we think. Browse{' '}
               <Link to="/work" className="font-bold text-primary underline">
-                {SITE_NAME}&apos;s concept projects
+                {SITE_NAME}&apos;s work
               </Link>{' '}
               to learn how our product development services can transform your
               business.
