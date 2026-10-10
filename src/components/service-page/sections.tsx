@@ -686,3 +686,104 @@ export function DeepDiveSection({
     </section>
   );
 }
+
+/** A picture beside a short pitch and a button: used for mid-page nudges. */
+export function SplitCalloutSection({
+  idPrefix,
+  eyebrow,
+  title,
+  description,
+  points,
+  cta,
+  image,
+  lottie,
+  light = false,
+  flip = false,
+}: HeadingProps & {
+  points?: string[];
+  cta: { label: string; to: string };
+  image: PageImage;
+  /** Animation shown instead of the image; the image's alt text still labels it. */
+  lottie?: string;
+  light?: boolean;
+  flip?: boolean;
+}) {
+  return (
+    <section
+      className={cn('section-pad', light && 'bg-cream')}
+      aria-labelledby={`${idPrefix}-callout-heading`}
+    >
+      <div className="container-zf">
+        <div className="grid grid-cols-1 items-center gap-12 lg:grid-cols-2 max-[575px]:gap-8">
+          <motion.div
+            {...reveal()}
+            className={cn(
+              'mx-auto w-full max-w-[560px] overflow-hidden rounded-3xl',
+              flip && 'lg:order-2'
+            )}
+          >
+            {lottie ? (
+              <LottiePlayer src={lottie} label={image.alt} className="w-full" />
+            ) : (
+              <img
+                src={image.src}
+                alt={image.alt}
+                width={image.width}
+                height={image.height}
+                loading="lazy"
+                decoding="async"
+                className="h-auto w-full"
+              />
+            )}
+          </motion.div>
+
+          <div>
+            <SectionHeading
+              id={`${idPrefix}-callout-heading`}
+              className="!mx-0 !max-w-none !text-left"
+              eyebrow={eyebrow}
+              title={title}
+              description={description}
+              tone={light ? 'light' : 'dark'}
+            />
+            {points && (
+              <ul className="mt-8 flex flex-col gap-3">
+                {points.map((p) => (
+                  <li
+                    key={p}
+                    className={cn(
+                      'flex items-center gap-3 font-inter text-[15px]',
+                      light ? 'text-black' : 'text-white'
+                    )}
+                  >
+                    <span
+                      className={cn(
+                        'flex h-5 w-5 shrink-0 items-center justify-center rounded-full',
+                        light ? 'bg-black text-white' : 'bg-white text-black'
+                      )}
+                    >
+                      <Check size={12} aria-hidden="true" />
+                    </span>
+                    {p}
+                  </li>
+                ))}
+              </ul>
+            )}
+            <Button
+              asChild
+              className={cn(
+                'mt-10 h-12 gap-2 rounded-lg px-8 text-base transition-all hover:scale-105 active:scale-95',
+                light && 'bg-black text-white hover:bg-black/85'
+              )}
+            >
+              <Link to={cta.to}>
+                {cta.label}
+                <ArrowRight size={16} aria-hidden="true" />
+              </Link>
+            </Button>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}

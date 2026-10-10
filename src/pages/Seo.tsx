@@ -13,6 +13,7 @@ import {
   ProblemSection,
   ProcessSection,
   RelatedSection,
+  SplitCalloutSection,
   WhySection,
 } from '../components/service-page/sections';
 import {
@@ -122,6 +123,26 @@ export default function Seo() {
         steps={seoSteps}
       />
 
+      <SplitCalloutSection
+        idPrefix="seo-audit"
+        eyebrow="Start here"
+        title="Not sure where you stand? Start with a free audit"
+        description="We look at how your site is found today, what’s holding it back, and where the quickest wins are. Then you decide what to do next."
+        points={[
+          'Technical health and speed',
+          'Keywords you rank for, and the ones you’re missing',
+          'How you compare with competitors',
+        ]}
+        cta={{ label: 'Get my free audit', to: '/#contact' }}
+        lottie="/lottie/audit.json"
+        image={{
+          src: '/images/seo/dive-keywords.svg',
+          alt: 'A web page being scanned, with a checklist of speed, keywords and competitors ticking off one by one',
+          width: 600,
+          height: 400,
+        }}
+      />
+
       <ConceptWorkSection
         idPrefix="seo"
         eyebrow="Our approach in action"
@@ -158,6 +179,23 @@ export default function Seo() {
         eyebrow="Why Varoq"
         title="SEO that earns its keep"
         items={seoWhyUs}
+      />
+
+      <SplitCalloutSection
+        idPrefix="seo-talk"
+        light
+        flip
+        eyebrow="Talk to us"
+        title="Questions? Talk to a real person"
+        description="Tell us about your business and what you want to be found for. We’ll reply within 24 hours with honest next steps."
+        cta={{ label: 'Contact us', to: '/#contact' }}
+        lottie="/lottie/talk.json"
+        image={{
+          src: '/images/seo/dive-local.svg',
+          alt: 'A chat conversation: a question comes in, and a reply is typed and sent',
+          width: 600,
+          height: 400,
+        }}
       />
 
       <FaqSection
