@@ -4,14 +4,15 @@ import { Link } from 'react-router-dom';
 import { ArrowRight } from 'lucide-react';
 import { CTASection } from '../components/CTASection';
 import { SectionHeading } from '../components/SectionHeading';
-import { workFilters, workItems } from '../data/work';
+import { workFilters } from '../data/work';
+import { caseStudies } from '../data/caseStudies';
 import { reveal } from '../hooks/useReveal';
 import { cn } from '../lib/cn';
 
 export default function Work() {
   const [filter, setFilter] = useState('all');
   const shown =
-    filter === 'all' ? workItems : workItems.filter((w) => w.serviceId === filter);
+    filter === 'all' ? caseStudies : caseStudies.filter((w) => w.serviceId === filter);
 
   return (
     <>
@@ -57,7 +58,7 @@ export default function Work() {
                 {...reveal((i % 2) * 0.06)}
                 className="group min-w-0"
               >
-                <Link to={item.href} className="block">
+                <Link to={`/work/${item.slug}`} className="block">
                   <div className="overflow-hidden rounded-3xl border border-ink-400 bg-ink-800 transition-colors duration-300 group-hover:border-white/30">
                     <img
                       src={item.image}
@@ -72,7 +73,7 @@ export default function Work() {
                   <div className="mt-5 flex items-start justify-between gap-4">
                     <div className="min-w-0">
                       <p className="font-inter text-[12px] font-medium uppercase tracking-wide text-gray-495">
-                        Concept · {item.serviceLabel} · {item.category}
+                        {item.isConcept ? 'Concept' : 'Case study'} · {item.serviceLabel} · {item.category}
                       </p>
                       <h2 className="mt-2 font-display text-[30px] font-semibold leading-none tracking-tight text-white">
                         {item.name}

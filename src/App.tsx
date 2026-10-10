@@ -11,6 +11,7 @@ import NoCodeDevelopment from './pages/NoCodeDevelopment';
 import Automation from './pages/Automation';
 import Seo from './pages/Seo'
 import Work from './pages/Work';
+import CaseStudy from './pages/CaseStudy';
 
 export default function App() {
   return (
@@ -21,6 +22,7 @@ export default function App() {
           <Route index element={<Home />} />
           <Route path="about" element={<About />} />
           <Route path="work" element={<Work />} />
+          <Route path="work/:slug" element={<CaseStudy />} />
           <Route path="services" element={<Services />} />
           <Route path="services/branding" element={<Branding />} />
           <Route path="services/ui-ux-design" element={<UiUx />} />
