@@ -9,7 +9,8 @@ import UiUx from './pages/UiUx';
 import WebDevelopment from './pages/WebDevelopment';
 import NoCodeDevelopment from './pages/NoCodeDevelopment';
 import Automation from './pages/Automation';
-import Seo from './pages/Seo';
+import Seo from './pages/Seo'
+import Work from './pages/Work';
 
 export default function App() {
   return (
@@ -19,6 +20,7 @@ export default function App() {
         <Route element={<Layout />}>
           <Route index element={<Home />} />
           <Route path="about" element={<About />} />
+          <Route path="work" element={<Work />} />
           <Route path="services" element={<Services />} />
           <Route path="services/branding" element={<Branding />} />
           <Route path="services/ui-ux-design" element={<UiUx />} />

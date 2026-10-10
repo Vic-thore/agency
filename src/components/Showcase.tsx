@@ -1,4 +1,5 @@
 import { motion } from 'framer-motion';
+import { Link } from 'react-router-dom';
 import { projects } from '../data/content';
 import { SectionHeading } from './SectionHeading';
 import { ProjectCard } from './ProjectCard';
@@ -15,8 +16,8 @@ export function Showcase() {
       <div className="container-zf">
         <SectionHeading
           id="showcase-heading"
-          eyebrow="how we helped others succeed"
-          title="Our Creative Showcase"
+          eyebrow="How we approach a project"
+          title="Concept work"
           description="We have become experts in creating top-notch digital products. We design beautifully and develop excellently. And we care deeply about what we do."
         />
 
@@ -32,13 +33,10 @@ export function Showcase() {
               Your project here
             </h3>
             <p className="mb-6 mt-4 font-inter text-[15px] leading-normal text-gray-495 max-[575px]:text-[14px]">
-              The proof is in our work. Check out{' '}
-              <a
-                href="#work"
-                className="font-bold text-primary underline"
-              >
-                {SITE_NAME}&apos;s case studies
-              </a>{' '}
+              See how we think. Browse{' '}
+              <Link to="/work" className="font-bold text-primary underline">
+                {SITE_NAME}&apos;s concept projects
+              </Link>{' '}
               to learn how our product development services can transform your
               business.
             </p>

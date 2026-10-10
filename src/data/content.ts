@@ -127,35 +127,20 @@ export const processSteps: ProcessStepData[] = [
 ];
 
 /* ---------------- Portfolio ---------------- */
+import { featuredWork } from './work';
+
 export interface ProjectData {
   client: string;
   title: string;
   image: string;
 }
 
-export const projects: ProjectData[] = [
-  {
-    client: 'Gig Desk',
-    title: 'All-in-one dashboard to manage gigs, tours, venues, and payrolls.',
-    image: `${ORIGIN}/storage/280/3.png`,
-  },
-  {
-    client: 'Ship Track',
-    title:
-      'Real-time shipment tracking and delivery management at your fingertips',
-    image: `${ORIGIN}/storage/278/2.png`,
-  },
-  {
-    client: 'Villa Vault',
-    title: "Discover and book the world's finest luxury villas with ease",
-    image: `${ORIGIN}/storage/277/1-%282%29.png`,
-  },
-  {
-    client: 'Bloom Money',
-    title: 'Empowering communities with financial solutions.',
-    image: `${ORIGIN}/storage/275/Rectangle-6338.png`,
-  },
-];
+/** Featured concept work (one per service); the full set lives on /work. */
+export const projects: ProjectData[] = featuredWork.map((w) => ({
+  client: `${w.name} · Concept`,
+  title: w.brief,
+  image: w.image,
+}));
 
 /* ---------------- FAQ ---------------- */
 export interface FaqData {

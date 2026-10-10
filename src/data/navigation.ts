@@ -11,6 +11,6 @@ export const primaryNav: NavItem[] = [
 ];
 
 export const trailingNav: NavItem[] = [
-  { label: 'Work', href: '/#work' },
+  { label: 'Work', href: '/work' },
   { label: 'Insights', href: '/#insights' },
 ];

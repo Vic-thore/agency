@@ -1,4 +1,5 @@
 import { motion } from 'framer-motion';
+import { Link } from 'react-router-dom';
 import type { ProjectData } from '../data/content';
 import { reveal } from '../hooks/useReveal';
 export function ProjectCard({
@@ -10,7 +11,7 @@ export function ProjectCard({
 }) {
   return (
     <motion.article {...reveal((index % 2) * 0.08)} className="portfolio-card">
-      <a href="#work" className="block group">
+      <Link to="/work" className="block group">
         <div className="portfolio-thumb">
           <img
             src={project.image}
@@ -32,7 +33,7 @@ export function ProjectCard({
             </h3>
           </div>
         </div>
-      </a>
+      </Link>
     </motion.article>
   );
 }
