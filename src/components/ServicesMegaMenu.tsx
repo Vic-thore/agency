@@ -77,7 +77,7 @@ export function ServicesMegaMenu({
             {current.cards.map((card) => (
               <Link
                 key={card.title}
-                to={`/?service=${encodeURIComponent(card.title)}#contact`}
+                to={`/contact?service=${encodeURIComponent(card.title)}`}
                 className="service-item-card"
                 tabIndex={open ? 0 : -1}
                 onClick={() => onNavigate?.()}

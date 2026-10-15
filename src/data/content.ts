@@ -57,7 +57,7 @@ export const serviceRows: ServiceRow[] = [
   {
     eyebrow: 'FOR LEAN, SCALING TEAMS',
     title: 'Automation',
-    href: '#contact',
+    href: '/contact',
   },
   {
     eyebrow: 'FOR BEING FOUND ONLINE',
@@ -253,7 +253,7 @@ export const testimonials: TestimonialData[] = [
   },
 ];
 
-/* ---------------- Offices ---------------- */
+/* ---------------- Offices (no longer shown; Varoq has no physical offices listed) ---------------- */
 // Placeholder locations/numbers — replace with Varoq's real office
 // details; the `tel` links are inert ('#') until then.
 export const offices = [
@@ -288,7 +288,7 @@ export const footerColumns = [
       { label: 'Home', href: '/' },
       { label: 'About', href: '/about' },
       { label: 'Work', href: '/#work' },
-      { label: 'Contact', href: '/#contact' },
+      { label: 'Contact', href: '/contact' },
       { label: 'Insights', href: '/#insights' },
     ],
   },

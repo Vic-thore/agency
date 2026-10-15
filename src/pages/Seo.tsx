@@ -56,7 +56,7 @@ export default function Seo() {
               asChild
               className="h-12 gap-2 rounded-lg bg-transparent bg-gradient-to-b from-white via-white/95 to-white/60 px-8 text-base text-black transition-all hover:scale-105 active:scale-95"
             >
-              <Link to="/#contact">
+              <Link to="/contact">
                 Get my free audit
                 <ArrowRight size={16} aria-hidden="true" />
               </Link>
@@ -133,7 +133,7 @@ export default function Seo() {
           'Keywords you rank for, and the ones you’re missing',
           'How you compare with competitors',
         ]}
-        cta={{ label: 'Get my free audit', to: '/#contact' }}
+        cta={{ label: 'Get my free audit', to: '/contact' }}
         lottie="/lottie/audit.json"
         image={{
           src: '/images/seo/dive-keywords.svg',
@@ -188,7 +188,7 @@ export default function Seo() {
         eyebrow="Talk to us"
         title="Questions? Talk to a real person"
         description="Tell us about your business and what you want to be found for. We’ll reply within 24 hours with honest next steps."
-        cta={{ label: 'Contact us', to: '/#contact' }}
+        cta={{ label: 'Contact us', to: '/contact' }}
         lottie="/lottie/talk.json"
         image={{
           src: '/images/seo/dive-local.svg',

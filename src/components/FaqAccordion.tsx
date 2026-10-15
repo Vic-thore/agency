@@ -26,7 +26,7 @@ export function FaqAccordion({
   description,
   items,
   ctaLabel,
-  ctaHref = '/#contact',
+  ctaHref = '/contact',
   defaultOpenIndex = 0,
 }: FaqAccordionProps) {
   const [openIndex, setOpenIndex] = useState<number | null>(defaultOpenIndex);

@@ -157,7 +157,7 @@ export function Header() {
 
           <div className="flex items-center gap-3">
             <a
-              href="/#contact"
+              href="/contact"
               className="btn btn-header hidden font-inter text-[14px] font-medium leading-5 xs:inline-flex"
             >
               <span className="flex items-center gap-3">
@@ -216,7 +216,7 @@ export function Header() {
             {navLinks()}
           </ul>
           <a
-            href="/#contact"
+            href="/contact"
             onClick={closeAll}
             className="btn btn-primary mt-2 self-center xs:hidden"
           >

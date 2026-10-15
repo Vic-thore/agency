@@ -53,7 +53,7 @@ export default function WebDevelopment() {
             asChild
             className="h-12 gap-2 rounded-lg bg-transparent bg-gradient-to-b from-white via-white/95 to-white/60 px-8 text-base text-black transition-all hover:scale-105 active:scale-95"
           >
-            <Link to="/#contact">
+            <Link to="/contact">
               Book a free call
               <ArrowRight size={16} aria-hidden="true" />
             </Link>

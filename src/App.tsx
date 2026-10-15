@@ -11,6 +11,7 @@ import NoCodeDevelopment from './pages/NoCodeDevelopment';
 import Automation from './pages/Automation';
 import Seo from './pages/Seo'
 import Work from './pages/Work';
+import Contact from './pages/Contact';
 import CaseStudy from './pages/CaseStudy';
 import AiSolutions from './pages/AiSolutions';
 
@@ -23,6 +24,7 @@ export default function App() {
           <Route index element={<Home />} />
           <Route path="about" element={<About />} />
           <Route path="work" element={<Work />} />
+          <Route path="contact" element={<Contact />} />
           <Route path="work/:slug" element={<CaseStudy />} />
           <Route path="services" element={<Services />} />
           <Route path="services/branding" element={<Branding />} />

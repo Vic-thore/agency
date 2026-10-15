@@ -455,7 +455,7 @@ export function PackagesSection({
                 )}
               >
                 <Link
-                  to={`/?service=${encodeURIComponent(`${serviceName}: ${tier.name}`)}#contact`}
+                  to={`/contact?service=${encodeURIComponent(`${serviceName}: ${tier.name}`)}`}
                 >
                   Request a quote
                   <ArrowRight size={16} aria-hidden="true" />

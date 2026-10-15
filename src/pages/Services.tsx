@@ -260,7 +260,7 @@ const whyUs = [
 function ServiceCard({ card, accent = false }: { card: Card; accent?: boolean }) {
   return (
     <Link
-      to={`/?service=${encodeURIComponent(card.title)}#contact`}
+      to={`/contact?service=${encodeURIComponent(card.title)}`}
       className={cn(
         'service-item-card flex-col items-start',
         accent && 'bg-primary'
@@ -358,7 +358,7 @@ export default function Services() {
                 no-code development, automation, and SEO under one roof, so
                 nothing gets lost between specialists.
               </p>
-              <a href="/#contact" className="btn btn-primary mt-8 inline-flex">
+              <a href="/contact" className="btn btn-primary mt-8 inline-flex">
                 Work with us
                 <ArrowRight size={16} aria-hidden="true" />
               </a>
@@ -375,7 +375,7 @@ export default function Services() {
                 Book a free 30-minute discovery call and talk through where
                 your product is today.
               </p>
-              <a href="/#contact" className="btn btn-primary mt-5 inline-flex">
+              <a href="/contact" className="btn btn-primary mt-5 inline-flex">
                 Schedule your free call
                 <ArrowRight size={16} aria-hidden="true" />
               </a>

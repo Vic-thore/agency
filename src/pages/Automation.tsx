@@ -33,7 +33,7 @@ export default function Automation() {
             asChild
             className="mt-8 h-11 gap-2 rounded-full px-6 hover:bg-primary-2"
           >
-            <Link to="/#contact">
+            <Link to="/contact">
               Book a free call
               <ArrowRight size={16} aria-hidden="true" />
             </Link>

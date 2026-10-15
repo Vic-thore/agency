@@ -51,7 +51,7 @@ export default function AiSolutions() {
               asChild
               className="h-12 gap-2 rounded-lg bg-transparent bg-gradient-to-b from-white via-white/95 to-white/60 px-8 text-base text-black transition-all hover:scale-105 active:scale-95"
             >
-              <Link to="/#contact">
+              <Link to="/contact">
                 Book a free call
                 <ArrowRight size={16} aria-hidden="true" />
               </Link>
@@ -100,7 +100,7 @@ export default function AiSolutions() {
         title="What could AI change in your business?"
         description="Pick the area that costs you the most time and see what it could look like."
         tabs={aiUseCases}
-        cta={{ label: 'Talk through my use case', to: '/#contact' }}
+        cta={{ label: 'Talk through my use case', to: '/contact' }}
       />
 
       <ProcessSection
@@ -117,7 +117,7 @@ export default function AiSolutions() {
         title="Not sure where to begin? Start with one workflow"
         description="Tell us the task that eats the most time. We’ll tell you honestly whether AI is the right tool, and what a first version would look like."
         points={['One workflow, built and live', 'Connected to the tools you already use', 'A person always able to step in']}
-        cta={{ label: 'Book a free call', to: '/#contact' }}
+        cta={{ label: 'Book a free call', to: '/contact' }}
         lottie="/lottie/talk.json"
         image={{
           src: '/images/seo/dive-local.svg',

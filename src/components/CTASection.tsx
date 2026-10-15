@@ -46,7 +46,7 @@ export function CTASection() {
             asChild
             className="mt-4 h-11 gap-2 rounded-full px-6 hover:bg-primary-2"
           >
-            <a href="/#contact">
+            <a href="/contact">
               Book a Free Discovery Call
               <ArrowUpRight className="h-4 w-4" aria-hidden="true" />
             </a>

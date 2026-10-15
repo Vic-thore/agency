@@ -1459,7 +1459,7 @@
     color: #8f8f8f;
   }
   .cf-input:focus {
-    border-bottom-color: #8bff4d;
+    border-bottom-color: var(--brand-bright);
   }
   .cf-input[aria-invalid='true'] {
     border-bottom-color: var(--color-danger);
