@@ -138,12 +138,12 @@ export function Header() {
             className="flex shrink-0 items-center gap-2"
           >
             <img
-              src="/svgs/favicon.svg"
+              src="/svgs/logo-mark.svg"
               alt=""
               aria-hidden="true"
-              width={30}
-              height={33}
-              className="h-8 w-auto"
+              width={50}
+              height={30}
+              className="h-[30px] w-auto"
             />
             <span className="font-display text-[26px] font-semibold leading-none tracking-tight text-primary">
               Varoq
