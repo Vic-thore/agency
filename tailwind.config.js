@@ -44,11 +44,15 @@ export default {
         'gray-495': 'var(--color-gray-495)',
         'gray-800': 'var(--color-gray-800)',
         'gray-900': 'var(--color-gray-900)',
+        'brand-navy': 'var(--brand-navy)',
+        'brand-royal': 'var(--brand-royal)',
+        'brand-blue': 'var(--brand-blue)',
+        'brand-bright': 'var(--brand-bright)',
       },
       fontFamily: {
-        display: ['Geologica', 'Geologica-fallback', 'sans-serif'],
-        tight: ['"Inter Tight"', 'Inter-fallback', 'sans-serif'],
-        inter: ['Inter', 'Inter-fallback', 'sans-serif'],
+        display: ['Satoshi', 'Inter-fallback', 'sans-serif'],
+        tight: ['Satoshi', 'Inter-fallback', 'sans-serif'],
+        inter: ['Satoshi', 'Inter-fallback', 'sans-serif'],
       },
       maxWidth: {
         container: '1400px',

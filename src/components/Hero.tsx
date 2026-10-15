@@ -136,7 +136,7 @@ export function Hero() {
                 href="#work"
                 className="btn btn-outlined anim-translate font-inter"
               >
-                <span className="anim-translate-content">© 2025 Work</span>
+                <span className="anim-translate-content">See our work</span>
                 <span className="anim-translate-slice flex items-center gap-2">
                   Open
                   <svg
