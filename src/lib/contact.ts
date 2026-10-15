@@ -11,7 +11,7 @@ import { WHATSAPP_NUMBER, SITE_NAME, whatsappHref } from './assets';
  * nothing is ever silently lost.
  */
 export const FORM_ENDPOINT = '';
-export const CONTACT_EMAIL = '';
+export const CONTACT_EMAIL = 'varoqstudio@email.com';
 
 export interface Inquiry {
   fullName: string;
