@@ -75,13 +75,25 @@ export default function CaseStudy() {
             <p className="mt-6 font-inter text-[20px] leading-8 text-gray-495 max-[575px]:text-[17px] max-[575px]:leading-7">
               {study.brief}
             </p>
-            {study.liveUrl && (
-              <Button asChild className="mt-8 h-12 gap-2 rounded-lg px-8 text-base">
-                <a href={study.liveUrl} target="_blank" rel="noopener noreferrer">
-                  Visit live site
-                  <ArrowUpRight size={16} aria-hidden="true" />
-                </a>
-              </Button>
+            {(study.liveUrl || study.behanceUrl) && (
+              <div className="mt-8 flex flex-wrap gap-3">
+                {study.liveUrl && (
+                  <Button asChild className="h-12 gap-2 rounded-lg px-8 text-base">
+                    <a href={study.liveUrl} target="_blank" rel="noopener noreferrer">
+                      Visit live site
+                      <ArrowUpRight size={16} aria-hidden="true" />
+                    </a>
+                  </Button>
+                )}
+                {study.behanceUrl && (
+                  <Button asChild variant={study.liveUrl ? 'outline' : 'default'} className="h-12 gap-2 rounded-lg px-8 text-base">
+                    <a href={study.behanceUrl} target="_blank" rel="noopener noreferrer">
+                      View on Behance
+                      <ArrowUpRight size={16} aria-hidden="true" />
+                    </a>
+                  </Button>
+                )}
+              </div>
             )}
           </motion.div>
 

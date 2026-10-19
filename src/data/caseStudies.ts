@@ -1,5 +1,6 @@
 import { workItems, type WorkItem } from './work';
 import { pastProjects } from './projects';
+import { behanceProjects } from './behance';
 
 /**
  * Case studies are rendered by one template (src/pages/CaseStudy.tsx) from the
@@ -31,6 +32,8 @@ export interface CaseStudyDetails {
   role?: string;
   /** Link to the live site; shows a "Visit live site" button. */
   liveUrl?: string;
+  /** Link to the project on Behance; shows a "View on Behance" button. */
+  behanceUrl?: string;
   /** Heading above the description. Defaults to "Our approach". */
   approachLabel?: string;
 }
@@ -131,9 +134,10 @@ const withSlug = (isConcept: boolean) => (item: WorkItem & CaseStudyDetails): Ca
   slug: slugify(item.name),
 });
 
-/** Real past projects first, then original concept projects. */
+/** Real past projects, then Behance UI/UX projects, then original concepts. */
 export const caseStudies: CaseStudy[] = [
   ...pastProjects.map(withSlug(false)),
+  ...behanceProjects.map((p) => withSlug(p.isConcept ?? true)(p)),
   ...workItems.map((item) => ({ ...item, ...details[item.name] })).map(withSlug(true)),
 ];
 
