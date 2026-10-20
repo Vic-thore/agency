@@ -113,42 +113,8 @@ export const uiuxSteps: ProcessStep[] = [
   },
 ];
 
-/** Concept projects: original work made to show our approach. */
-export const uiuxConcepts: ServiceConcept[] = [
-  {
-    name: 'Pulse',
-    category: 'Fitness & wellness app',
-    image: '/images/uiux/concept-pulse.svg',
-    alt: 'Pulse concept: three mobile app screens showing a daily goal ring, a workout timer, and weekly stats in a dark interface',
-    brief:
-      'A workout app for people who find most fitness apps overwhelming.',
-    approach:
-      'A calm home screen with one clear next action, progress readable at a glance, and a dark, focused interface.',
-    delivered: ['Mobile app UI', 'Design system', 'Prototype'],
-  },
-  {
-    name: 'Ledgerly',
-    category: 'B2B finance dashboard',
-    image: '/images/uiux/concept-ledgerly.svg',
-    alt: 'Ledgerly concept: an invoicing dashboard in a browser window with a summary row and status table, plus a mobile invoice list',
-    brief:
-      'An invoicing tool for small finance teams drowning in spreadsheets.',
-    approach:
-      'A clean dashboard that surfaces what needs attention first, with tables and filters designed for daily use.',
-    delivered: ['Web app UI', 'Component library', 'User flows'],
-  },
-  {
-    name: 'Roam',
-    category: 'Travel booking platform',
-    image: '/images/uiux/concept-roam.svg',
-    alt: 'Roam concept: a travel website with a search-first hero and destination cards, plus a mobile booking screen',
-    brief:
-      'A booking site for travelers who want to plan a trip in minutes, not tabs.',
-    approach:
-      'A search-first landing page, a simple comparison view, and a checkout stripped to the essentials.',
-    delivered: ['Website & mobile UI', 'Booking flow', 'Prototype'],
-  },
-];
+/** Concept projects. Real UI/UX work now lives in src/data/behance.ts. */
+export const uiuxConcepts: ServiceConcept[] = [];
 
 export const uiuxDeliverables = [
   'Research findings and user flows',

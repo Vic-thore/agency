@@ -59,21 +59,6 @@ const details: Record<string, CaseStudyDetails> = {
       'Skincare shelves are loud. The goal was a brand that felt calm and trustworthy to people who are tired of exaggerated claims and busy packaging.',
     tools: ['Figma', 'Illustrator'],
   },
-  Pulse: {
-    challenge:
-      'Most fitness apps bury people in plans, charts and notifications. Pulse needed to make starting a workout feel as simple as pressing one button.',
-    tools: ['Figma', 'FigJam'],
-  },
-  Ledgerly: {
-    challenge:
-      'Small finance teams were chasing invoices across spreadsheets. The dashboard had to show what needs attention today, and nothing else.',
-    tools: ['Figma', 'FigJam'],
-  },
-  Roam: {
-    challenge:
-      'Planning a trip meant juggling a dozen browser tabs. Roam needed to bring flights, stays and activities into one clear, fast flow.',
-    tools: ['Figma', 'FigJam'],
-  },
   Kilnworks: {
     challenge:
       'The pieces were handmade and warm, but the old shop felt generic. The new store had to show the craft while still being fast and easy to buy from.',

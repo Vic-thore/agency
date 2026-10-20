@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom';
-import { VideoIcon } from 'lucide-react';
+import { motion } from 'framer-motion';
+import { ArrowRight, VideoIcon } from 'lucide-react';
 import {
   ContainerAnimated,
   ContainerScroll,
@@ -10,8 +11,10 @@ import {
 } from '@/components/ui/animated-gallery';
 import { Button } from '@/components/ui/button';
 import { CTASection } from '../components/CTASection';
+import { SectionHeading } from '../components/SectionHeading';
+import { caseStudies } from '../data/caseStudies';
+import { reveal } from '../hooks/useReveal';
 import {
-  ConceptWorkSection,
   DeliverablesSection,
   FaqSection,
   IncludesSection,
@@ -22,7 +25,6 @@ import {
   WhySection,
 } from '../components/service-page/sections';
 import {
-  uiuxConcepts,
   uiuxDeliverables,
   uiuxFaqs,
   uiuxFileFormats,
@@ -172,13 +174,54 @@ export default function UiUx() {
         steps={uiuxSteps}
       />
 
-      <ConceptWorkSection
-        idPrefix="uiux"
-        eyebrow="Our approach in action"
-        title="Concept work that shows how we design"
-        description="Original product concepts made to show our approach. Client projects will appear here as they’re published."
-        concepts={uiuxConcepts}
-      />
+      <section className="section-pad" aria-labelledby="uiux-work-heading">
+        <div className="container-zf">
+          <SectionHeading
+            id="uiux-work-heading"
+            className="max-w-[760px]"
+            eyebrow="Selected work"
+            title="UI/UX projects"
+            description="A few recent interface designs. See the full portfolio for more."
+          />
+          <ul className="mt-14 grid grid-cols-1 gap-8 md:grid-cols-3 max-[575px]:mt-8 max-[575px]:gap-6">
+            {caseStudies
+              .filter((c) => c.serviceId === 'ui-ux-design')
+              .slice(0, 3)
+              .map((item, i) => (
+                <motion.li key={item.slug} {...reveal(i * 0.06)} className="group min-w-0">
+                  <Link to={`/work/${item.slug}`} className="block">
+                    <div className="overflow-hidden rounded-3xl border border-ink-400 bg-ink-800 transition-colors duration-300 group-hover:border-white/30">
+                      <img
+                        src={item.image}
+                        alt={item.alt}
+                        width={1200}
+                        height={800}
+                        loading="lazy"
+                        decoding="async"
+                        className="aspect-[3/2] w-full object-cover object-top"
+                      />
+                    </div>
+                    <p className="mt-5 font-inter text-[12px] font-medium uppercase tracking-wide text-gray-495">
+                      {item.category}
+                    </p>
+                    <h3 className="mt-2 font-display text-[26px] font-semibold leading-none tracking-tight text-white">
+                      {item.name}
+                    </h3>
+                    <p className="mt-3 font-inter text-[15px] leading-6 text-gray-495">{item.brief}</p>
+                  </Link>
+                </motion.li>
+              ))}
+          </ul>
+          <div className="mt-12 flex justify-center">
+            <Button asChild variant="outline" className="h-12 gap-2 rounded-lg px-8 text-base">
+              <Link to="/work">
+                See all work
+                <ArrowRight size={16} aria-hidden="true" />
+              </Link>
+            </Button>
+          </div>
+        </div>
+      </section>
 
       <DeliverablesSection
         idPrefix="uiux"
