@@ -4,8 +4,8 @@ import { Button } from '@/components/ui/button';
 import { HeroSection } from '@/components/ui/hero-01-utils/hero';
 import { BrandSlider } from '@/components/ui/hero-01-utils/brand-slider';
 import { CTASection } from '../components/CTASection';
+import { FeaturedWorkSection } from '../components/service-page/FeaturedWorkSection';
 import {
-  ConceptWorkSection,
   DeliverablesSection,
   FaqSection,
   IncludesSection,
@@ -16,7 +16,6 @@ import {
   WhySection,
 } from '../components/service-page/sections';
 import {
-  nocodeConcepts,
   nocodeDeliverables,
   nocodeFaqs,
   nocodeIncludes,
@@ -93,12 +92,10 @@ export default function NoCodeDevelopment() {
         steps={nocodeSteps}
       />
 
-      <ConceptWorkSection
+      <FeaturedWorkSection
+        serviceId="no-code-development"
         idPrefix="nocode"
-        eyebrow="Our approach in action"
-        title="Concept builds that show how we work"
-        description="Original no-code concepts made to show our approach. Client projects will appear here as they’re published."
-        concepts={nocodeConcepts}
+        title="No-code projects"
       />
 
       <DeliverablesSection

@@ -118,41 +118,8 @@ export const nocodeSteps: ProcessStep[] = [
   },
 ];
 
-/** Concept projects: original work made to show our approach. */
-export const nocodeConcepts: ServiceConcept[] = [
-  {
-    name: 'Fernway',
-    category: 'Webflow marketing site',
-    image: '/images/nocode/concept-fernway.svg',
-    alt: 'Fernway concept: a houseplant brand website built in Webflow, with a product grid and a mobile CMS editing screen',
-    brief:
-      'A houseplant brand that needed a site its own team could keep updated.',
-    approach:
-      'A Webflow build with every plant in the CMS, so adding a new product takes minutes, not a developer.',
-    delivered: ['Webflow build', 'CMS setup', 'Team training'],
-  },
-  {
-    name: 'Bloomcast',
-    category: 'Framer landing page',
-    image: '/images/nocode/concept-bloomcast.svg',
-    alt: 'Bloomcast concept: a podcast hosting landing page built in Framer with an animated waveform, and a mobile player screen',
-    brief: 'A podcast hosting startup that needed a launch page, fast.',
-    approach:
-      'A Framer site with a bold, animated hero, live within days of the first call.',
-    delivered: ['Framer site', 'Animation', 'Launch in days'],
-  },
-  {
-    name: 'Deskhive',
-    category: 'Bubble internal tool',
-    image: '/images/nocode/concept-deskhive.svg',
-    alt: 'Deskhive concept: an office desk-booking tool built in Bubble, with a floor map and a mobile booking screen',
-    brief:
-      'A growing company that needed a desk-booking tool, not a spreadsheet.',
-    approach:
-      'A Bubble app with a visual floor map, bookings, and accounts, built and running in weeks.',
-    delivered: ['Bubble app', 'Accounts & data', 'MVP in weeks'],
-  },
-];
+/** Concept projects. Real no-code work lives in src/data/projects.ts. */
+export const nocodeConcepts: ServiceConcept[] = [];
 
 export const nocodeDeliverables = [
   'The finished, published site or app, live on your domain',

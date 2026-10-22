@@ -74,21 +74,6 @@ const details: Record<string, CaseStudyDetails> = {
       'Field teams worked from paper and messages. The app had to work on a phone, on a weak connection, with one hand.',
     tools: ['React', 'TypeScript', 'Node.js'],
   },
-  Fernway: {
-    challenge:
-      'The marketing team depended on a developer for every change. The new site had to look custom while letting them edit content on their own.',
-    tools: ['Webflow'],
-  },
-  Bloomcast: {
-    challenge:
-      'A launch date was close and there was no page to send people to. The page had to explain the product and collect sign-ups within days.',
-    tools: ['Framer'],
-  },
-  Deskhive: {
-    challenge:
-      'Desk bookings lived in a shared spreadsheet that broke every week. The team needed a working tool without a long custom build.',
-    tools: ['Bubble'],
-  },
   'Harbor & Pine': {
     challenge:
       'Each café competed with the others and with big chains for the same nearby searches, with inconsistent listings and few reviews.',
