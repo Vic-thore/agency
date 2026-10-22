@@ -1,11 +1,6 @@
 import type { CaseStudy } from './caseStudies';
 
-/**
- * Real past projects. Images are served from the original Webflow portfolio's
- * CDN; download them into /public/images/projects and swap the paths to
- * self-host (the site then no longer depends on the Webflow project).
- */
-const CDN = 'https://cdn.prod.website-files.com/65058336ffd1d227c018972b';
+/** Real past projects. Cover images are self-hosted in /public/images/projects. */
 
 type Past = Omit<CaseStudy, 'slug' | 'isConcept'>;
 
@@ -160,7 +155,7 @@ export const pastProjects: Past[] = [
     ...uiux,
     name: 'Yahweh Yasad Nursing Home',
     category: 'Senior care',
-    image: `${CDN}/653308572070401a856430db_Instagram%20post%20-%201%20(10).png`,
+    image: '/images/projects/yahweh-yasad.webp',
     alt: 'Promotional image for the Yahweh Yasad Nursing Home website',
     brief: 'A website for a single-story nursing home built around comfort, care and community.',
     approach:
