@@ -128,7 +128,7 @@ export const pastProjects: Past[] = [
     ...uiux,
     name: 'The Padel Club',
     category: 'Sports club',
-    image: `${CDN}/6628494a2d7c97284a9263a6_hero%20section%20(2).png`,
+    image: '/images/projects/padelclub.webp',
     alt: 'Hero section of The Padel Club website',
     brief: 'A website for a padel club serving players of every level.',
     approach:
