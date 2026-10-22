@@ -112,7 +112,7 @@ export const pastProjects: Past[] = [
     ...nocode,
     name: 'Stache.haus',
     category: 'Creative agency',
-    image: `${CDN}/663d46055345d145f13c3930_Screenshot%20(287)%20(1).png`,
+    image: '/images/projects/stachehaus.webp',
     alt: 'Screenshot of the Stache.haus website, a video and photography creative agency',
     brief: 'A website for a creative agency that produces video and photography for brand storytelling.',
     approach:
