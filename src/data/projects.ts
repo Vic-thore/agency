@@ -144,7 +144,7 @@ export const pastProjects: Past[] = [
     ...nocode,
     name: 'Mrcreative Social',
     category: 'Web design agency',
-    image: `${CDN}/65b2dee9544296ba2a481070_Screenshot%20(266).png`,
+    image: '/images/projects/mrcreative.webp',
     alt: 'Screenshot of the Mrcreative Social agency website',
     brief: 'A full website redesign for an agency that helps businesses build a strong online presence.',
     approach:
