@@ -12,6 +12,7 @@ import Automation from './pages/Automation';
 import Seo from './pages/Seo'
 import Work from './pages/Work';
 import Contact from './pages/Contact';
+import NotFound from './pages/NotFound';
 import CaseStudy from './pages/CaseStudy';
 import AiSolutions from './pages/AiSolutions';
 
@@ -35,6 +36,7 @@ export default function App() {
           <Route path="services/seo" element={<Seo />} />
           <Route path="ai-solutions" element={<AiSolutions />} />
           <Route path="services/ai-solutions" element={<Navigate to="/ai-solutions" replace />} />
+          <Route path="*" element={<NotFound />} />
         </Route>
       </Routes>
     </BrowserRouter>
