@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 import { ArrowRight } from 'lucide-react';
 import { CTASection } from '../components/CTASection';
 import { SectionHeading } from '../components/SectionHeading';
+import { CoverImage } from '../components/CoverImage';
 import { workFilters, workKindFilters } from '../data/work';
 import { caseStudies } from '../data/caseStudies';
 import { reveal } from '../hooks/useReveal';
@@ -67,7 +68,7 @@ export default function Work() {
               >
                 <Link to={`/work/${item.slug}`} className="block">
                   <div className="overflow-hidden rounded-3xl border border-ink-400 bg-ink-800 transition-colors duration-300 group-hover:border-white/30">
-                    <img
+                    <CoverImage fallbackSrc={item.imageFallback}
                       src={item.image}
                       alt={item.alt}
                       width={1200}

@@ -3,6 +3,7 @@ import { motion } from 'framer-motion';
 import { ArrowRight } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { SectionHeading } from '../SectionHeading';
+import { CoverImage } from '../CoverImage';
 import { caseStudies } from '../../data/caseStudies';
 import { reveal } from '../../hooks/useReveal';
 
@@ -36,7 +37,7 @@ export function FeaturedWorkSection({
             <motion.li key={item.slug} {...reveal(i * 0.06)} className="group min-w-0">
               <Link to={`/work/${item.slug}`} className="block">
                 <div className="overflow-hidden rounded-3xl border border-ink-400 bg-ink-800 transition-colors duration-300 group-hover:border-white/30">
-                  <img
+                  <CoverImage fallbackSrc={item.imageFallback}
                     src={item.image}
                     alt={item.alt}
                     width={1200}

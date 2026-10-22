@@ -32,6 +32,8 @@ export interface CaseStudyDetails {
   role?: string;
   /** Link to the live site; shows a "Visit live site" button. */
   liveUrl?: string;
+  /** Used if `image` fails to load (e.g. a lower-resolution copy). */
+  imageFallback?: string;
   /** Link to the project on Behance; shows a "View on Behance" button. */
   behanceUrl?: string;
   /** Heading above the description. Defaults to "Our approach". */

@@ -1,5 +1,6 @@
 import { useEffect } from 'react';
 import { Link, useParams } from 'react-router-dom';
+import { CoverImage } from '../components/CoverImage';
 import { motion } from 'framer-motion';
 import { ArrowLeft, ArrowRight, ArrowUpRight, Check, Quote } from 'lucide-react';
 import { Button } from '@/components/ui/button';
@@ -110,7 +111,7 @@ export default function CaseStudy() {
             {...reveal()}
             className="mt-12 overflow-hidden rounded-3xl border border-ink-400 bg-ink-800"
           >
-            <img
+            <CoverImage fallbackSrc={study.imageFallback}
               src={study.image}
               alt={study.alt}
               width={1200}
