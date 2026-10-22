@@ -13,5 +13,4 @@ export const primaryNav: NavItem[] = [
 export const trailingNav: NavItem[] = [
   { label: 'AI Solutions', href: '/ai-solutions' },
   { label: 'Work', href: '/work' },
-  { label: 'Insights', href: '/#insights' },
 ];

@@ -1,4 +1,4 @@
-import { SVG, ORIGIN, SITE_NAME } from '../lib/assets';
+import { SITE_NAME } from '../lib/assets';
 
 /* ---------------- Hero ---------------- */
 export const typewriterWords = [
@@ -9,14 +9,6 @@ export const typewriterWords = [
   'bold',
 ];
 
-export const heroToolIcons = [
-  { src: `${SVG}/figma.svg`, alt: 'Figma', width: 12, height: 16 },
-  { src: `${SVG}/sketch.svg`, alt: 'Sketch', width: 16, height: 16 },
-  { src: `${SVG}/adobe-xd.svg`, alt: 'Adobe XD', width: 18, height: 16 },
-  { src: `${SVG}/framer.svg`, alt: 'Framer', width: 12, height: 16 },
-  { src: `${SVG}/framer2.svg`, alt: 'Webflow', width: 16, height: 10 },
-  { src: `${SVG}/loveable.svg`, alt: 'Lovable', width: 14, height: 14 },
-];
 
 /* ---------------- Client logos ---------------- */
 // Logos of sites built for real clients (see src/data/projects.ts). They are
@@ -246,32 +238,10 @@ export interface InsightData {
   image: string;
 }
 
-export const insights: InsightData[] = [
-  {
-    category: 'Artificial Intelligence',
-    title: 'OpenAI vs Anthropic in 2026: Consumer King or Enterprise Challenger?',
-    excerpt:
-      'OpenAI vs Anthropic 2026: founding stories, valuations, revenue, products, safety philosophy, and a clear pick for consumers, developers, and enterprise teams.',
-    href: '#',
-    image: `${ORIGIN}/storage/363/openai-vs-anthropic-in-2026-consumer-king-or-enterprise-challenger-%282%29_upscaled.webp`,
-  },
-  {
-    category: 'Artificial Intelligence',
-    title: 'Cursor vs OpenAI Codex 2026: Which AI Coding Agent Wins?',
-    excerpt:
-      'Cursor vs OpenAI Codex in 2026: full comparison for custom development, and which AI coding tool wins for solo developers, teams, and enterprise.',
-    href: '#',
-    image: `${ORIGIN}/storage/368/cursor-vs-openai-codex-2026-which-ai-coding-agent-wins-%284%29_upscaled.webp`,
-  },
-  {
-    category: 'Web Design',
-    title: "WordPress vs Webflow 2026: The Startup Founder's Decision Guide",
-    excerpt:
-      'WordPress vs Webflow in 2026 for startup founders and businesses. 10 key differences, library ecosystems, security incidents, cost analysis, and risk map.',
-    href: '#',
-    image: `${ORIGIN}/storage/372/wordpress-vs-webflow-2026-the-startup-founder-s-decision-guide-%284%29_upscaled.webp`,
-  },
-];
+// No articles yet. The Insights section is hidden until real posts are added;
+// the template placeholders (and their hotlinked images) were removed.
+export const insights: InsightData[] = [];
+
 
 /* ---------------- Testimonials ---------------- */
 // Placeholder copy only — no real clients yet, so these are clearly example
@@ -303,33 +273,6 @@ export const testimonials: TestimonialData[] = [
   },
 ];
 
-/* ---------------- Offices (no longer shown; Varoq has no physical offices listed) ---------------- */
-// Placeholder locations/numbers — replace with Varoq's real office
-// details; the `tel` links are inert ('#') until then.
-export const offices = [
-  {
-    region: 'North America',
-    address: 'Address on request',
-    phone: 'Available on request',
-    tel: '#',
-    icon: `${SVG}/address-north-america.svg`,
-  },
-  {
-    region: 'Europe',
-    address: 'Address on request',
-    phone: 'Available on request',
-    tel: '#',
-    icon: `${SVG}/address-europe.svg`,
-  },
-  {
-    region: 'Asia',
-    address: 'Address on request',
-    phone: 'Available on request',
-    tel: '#',
-    icon: `${SVG}/address-asia.svg`,
-  },
-];
-
 /* ---------------- Footer ---------------- */
 export const footerColumns = [
   {
@@ -339,7 +282,6 @@ export const footerColumns = [
       { label: 'About', href: '/about' },
       { label: 'Work', href: '/#work' },
       { label: 'Contact', href: '/contact' },
-      { label: 'Insights', href: '/#insights' },
     ],
   },
   {

@@ -1,7 +1,6 @@
 import { lazy, Suspense } from 'react';
 import { motion } from 'framer-motion';
-import { SVG } from '../lib/assets';
-import { heroToolIcons, typewriterWords } from '../data/content';
+import { typewriterWords } from '../data/content';
 import { useTypewriter } from '../hooks/useTypewriter';
 import { useMediaQuery } from '../hooks/useMediaQuery';
 import { ClientLogos } from './ClientLogos';
@@ -66,7 +65,7 @@ export function Hero() {
               <div className="flex items-center gap-3">
                 <span className="power-icon">
                   <img
-                    src={`${SVG}/sheild.svg`}
+                    src="/svgs/shield.svg"
                     alt=""
                     width={20}
                     height={20}
@@ -74,21 +73,8 @@ export function Hero() {
                   />
                 </span>
                 <p className="font-inter text-[16px] leading-none text-white">
-                  Design and build with the tools you already use
+                  Design and build in Figma, Webflow, Framer and Lovable
                 </p>
-              </div>
-              <div className="icon-box-wrap flex">
-                {heroToolIcons.map((icon) => (
-                  <span key={icon.alt} className="icon-box" title={icon.alt}>
-                    <img
-                      src={icon.src}
-                      alt={icon.alt}
-                      width={icon.width}
-                      height={icon.height}
-                      decoding="async"
-                    />
-                  </span>
-                ))}
               </div>
             </motion.div>
 
@@ -127,7 +113,7 @@ export function Hero() {
                 <span className="invisible">Schedule Call</span>
                 <span className="default-text">Schedule Call</span>
                 <span className="hover-content flex w-full items-center justify-start gap-4 px-[3px]">
-                  <img src={`${SVG}/lets-talk.svg`} alt="" aria-hidden="true" />
+                  <img src="/svgs/avatar-mark.svg" alt="" aria-hidden="true" />
                   <span className="hover-text">Lets Talk 🤙</span>
                 </span>
               </a>

@@ -6,7 +6,6 @@ import { Process } from '../components/Process';
 import { Showcase } from '../components/Showcase';
 import { CTASection } from '../components/CTASection';
 import { FAQ } from '../components/FAQ';
-import { Insights } from '../components/Insights';
 import { Contact } from '../components/Contact';
 
 export default function Home() {
@@ -20,7 +19,6 @@ export default function Home() {
       <Showcase />
       <CTASection />
       <FAQ />
-      <Insights />
       <Contact />
     </>
   );
