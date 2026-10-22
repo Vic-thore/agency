@@ -96,7 +96,7 @@ export const pastProjects: Past[] = [
     ...uiux,
     name: 'Dente',
     category: 'Dental care',
-    image: `${CDN}/66ae28b90cb9e4274b78aef9_664bcf8818ab4aa8648e7528_Mockup%20Preview%20(11).png`,
+    image: '/images/projects/dente.webp',
     alt: 'Mockup preview of the Dente dental care website',
     brief: 'A bilingual website for a dental provider focused on personalized care.',
     approach:
