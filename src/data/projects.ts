@@ -49,7 +49,7 @@ export const pastProjects: Past[] = [
     ...web,
     name: 'Faprint Studio',
     category: 'Ecommerce store',
-    image: `${CDN}/6a4a6e19d276e034c3c88acb_Frame%202147226847.png`,
+    image: '/images/projects/faprint.webp',
     alt: 'Screenshot of the Faprint Studio online store',
     brief: 'A WordPress online store with a bold, expressive look that matches the brand.',
     approach:
@@ -64,7 +64,7 @@ export const pastProjects: Past[] = [
     ...web,
     name: 'GameDevEssentials',
     category: 'Content platform',
-    image: `${CDN}/6a4a4a9c0b17a51efeae0385_Frame%20720njnjnjn.png`,
+    image: '/images/projects/gamedevessentials.webp',
     alt: 'Screenshot of the GameDevEssentials website, a learning platform for game developers',
     brief: 'A content platform that helps aspiring game developers find tutorials, tools and industry insight in one place.',
     approach:
@@ -80,7 +80,7 @@ export const pastProjects: Past[] = [
     ...nocode,
     name: 'ArkBM',
     category: 'Freelance project management',
-    image: `${CDN}/66ae474ac6c2ad9398c3aee8_6479c3ee0cda53e3cb498964_3.jpg`,
+    image: '/images/projects/arkbm.webp',
     alt: 'Screenshot of the ArkBM website, a freelance project management service',
     brief: 'A website for a freelance project management service for creatives, freelancers and small businesses.',
     approach:
