@@ -74,7 +74,7 @@ export function Hero() {
                   />
                 </span>
                 <p className="font-inter text-[16px] leading-none text-white">
-                  Trusted by startups to craft $100M+ designs with
+                  Design and build with the tools you already use
                 </p>
               </div>
               <div className="icon-box-wrap flex">

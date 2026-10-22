@@ -878,6 +878,29 @@
     align-items: center;
     flex-shrink: 0;
   }
+  @media (prefers-reduced-motion: reduce) {
+    .marquee-track {
+      animation: none;
+      flex-wrap: wrap;
+      justify-content: center;
+      width: auto;
+    }
+    .marquee-item[aria-hidden='true'] {
+      display: none;
+    }
+  }
+  /* Client logos drawn in white. The tone depends on the source file. */
+  .logo-white--alpha {
+    filter: brightness(0) invert(1);
+  }
+  .logo-white--on-dark {
+    filter: grayscale(1) brightness(2.4);
+    mix-blend-mode: screen;
+  }
+  .logo-white--on-light {
+    filter: grayscale(1) invert(1) brightness(2.4);
+    mix-blend-mode: screen;
+  }
 
   /* ---------------------------------------------------------
      Service rows (cream section)

@@ -19,12 +19,62 @@ export const heroToolIcons = [
 ];
 
 /* ---------------- Client logos ---------------- */
-// Emptied out: the original list was real companies (Nissan Motor
-// Corporation, Bank of Namibia, a government ministry, etc.) that are
-// clients of the site this was cloned from, not of Varoq. Showing
-// their logos under a "trusted by" banner here would falsely claim them as
-// Varoq's clients — same reasoning as the testimonials placeholder.
-export const clientLogos: { src: string; alt: string; width: number; height: number }[] = [];
+// Logos of sites built for real clients (see src/data/projects.ts). They are
+// drawn in white on the dark page by CSS, using `tone`:
+//   alpha    transparent background  -> flattened to white
+//   on-dark  baked-in dark background -> grey-scaled, background blended out
+//   on-light baked-in white background -> inverted, background blended out
+// If a logo looks wrong on the live site, change its `tone` here, or host a
+// clean white version and point `src` at it.
+export interface ClientLogo {
+  alt: string;
+  src?: string;
+  /** Text wordmark, for brands whose logo is plain type. */
+  text?: string;
+  width: number;
+  height: number;
+  tone?: 'alpha' | 'on-dark' | 'on-light';
+  href?: string;
+}
+
+export const clientLogos: ClientLogo[] = [
+  {
+    alt: 'Groupaway',
+    src: 'https://cdn.prod.website-files.com/65e9429884be0d5dedc55700/69b27b1fe975fbcabb8eddb4_Group%2098%20(1).avif',
+    width: 130, height: 32, tone: 'on-dark', href: '/work/groupaway',
+  },
+  {
+    alt: 'Dente',
+    src: 'https://cdn.prod.website-files.com/69681c28279e71cf89ba90c4/69681c28279e71cf89ba90d1_Dente.158C%20(1).avif',
+    width: 100, height: 32, tone: 'alpha', href: '/work/dente',
+  },
+  {
+    alt: 'Stache.haus',
+    src: 'https://cdn.prod.website-files.com/65c674fcfa3c61cb18e16461/6a14b20bc68a2682a03001cc_Wordmark%20(Cream)%E2%80%94%20Stachehaus%C2%AE.svg',
+    width: 130, height: 32, tone: 'alpha', href: '/work/stache-haus',
+  },
+  {
+    alt: 'The Padel Club',
+    src: 'https://www.thepadelclubfe.it/wp-content/uploads/2024/02/Logo-the-padel-club-1024x501.png',
+    width: 66, height: 32, tone: 'alpha', href: '/work/the-padel-club',
+  },
+  {
+    alt: 'ArkBM',
+    src: 'https://www.arkbm.com/_next/image?url=%2Fbrand%2Farkbm-logo-v3-on-white.png&w=640&q=75',
+    width: 110, height: 32, tone: 'on-light', href: '/work/arkbm',
+  },
+  {
+    alt: 'Game Dev Essentials',
+    src: 'https://gamedevessentials.com/wp-content/uploads/2025/10/Group-9-1.png',
+    width: 130, height: 32, tone: 'alpha', href: '/work/gamedevessentials',
+  },
+  {
+    alt: 'Yahweh Yasad Nursing Home',
+    src: 'https://yahwehyasad.com/wp-content/uploads/2023/04/logo-8.svg',
+    width: 82, height: 32, tone: 'alpha', href: '/work/yahweh-yasad-nursing-home',
+  },
+  { alt: 'Everscribn', text: 'Everscribn', width: 110, height: 32, href: '/work/everscribn' },
+];
 
 /* ---------------- Service rows ---------------- */
 export interface ServiceRow {
