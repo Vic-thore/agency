@@ -33,7 +33,7 @@ export const pastProjects: Past[] = [
     ...nocode,
     name: 'Groupaway',
     category: 'Travel platform',
-    image: `${CDN}/6a4a561f6049f1518184a72a_Frame%202147226846.png`,
+    image: '/images/projects/groupaway.webp',
     alt: 'Screenshot of the Groupaway website, a travel platform for adventure and community trips',
     brief: 'A travel platform for adventure and community-driven group trips.',
     approach:
