@@ -318,5 +318,5 @@ export const socialLinks = [
   { label: 'YouTube', href: '#' },
   { label: 'Facebook', href: '#' },
   { label: 'LinkedIn', href: '#' },
-  { label: 'Instagram', href: '#' },
+  { label: 'Instagram', href: 'https://www.instagram.com/varoqstudio' },
 ];

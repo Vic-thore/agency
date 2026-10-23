@@ -29,7 +29,7 @@ const socialIcons: Record<string, Glyph> = {
 function SocialList({ className = '' }: { className?: string }) {
   return (
     <ul className={`flex list-none items-center gap-4 ${className}`}>
-      {socialLinks.map((social) => {
+      {socialLinks.filter((social) => social.href && social.href !== '#').map((social) => {
         const Icon = socialIcons[social.label];
         return (
           <li key={social.label}>
