@@ -1,5 +1,6 @@
 import { MessageCircle, Mail } from 'lucide-react';
 import { CONTACT_EMAIL } from '../lib/contact';
+import { trackEvent } from '../lib/analytics';
 import { WHATSAPP_NUMBER, whatsappHref } from '../lib/assets';
 
 const steps = [
@@ -23,6 +24,7 @@ export function ContactInfo({ className = '' }: { className?: string }) {
         {WHATSAPP_NUMBER && (
           <a
             href={whatsappHref()}
+            onClick={() => trackEvent('whatsapp_click', { location: 'contact' })}
             target="_blank"
             rel="noopener noreferrer"
             className="btn btn-primary w-full justify-start gap-3"
@@ -34,6 +36,7 @@ export function ContactInfo({ className = '' }: { className?: string }) {
         {CONTACT_EMAIL && (
           <a
             href={`mailto:${CONTACT_EMAIL}`}
+            onClick={() => trackEvent('email_click', { location: 'contact' })}
             className="btn w-full justify-start gap-3 border-gray-800 text-gray-800"
           >
             <Mail size={18} aria-hidden="true" />

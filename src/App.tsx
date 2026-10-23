@@ -1,20 +1,21 @@
+import { lazy } from 'react';
 import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
 import { Layout } from './components/Layout';
 import { ScrollToHash } from './components/ScrollToHash';
 import Home from './pages/Home';
-import About from './pages/About';
-import Services from './pages/Services';
-import Branding from './pages/Branding';
-import UiUx from './pages/UiUx';
-import WebDevelopment from './pages/WebDevelopment';
-import NoCodeDevelopment from './pages/NoCodeDevelopment';
-import Automation from './pages/Automation';
-import Seo from './pages/Seo'
-import Work from './pages/Work';
-import Contact from './pages/Contact';
-import NotFound from './pages/NotFound';
-import CaseStudy from './pages/CaseStudy';
-import AiSolutions from './pages/AiSolutions';
+const About = lazy(() => import('./pages/About'));
+const Services = lazy(() => import('./pages/Services'));
+const Branding = lazy(() => import('./pages/Branding'));
+const UiUx = lazy(() => import('./pages/UiUx'));
+const WebDevelopment = lazy(() => import('./pages/WebDevelopment'));
+const NoCodeDevelopment = lazy(() => import('./pages/NoCodeDevelopment'));
+const Automation = lazy(() => import('./pages/Automation'));
+const Seo = lazy(() => import('./pages/Seo'));
+const Work = lazy(() => import('./pages/Work'));
+const Contact = lazy(() => import('./pages/Contact'));
+const NotFound = lazy(() => import('./pages/NotFound'));
+const CaseStudy = lazy(() => import('./pages/CaseStudy'));
+const AiSolutions = lazy(() => import('./pages/AiSolutions'));
 
 export default function App() {
   return (

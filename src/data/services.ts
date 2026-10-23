@@ -173,6 +173,7 @@ export const serviceGroups: ServiceGroup[] = [
   {
     slug: 'automation',
     tabLabel: 'Automation',
+    href: '/services/automation',
     summary: 'Connect the tools your team already uses and cut repetitive work.',
     cards: [
       {

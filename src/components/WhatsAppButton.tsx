@@ -1,3 +1,4 @@
+import { trackEvent } from '../lib/analytics';
 import { WHATSAPP_NUMBER, whatsappHref } from '../lib/assets';
 
 function WhatsAppGlyph({ size = 28 }: { size?: number }) {
@@ -19,8 +20,10 @@ function WhatsAppGlyph({ size = 28 }: { size?: number }) {
 export function WhatsAppButton() {
   if (!WHATSAPP_NUMBER) return null;
   return (
+    <aside aria-label="Chat on WhatsApp">
     <a
       href={whatsappHref()}
+      onClick={() => trackEvent('whatsapp_click', { location: 'floating_button' })}
       target="_blank"
       rel="noopener noreferrer"
       aria-label="Chat with us on WhatsApp"
@@ -31,5 +34,6 @@ export function WhatsAppButton() {
         Chat with us
       </span>
     </a>
+    </aside>
   );
 }

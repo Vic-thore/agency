@@ -1,10 +1,8 @@
-import { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { ArrowRight } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { reveal } from '../hooks/useReveal';
-import { SITE_NAME } from '../lib/assets';
 
 const links = [
   { to: '/services', label: 'Services' },
@@ -14,18 +12,6 @@ const links = [
 ];
 
 export default function NotFound() {
-  useEffect(() => {
-    document.title = `Page not found | ${SITE_NAME}`;
-    // Keep error pages out of search results.
-    const meta = document.createElement('meta');
-    meta.name = 'robots';
-    meta.content = 'noindex';
-    document.head.appendChild(meta);
-    return () => {
-      meta.remove();
-    };
-  }, []);
-
   return (
     <section
       className="section-pad flex min-h-[80vh] items-center pt-[160px] max-[575px]:pt-[120px]"
@@ -35,11 +21,10 @@ export default function NotFound() {
         <motion.div {...reveal()} className="mx-auto max-w-[640px] text-center">
           <p
             aria-hidden="true"
-            className="font-display text-[clamp(96px,22vw,200px)] font-semibold leading-none tracking-tight"
+            data-text="404"
+            className="font-display text-[clamp(96px,22vw,200px)] font-semibold leading-none tracking-tight before:content-[attr(data-text)]"
             style={{ color: 'rgba(22, 131, 255, 0.35)' }}
-          >
-            404
-          </p>
+          />
           <h1
             id="nf-heading"
             className="mt-2 font-display text-[44px] font-semibold leading-tight tracking-tight text-white max-[575px]:text-[32px]"
@@ -68,7 +53,7 @@ export default function NotFound() {
               <li key={l.to}>
                 <Link
                   to={l.to}
-                  className="font-inter text-[15px] text-gray-495 underline-offset-4 transition-colors hover:text-white hover:underline"
+                  className="inline-block py-1 font-inter text-[15px] text-gray-495 underline-offset-4 transition-colors hover:text-white hover:underline"
                 >
                   {l.label}
                 </Link>

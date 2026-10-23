@@ -54,12 +54,13 @@ export function Footer() {
     <>
       <footer className="zf-footer above-glow relative">
         <div className="container-zf">
+          {/* Decorative watermark: drawn with generated content so it is not
+              treated as text that needs readable contrast. */}
           <p
             aria-hidden="true"
-            className="font-display text-[15vw] font-semibold uppercase leading-none tracking-tight text-white/10 max-[575px]:text-[22vw]"
-          >
-            {SITE_NAME}
-          </p>
+            data-text={SITE_NAME}
+            className="font-display text-[15vw] font-semibold uppercase leading-none tracking-tight text-white/10 before:content-[attr(data-text)] max-[575px]:text-[22vw]"
+          />
 
           <div className="footer-grid">
             <div className="footer-text">
@@ -100,14 +101,14 @@ export function Footer() {
                       {link.href.startsWith('/') && !link.href.includes('#') ? (
                         <Link
                           to={link.href}
-                          className="arrow-hover font-inter text-[15px] leading-5 text-gray-200"
+                          className="arrow-hover inline-block font-inter text-[15px] leading-6 text-gray-200"
                         >
                           {link.label}
                         </Link>
                       ) : (
                         <a
                           href={link.href}
-                          className="arrow-hover font-inter text-[15px] leading-5 text-gray-200"
+                          className="arrow-hover inline-block font-inter text-[15px] leading-6 text-gray-200"
                         >
                           {link.label}
                         </a>
@@ -140,7 +141,7 @@ export function Footer() {
             </p>
             <a
               href="#"
-              className="arrow-hover font-inter text-[14px] leading-[21px] text-gray-200"
+              className="arrow-hover inline-block font-inter text-[14px] leading-6 text-gray-200"
             >
               Privacy Policy
             </a>

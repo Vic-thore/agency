@@ -95,7 +95,7 @@ export function Header() {
             aria-expanded={servicesOpen}
             aria-controls="services-mega-menu"
             onClick={() => setServicesOpen((v) => !v)}
-            className="flex items-center justify-center border-0 bg-transparent p-1 pl-0.5 cursor-pointer"
+            className="flex h-6 min-w-6 items-center justify-center border-0 bg-transparent p-1 pl-0.5 cursor-pointer"
           >
             <ChevronDown
               size={14}
@@ -210,7 +210,9 @@ export function Header() {
         <div
           id="mobile-drawer"
           className={cn('mobile-drawer', drawerOpen && 'is-open')}
-          aria-hidden={!drawerOpen}
+          // `inert` takes the closed drawer out of the tab order and the
+          // accessibility tree (aria-hidden alone leaves its links focusable).
+          {...(drawerOpen ? {} : ({ inert: '' } as Record<string, string>))}
         >
           <ul className="flex list-none flex-col gap-4 text-center">
             {navLinks()}

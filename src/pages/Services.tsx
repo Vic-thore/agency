@@ -190,6 +190,7 @@ const serviceSections: ServiceSection[] = [
     blurb:
       'Cut repetitive work by connecting the tools your team already uses.',
     gradient: 'bg-gradient-to-br from-[#2b1a06] via-[#d98a1f] to-[#140b02]',
+    href: '/services/automation',
     cards: cardsFor('automation'),
   },
   {
@@ -318,6 +319,8 @@ function CategoryPanel({
         <img
           src={image}
           alt={label}
+          width={1200}
+          height={660}
           loading="lazy"
           decoding="async"
           className="h-full w-full object-cover"
@@ -368,9 +371,9 @@ export default function Services() {
               {...reveal(0.1)}
               className="rounded-2xl border border-ink-400 bg-ink-800 p-8"
             >
-              <h3 className="font-tight text-[19px] leading-normal text-white">
+              <h2 className="font-tight text-[19px] leading-normal text-white">
                 Ready to build a product users love?
-              </h3>
+              </h2>
               <p className="mt-2 font-inter text-[13px] leading-6 text-gray-495">
                 Book a free 30-minute discovery call and talk through where
                 your product is today.
@@ -412,7 +415,7 @@ export default function Services() {
                 {section.href && (
                   <Link
                     to={section.href}
-                    className="mb-6 inline-flex items-center gap-1.5 font-inter text-[14px] font-medium text-white underline-offset-4 hover:underline"
+                    className="mb-6 inline-flex min-h-6 items-center gap-1.5 font-inter text-[14px] font-medium text-white underline-offset-4 hover:underline"
                   >
                     Explore {section.title.toLowerCase()}
                     <ArrowRight size={14} aria-hidden="true" />

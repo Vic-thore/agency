@@ -1,6 +1,7 @@
 import { useEffect, useId, useRef, useState } from 'react';
 import { useSearchParams } from 'react-router-dom';
 import { ChevronDown, Check, AlertCircle } from 'lucide-react';
+import { trackEvent } from '../lib/analytics';
 import { submitInquiry, inquiryWhatsappHref, CONTACT_EMAIL, FORM_ENDPOINT, type SubmitResult } from '../lib/contact';
 import { WHATSAPP_NUMBER, whatsappHref } from '../lib/assets';
 import { countries } from '../data/countries';
@@ -91,7 +92,10 @@ export function ContactForm() {
     setStatus('sending');
     // Not awaited before the call: the WhatsApp / mailto branches need to
     // run inside this click so the browser doesn't block the new tab.
-    submitInquiry(values).then(setStatus);
+    submitInquiry(values).then((result) => {
+      if (result !== 'error') trackEvent('enquiry_submitted', { method: result });
+      setStatus(result);
+    });
   };
 
   const filtered = countryQuery

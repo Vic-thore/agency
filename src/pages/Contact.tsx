@@ -1,16 +1,10 @@
-import { useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { SectionHeading } from '../components/SectionHeading';
 import { ContactForm } from '../components/ContactForm';
 import { ContactInfo } from '../components/ContactInfo';
 import { reveal } from '../hooks/useReveal';
-import { SITE_NAME } from '../lib/assets';
 
 export default function Contact() {
-  useEffect(() => {
-    document.title = `Contact | ${SITE_NAME}`;
-  }, []);
-
   return (
     <section className="section-pad pt-[160px] max-[575px]:pt-[120px]" aria-labelledby="contact-page-heading">
       <div className="container-zf">

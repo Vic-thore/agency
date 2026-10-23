@@ -95,6 +95,8 @@ const details: Record<string, CaseStudyDetails> = {
 
 export const slugify = (name: string) =>
   name
+    .normalize('NFD')
+    .replace(/[\u0300-\u036f]/g, '')
     .toLowerCase()
     .replace(/&/g, 'and')
     .replace(/[^a-z0-9]+/g, '-')

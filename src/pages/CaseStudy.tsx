@@ -1,4 +1,3 @@
-import { useEffect } from 'react';
 import { Link, useParams } from 'react-router-dom';
 import { CoverImage } from '../components/CoverImage';
 import { motion } from 'framer-motion';
@@ -7,20 +6,10 @@ import { Button } from '@/components/ui/button';
 import { CTASection } from '../components/CTASection';
 import { adjacentStudies, caseStudies, getCaseStudy } from '../data/caseStudies';
 import { reveal } from '../hooks/useReveal';
-import { SITE_NAME } from '../lib/assets';
 
 export default function CaseStudy() {
   const { slug = '' } = useParams();
   const study = getCaseStudy(slug);
-
-  useEffect(() => {
-    if (!study) return;
-    const previous = document.title;
-    document.title = `${study.name}: ${study.category} | ${SITE_NAME}`;
-    return () => {
-      document.title = previous;
-    };
-  }, [study]);
 
   if (!study) {
     return (
@@ -59,7 +48,7 @@ export default function CaseStudy() {
         <div className="container-zf">
           <Link
             to="/work"
-            className="inline-flex items-center gap-2 font-inter text-[14px] text-gray-495 transition-colors hover:text-white"
+            className="inline-flex min-h-6 items-center gap-2 font-inter text-[14px] text-gray-495 transition-colors hover:text-white"
           >
             <ArrowLeft size={16} aria-hidden="true" /> All work
           </Link>
@@ -69,7 +58,7 @@ export default function CaseStudy() {
             </p>
             <h1
               id="cs-heading"
-              className="mt-3 font-display text-[64px] font-semibold leading-none tracking-tight text-white max-[575px]:text-[44px]"
+              className="mt-3 font-display text-[64px] font-semibold leading-none tracking-tight text-white max-[575px]:text-[clamp(30px,9vw,44px)] [overflow-wrap:anywhere]"
             >
               {study.name}
             </h1>
@@ -224,7 +213,7 @@ export default function CaseStudy() {
           <div className="container-zf">
             <div className="flex items-end justify-between gap-4">
               <h2 className="font-tight text-[28px] text-white">More {study.serviceLabel} work</h2>
-              <Link to={study.href} className="font-inter text-[14px] text-primary underline">
+              <Link to={study.href} className="inline-flex min-h-6 items-center font-inter text-[14px] text-primary underline">
                 About our {study.serviceLabel} service
               </Link>
             </div>
