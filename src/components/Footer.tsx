@@ -6,6 +6,7 @@ import {
   LinkedinIcon,
   InstagramIcon,
   XIcon,
+  TiktokIcon,
 } from './SocialIcons';
 import {
   footerColumns,
@@ -26,6 +27,7 @@ const socialIcons: Record<string, Glyph> = {
   LinkedIn: LinkedinIcon,
   Instagram: InstagramIcon,
   X: XIcon,
+  TikTok: TiktokIcon,
 };
 
 function SocialList({ className = '' }: { className?: string }) {
