@@ -19,6 +19,8 @@ interface SmoothScrollHeroProps {
    * actual <video> element, not a CSS background-image.
    */
   video?: string;
+  /** Still frame shown until the video has loaded. */
+  poster?: string;
   /** Initial clip path percentage. @default 25 */
   initialClipPercentage?: number;
   /** Final clip path percentage. @default 75 */
@@ -26,11 +28,6 @@ interface SmoothScrollHeroProps {
   /** Optional content overlaid on top of the sticky background (e.g. a CTA). */
   children?: React.ReactNode;
 }
-
-const DEFAULT_DESKTOP_IMAGE =
-  'https://images.unsplash.com/photo-1511884642898-4c92249e20b6';
-const DEFAULT_MOBILE_IMAGE =
-  'https://images.unsplash.com/photo-1511207538754-e8555f2bc187?q=80&w=2412&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D';
 
 interface SmoothScrollHeroBackgroundProps extends SmoothScrollHeroProps {
   scrollHeight: number;
@@ -42,14 +39,39 @@ const SmoothScrollHeroBackground: React.FC<
   SmoothScrollHeroBackgroundProps
 > = ({
   scrollHeight,
-  desktopImage = DEFAULT_DESKTOP_IMAGE,
-  mobileImage = DEFAULT_MOBILE_IMAGE,
+  desktopImage,
+  mobileImage,
   video,
+  poster,
   initialClipPercentage,
   finalClipPercentage,
   children,
 }) => {
   const { scrollY } = useScroll();
+
+  // The video is only requested once the section is near the viewport, so it
+  // never competes with the hero for bandwidth on first load.
+  const holderRef = React.useRef<HTMLDivElement>(null);
+  const [loadVideo, setLoadVideo] = React.useState(false);
+  React.useEffect(() => {
+    if (!video || loadVideo) return;
+    const el = holderRef.current;
+    if (!el || typeof IntersectionObserver === 'undefined') {
+      setLoadVideo(true);
+      return;
+    }
+    const io = new IntersectionObserver(
+      (entries) => {
+        if (entries.some((e) => e.isIntersecting)) {
+          setLoadVideo(true);
+          io.disconnect();
+        }
+      },
+      { rootMargin: '600px 0px' }
+    );
+    io.observe(el);
+    return () => io.disconnect();
+  }, [video, loadVideo]);
 
   const clipStart = useTransform(
     scrollY,
@@ -73,6 +95,7 @@ const SmoothScrollHeroBackground: React.FC<
 
   return (
     <motion.div
+      ref={holderRef}
       className="sticky top-0 h-screen w-full overflow-hidden bg-black"
       style={{
         clipPath,
@@ -83,7 +106,9 @@ const SmoothScrollHeroBackground: React.FC<
         <motion.video
           className="absolute inset-0 h-full w-full object-cover"
           style={{ scale: videoScale }}
-          src={video}
+          src={loadVideo ? video : undefined}
+          poster={poster}
+          preload="none"
           autoPlay
           muted
           loop
@@ -96,7 +121,7 @@ const SmoothScrollHeroBackground: React.FC<
           <motion.div
             className="absolute inset-0 md:hidden"
             style={{
-              backgroundImage: `url(${mobileImage})`,
+              backgroundImage: mobileImage ? `url(${mobileImage})` : undefined,
               backgroundSize,
               backgroundPosition: 'center',
               backgroundRepeat: 'no-repeat',
@@ -106,7 +131,7 @@ const SmoothScrollHeroBackground: React.FC<
           <motion.div
             className="absolute inset-0 hidden md:block"
             style={{
-              backgroundImage: `url(${desktopImage})`,
+              backgroundImage: desktopImage ? `url(${desktopImage})` : undefined,
               backgroundSize,
               backgroundPosition: 'center',
               backgroundRepeat: 'no-repeat',
@@ -129,6 +154,7 @@ const SmoothScrollHero: React.FC<SmoothScrollHeroProps> = ({
   desktopImage,
   mobileImage,
   video,
+  poster,
   initialClipPercentage = 25,
   finalClipPercentage = 75,
   children,
@@ -143,6 +169,7 @@ const SmoothScrollHero: React.FC<SmoothScrollHeroProps> = ({
         desktopImage={desktopImage}
         mobileImage={mobileImage}
         video={video}
+        poster={poster}
         initialClipPercentage={initialClipPercentage}
         finalClipPercentage={finalClipPercentage}
       >

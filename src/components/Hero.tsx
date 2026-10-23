@@ -1,4 +1,4 @@
-import { lazy, Suspense } from 'react';
+import { lazy, Suspense, useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
 import { typewriterWords } from '../data/content';
 import { useTypewriter } from '../hooks/useTypewriter';
@@ -21,8 +21,51 @@ function HeroBgImg() {
   return <div aria-hidden="true" className="hero-bg-img bg-ink" />;
 }
 
+/**
+ * True once the page has finished loading and the browser is idle, so the
+ * decorative WebGL background never competes with the headline for the first
+ * paint or with early interaction. Stays false when the visitor has asked to
+ * save data.
+ */
+function useWhenIdle() {
+  const [ready, setReady] = useState(false);
+  useEffect(() => {
+    const saveData = (navigator as Navigator & { connection?: { saveData?: boolean } })
+      .connection?.saveData;
+    if (saveData) return;
+    let cancelled = false;
+    let handle: number | undefined;
+    let idleUsed = false;
+    const go = () => {
+      const run = () => !cancelled && setReady(true);
+      const w = window as Window & {
+        requestIdleCallback?: (cb: () => void, opts?: { timeout: number }) => number;
+      };
+      if (w.requestIdleCallback) {
+        handle = w.requestIdleCallback(run, { timeout: 2500 });
+        idleUsed = true;
+      } else {
+        handle = window.setTimeout(run, 1200);
+      }
+    };
+    if (document.readyState === 'complete') go();
+    else window.addEventListener('load', go, { once: true });
+    return () => {
+      cancelled = true;
+      window.removeEventListener('load', go);
+      if (handle !== undefined) {
+        const w = window as Window & { cancelIdleCallback?: (h: number) => void };
+        if (idleUsed && w.cancelIdleCallback) w.cancelIdleCallback(handle);
+        else window.clearTimeout(handle);
+      }
+    };
+  }, []);
+  return ready;
+}
+
 export function Hero() {
   const reducedMotion = useMediaQuery('(prefers-reduced-motion: reduce)');
+  const idle = useWhenIdle();
   const word = useTypewriter(typewriterWords, !reducedMotion);
 
   return (
@@ -32,7 +75,7 @@ export function Hero() {
           wave replaces the static photo background; reduced-motion users
           get that original static image instead of a continuous WebGL
           animation. */}
-      {reducedMotion ? (
+      {reducedMotion || !idle ? (
         <HeroBgImg />
       ) : (
         <Suspense fallback={<HeroBgImg />}>

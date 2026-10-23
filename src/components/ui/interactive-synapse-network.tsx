@@ -192,11 +192,9 @@ export function InteractiveSynapseNetwork({
   return (
     <div
       ref={wrapperRef}
-      role="img"
-      aria-label={ariaLabel}
       className={`relative h-full w-full overflow-hidden bg-black ${className}`}
     >
-      <canvas ref={canvasRef} aria-hidden="true" className="absolute inset-0 block h-full w-full" />
+      <canvas ref={canvasRef} role="img" aria-label={ariaLabel} className="absolute inset-0 block h-full w-full" />
       <div className="relative z-10 h-full w-full">{children}</div>
     </div>
   );

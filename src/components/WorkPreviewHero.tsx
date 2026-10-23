@@ -12,6 +12,7 @@ export function WorkPreviewHero() {
   return (
     <SmoothScrollHero
       video="/videos/hero-showreel.mp4"
+      poster="/videos/hero-showreel-poster.webp"
       scrollHeight={600}
       initialClipPercentage={25}
       finalClipPercentage={75}
