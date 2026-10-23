@@ -33,7 +33,7 @@ const ORG = {
   email: 'varoqstudio@email.com',
   telephone: '+2349067328783',
   logo: '/images/brand/varoq-profile.png',
-  sameAs: ['https://www.instagram.com/varoqstudio'],
+  sameAs: ['https://www.instagram.com/varoqstudio', 'https://x.com/Varoqstudio'],
 };
 
 // ---- load the shared metadata module (TypeScript) -------------------------

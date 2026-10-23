@@ -319,4 +319,5 @@ export const socialLinks = [
   { label: 'Facebook', href: '#' },
   { label: 'LinkedIn', href: '#' },
   { label: 'Instagram', href: 'https://www.instagram.com/varoqstudio' },
+  { label: 'X', href: 'https://x.com/Varoqstudio' },
 ];

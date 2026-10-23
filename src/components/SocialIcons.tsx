@@ -55,3 +55,12 @@ export function InstagramIcon({ size = 18, className }: IconProps) {
     </svg>
   );
 }
+
+export function XIcon({ size = 18, className }: IconProps) {
+  return (
+    <svg {...base(size)} className={className} fill="none" stroke="currentColor" strokeWidth={1.8} strokeLinecap="round" strokeLinejoin="round">
+      <path d="M4 4l11.733 16h4.267l-11.733 -16z" />
+      <path d="M4 20l6.768 -6.768m2.46 -2.46l6.772 -6.772" />
+    </svg>
+  );
+}
