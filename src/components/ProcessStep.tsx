@@ -11,10 +11,10 @@ export const ProcessStep = forwardRef<HTMLLIElement, ProcessStepProps>(
   function ProcessStep({ step, active }, ref) {
     return (
       <li ref={ref} className={cn('process-item', active && 'is-active')}>
-        <h3 className="text-[36px] font-semibold max-[575px]:text-[20px] max-[575px]:font-bold">
-          <span className="hidden pr-1.5 text-[16px] font-medium max-[575px]:inline">
-            {step.index}
-          </span>
+        <span className="process-num" aria-hidden="true">
+          {step.index}
+        </span>
+        <h3 className="text-[32px] font-semibold max-[575px]:text-[22px] max-[575px]:font-bold">
           {step.title}
         </h3>
         <h4 className="mb-4 mt-1.5 font-inter text-[18px] max-[575px]:text-[16px]">

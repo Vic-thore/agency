@@ -1021,7 +1021,7 @@
     top: 0;
     height: var(--scroll-height, 0px);
     max-height: 100%;
-    background: var(--color-primary);
+    background: var(--brand-bright);
     transition: height 0.15s linear;
   }
   .process-list {
@@ -1033,27 +1033,30 @@
   }
   @media (max-width: 575px) {
     .process-list {
-      gap: 32px;
+      gap: 56px;
     }
   }
   .process-item {
     position: relative;
     counter-increment: process-counter;
   }
-  .process-item::before {
-    content: counter(process-counter, decimal-leading-zero);
-    position: absolute;
-    left: -51px;
-    top: 6px;
-    font-family: 'Inter Variable', Inter-fallback, sans-serif;
-    font-size: 16px;
-    font-weight: 500;
-    color: var(--color-white);
-    opacity: 0;
-    transition: opacity 0.5s linear;
+  /* Large step numeral: outlined while the step is ahead, filled blue once the
+     reading line reaches it. */
+  .process-num {
+    display: block;
+    margin-bottom: 14px;
+    font-family: 'Sora Variable', Inter-fallback, sans-serif;
+    font-size: clamp(56px, 7vw, 96px);
+    font-weight: 700;
+    line-height: 1;
+    letter-spacing: -0.04em;
+    color: transparent;
+    -webkit-text-stroke: 1.5px rgba(22, 131, 255, 0.4);
+    transition: color 0.5s linear, -webkit-text-stroke-color 0.5s linear;
   }
-  .process-item.is-active::before {
-    opacity: 1;
+  .process-item.is-active .process-num {
+    color: var(--brand-bright);
+    -webkit-text-stroke-color: var(--brand-bright);
   }
   .process-item h3,
   .process-item h4,
@@ -1074,9 +1077,13 @@
       max-width: 100%;
     }
     .process-list-wrap::before,
-    .process-list-wrap::after,
-    .process-item::before {
+    .process-list-wrap::after {
       display: none;
+    }
+    .process-num {
+      color: var(--brand-bright);
+      -webkit-text-stroke-color: var(--brand-bright);
+      font-size: clamp(48px, 14vw, 64px);
     }
     .process-item h3,
     .process-item h4,
