@@ -15,7 +15,7 @@ import {
 import { Button } from '@/components/ui/button';
 import { FaqAccordion, type FaqItem } from '../FaqAccordion';
 import { LottiePlayer } from '../LottiePlayer';
-import { SectionHeading } from '../SectionHeading';
+import { SectionHeading, AccentTitle } from '../SectionHeading';
 import { serviceGroups } from '../../data/services';
 import { reveal } from '../../hooks/useReveal';
 import { cn } from '../../lib/cn';
@@ -175,9 +175,9 @@ export function ProcessSection({
             <p className="eyebrow text-gray-muted-dark">{eyebrow}</p>
             <h2
               id={`${idPrefix}-process-heading`}
-              className="section-title mt-6 text-left text-black"
+              className="section-title section-title-md mt-6 text-left text-black"
             >
-              {title}
+              <AccentTitle text={title} tone="light" />
             </h2>
             <p className="mt-4 font-inter text-[16px] leading-7 text-gray-muted-light">
               {description}
@@ -328,9 +328,9 @@ export function DeliverablesSection({
             <p className="eyebrow text-gray-muted-dark">{eyebrow}</p>
             <h2
               id={`${idPrefix}-deliverables-heading`}
-              className="section-title mt-6 text-left text-black"
+              className="section-title section-title-md mt-6 text-left text-black"
             >
-              {title}
+              <AccentTitle text={title} tone="light" />
             </h2>
             <p className="mt-4 font-inter text-[16px] leading-7 text-gray-muted-light">
               {description}

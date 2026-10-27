@@ -17,7 +17,7 @@ export function Services() {
         <SectionHeading
           id="services-heading"
           eyebrow="What we do"
-          title="Design, build, and grow your business online"
+          title="Design, build, and *grow* your business online"
           description="Branding, UI/UX, web development, no-code, automation, and SEO under one roof."
           tone="light"
         />

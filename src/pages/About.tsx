@@ -126,9 +126,9 @@ export default function About() {
               <p className="eyebrow text-gray-muted-dark">Our story</p>
               <h2
                 id="about-story-heading"
-                className="section-title text-left text-black"
+                className="section-title section-title-md text-left text-black"
               >
-                One team for the whole picture
+                One team for the whole *picture*
               </h2>
               <p className="mt-6 font-inter text-[16px] leading-7 text-gray-muted-light">
                 {SITE_NAME} exists because too many businesses end up with a

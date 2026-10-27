@@ -26,7 +26,7 @@ import {
   UserCheck,
   CheckCircle2,
 } from 'lucide-react';
-import { SectionHeading } from '../components/SectionHeading';
+import { SectionHeading, AccentTitle } from '../components/SectionHeading';
 import { CTASection } from '../components/CTASection';
 import { Contact } from '../components/Contact';
 import { reveal } from '../hooks/useReveal';
@@ -352,7 +352,7 @@ export default function Services() {
               <p className="eyebrow text-primary">What We Do</p>
               <h1
                 id="services-heading"
-                className="section-title max-w-[560px] text-white"
+                className="section-title section-title-md max-w-[560px] text-white"
               >
                 Growth-driven product services
               </h1>
@@ -400,9 +400,9 @@ export default function Services() {
               <div className="lg:sticky lg:top-24">
                 <h2
                   id={`${section.id}-heading`}
-                  className="section-title mt-0 text-white"
+                  className="section-title section-title-sm mt-0 text-white"
                 >
-                  {section.title}
+                  <AccentTitle text={section.title} />
                 </h2>
                 <p
                   className={cn(

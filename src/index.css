@@ -194,20 +194,24 @@
   }
 
   .section-title {
-    font-size: 36px;
-    line-height: 40px;
-    font-weight: 500;
+    font-family: 'Sora Variable', Inter-fallback, sans-serif;
+    font-size: clamp(30px, 4.4vw, 56px);
+    line-height: 1.08;
+    letter-spacing: -0.03em;
+    font-weight: 600;
     margin-top: 16px;
-    margin-bottom: 16px;
+    margin-bottom: 20px;
+    text-wrap: balance;
   }
   @media (max-width: 575px) {
     .section-title {
-      font-size: 28px;
       margin-top: 6px;
-      margin-bottom: 6px;
+      margin-bottom: 10px;
     }
   }
 
+  .section-title-md { font-size: clamp(28px, 3.4vw, 44px); }
+  .section-title-sm { font-size: clamp(26px, 2.6vw, 36px); }
   .section-sub {
     font-size: 16px;
     line-height: 21px;

@@ -1,4 +1,5 @@
 import { motion } from 'framer-motion';
+import { AccentTitle } from './SectionHeading';
 import { ArrowUpRight } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { GridVignetteBackground } from '@/components/ui/vignette-grid-background';
@@ -32,10 +33,9 @@ export function CTASection() {
         >
           <h2
             id="cta-heading"
-            className="text-[36px] font-medium leading-[48px] text-white max-[575px]:text-[32px] max-[575px]:leading-9"
-            style={{ letterSpacing: '-0.8px' }}
+            className="font-display text-[clamp(30px,4vw,48px)] font-semibold leading-[1.12] tracking-[-0.03em] text-white [text-wrap:balance]"
           >
-            Your next great product decision starts with one conversation.
+            <AccentTitle text="Your next great product decision starts with one *conversation*." />
           </h2>
           <p className="text-[16px] leading-6 text-muted-foreground">
             If your product isn&apos;t where you want it to be, 30 minutes with
