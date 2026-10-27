@@ -50,9 +50,9 @@ export default {
         'brand-bright': 'var(--brand-bright)',
       },
       fontFamily: {
-        display: ['Satoshi', 'Inter-fallback', 'sans-serif'],
-        tight: ['Satoshi', 'Inter-fallback', 'sans-serif'],
-        inter: ['Satoshi', 'Inter-fallback', 'sans-serif'],
+        display: ['Sora Variable', 'Inter-fallback', 'sans-serif'],
+        tight: ['Sora Variable', 'Inter-fallback', 'sans-serif'],
+        inter: ['Inter Variable', 'Inter-fallback', 'sans-serif'],
       },
       maxWidth: {
         container: '1400px',

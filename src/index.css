@@ -110,7 +110,7 @@
   }
 
   body {
-    font-family: Satoshi, Inter-fallback, sans-serif;
+    font-family: 'Inter Variable', Inter-fallback, sans-serif;
     font-weight: 400;
     background: var(--color-black-300);
     color: var(--color-white);
@@ -217,7 +217,7 @@
      Buttons
      --------------------------------------------------------- */
   .btn {
-    font-family: Satoshi, sans-serif;
+    font-family: 'Inter Variable', Inter-fallback, sans-serif;
     display: inline-flex;
     align-items: center;
     justify-content: center;
@@ -759,7 +759,7 @@
   }
 
   .main-heading {
-    font-family: Satoshi, Inter-fallback, sans-serif;
+    font-family: 'Sora Variable', Inter-fallback, sans-serif;
     font-size: 72px;
     line-height: 96px;
     font-weight: 800;
@@ -1041,7 +1041,7 @@
     position: absolute;
     left: -51px;
     top: 6px;
-    font-family: Satoshi, Inter-fallback, sans-serif;
+    font-family: 'Inter Variable', Inter-fallback, sans-serif;
     font-size: 16px;
     font-weight: 500;
     color: var(--color-white);
@@ -1473,7 +1473,7 @@
     padding: 5.5px 0 11.5px;
     outline: 0;
     color: var(--color-gray-495);
-    font-family: Satoshi, Inter-fallback, sans-serif;
+    font-family: 'Inter Variable', Inter-fallback, sans-serif;
     font-size: 14px;
     font-weight: 500;
     transition: border-color 0.3s ease-in-out;
@@ -1494,7 +1494,7 @@
   .cf-label {
     display: inline-block;
     margin-bottom: 6px;
-    font-family: Satoshi, Inter-fallback, sans-serif;
+    font-family: 'Inter Variable', Inter-fallback, sans-serif;
     font-size: 16px;
     line-height: 24px;
     font-weight: 500;
