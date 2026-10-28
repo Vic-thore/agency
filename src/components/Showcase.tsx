@@ -29,7 +29,7 @@ export function Showcase() {
 
         <motion.div {...reveal()} className="book-discovery-call">
           <div className="mx-auto max-w-[494px] text-center">
-            <h3 className="text-[24px] font-semibold leading-normal text-white">
+            <h3 className="text-[24px] font-bold leading-normal text-white">
               Your project here
             </h3>
             <p className="mb-6 mt-4 font-inter text-[15px] leading-normal text-gray-495 max-[575px]:text-[14px]">

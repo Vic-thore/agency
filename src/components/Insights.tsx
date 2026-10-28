@@ -19,7 +19,7 @@ export function Insights() {
             <span className="eyebrow text-gray-900">Our Insights</span>
             <h2
               id="insights-heading"
-              className="mt-8 text-[36px] font-medium leading-10 text-gray-800 max-[575px]:text-[28px]"
+              className="mt-8 text-[36px] font-bold leading-10 text-gray-800 max-[575px]:text-[28px]"
             >
               Insights That Inspire Vision Forward
             </h2>

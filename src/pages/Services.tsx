@@ -371,7 +371,7 @@ export default function Services() {
               {...reveal(0.1)}
               className="rounded-2xl border border-ink-400 bg-ink-800 p-8"
             >
-              <h2 className="font-tight text-[19px] leading-normal text-white">
+              <h2 className="font-tight text-[19px] leading-normal text-white font-bold">
                 Ready to build a product users love?
               </h2>
               <p className="mt-2 font-inter text-[13px] leading-6 text-gray-495">
@@ -400,7 +400,7 @@ export default function Services() {
               <div className="lg:sticky lg:top-24">
                 <h2
                   id={`${section.id}-heading`}
-                  className="section-title section-title-sm mt-0 text-white"
+                  className="section-title section-title-sm mt-0 text-white font-bold"
                 >
                   <AccentTitle text={section.title} />
                 </h2>
@@ -458,7 +458,7 @@ export default function Services() {
             {approach.map((item, i) => (
               <motion.div key={item.title} {...reveal(i * 0.05)}>
                 <item.icon size={28} className="text-black" aria-hidden="true" />
-                <h3 className="mt-4 font-tight text-[17px] leading-normal text-black">
+                <h3 className="mt-4 font-tight text-[17px] leading-normal text-black font-bold">
                   {item.title}
                 </h3>
                 <p className="mt-2 font-inter text-[14px] leading-6 text-gray-muted-light">
@@ -487,7 +487,7 @@ export default function Services() {
                 className="rounded-2xl border border-ink-400 bg-ink-800 p-8"
               >
                 <item.icon size={28} className="text-primary" aria-hidden="true" />
-                <h3 className="mt-5 font-tight text-[19px] leading-normal text-white">
+                <h3 className="mt-5 font-tight text-[19px] leading-normal text-white font-bold">
                   {item.title}
                 </h3>
                 <p className="mt-2 font-inter text-[14px] leading-6 text-gray-495">

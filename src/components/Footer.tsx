@@ -96,7 +96,7 @@ export function Footer() {
                 key={column.heading}
                 aria-label={column.heading}
               >
-                <h2 className="font-inter text-[16px] font-semibold leading-5 text-white">
+                <h2 className="font-inter text-[16px] font-bold leading-5 text-white">
                   {column.heading}
                 </h2>
                 <ul className="mt-5 flex list-none flex-col gap-3.5">
@@ -124,7 +124,7 @@ export function Footer() {
             ))}
 
             <div className="footer-col">
-              <h2 className="font-inter text-[16px] font-semibold leading-5 text-white">
+              <h2 className="font-inter text-[16px] font-bold leading-5 text-white">
                 Industries
               </h2>
               <ul className="mt-5 flex list-none flex-col gap-3.5">

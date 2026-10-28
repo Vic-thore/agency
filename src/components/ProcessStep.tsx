@@ -14,7 +14,7 @@ export const ProcessStep = forwardRef<HTMLLIElement, ProcessStepProps>(
         <span className="process-num" aria-hidden="true">
           {step.index}
         </span>
-        <h3 className="text-[32px] font-semibold max-[575px]:text-[22px] max-[575px]:font-bold">
+        <h3 className="text-[32px] font-bold max-[575px]:text-[22px] max-[575px]:font-bold">
           {step.title}
         </h3>
         <h4 className="mb-4 mt-1.5 font-inter text-[18px] max-[575px]:text-[16px]">

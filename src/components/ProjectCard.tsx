@@ -25,10 +25,10 @@ export function ProjectCard({
         </div>
         <div className="mt-6 flex items-end justify-between gap-4">
           <div>
-            <p className="mb-2 text-[14px] leading-none text-white max-[575px]:text-[16px] max-[575px]:leading-[25px]">
+            <p className="mb-2 text-[14px] font-semibold leading-none text-white max-[575px]:text-[16px] max-[575px]:leading-[25px]">
               {project.client}
             </p>
-            <h3 className="text-[24px] font-medium leading-normal text-white max-[575px]:font-semibold">
+            <h3 className="text-[24px] font-bold leading-normal text-white max-[575px]:font-bold">
               {project.title}
             </h3>
           </div>

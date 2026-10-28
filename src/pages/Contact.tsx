@@ -25,7 +25,7 @@ export default function Contact() {
             {...reveal(0.1)}
             className="rounded-xl border border-white/10 bg-[var(--color-black-750)] p-10 max-[575px]:p-6"
           >
-            <h2 className="font-tight text-[26px] leading-8 text-white">Send us a message</h2>
+            <h2 className="font-tight text-[26px] leading-8 text-white font-bold">Send us a message</h2>
             <ContactForm />
           </motion.div>
         </div>

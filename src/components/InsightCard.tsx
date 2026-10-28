@@ -28,7 +28,7 @@ export function InsightCard({
       </div>
       <div className="insight-body">
         <span className="category-pill">{insight.category}</span>
-        <h3 className="clamp-2 text-[16px] leading-[22px] text-gray-02 transition-colors">
+        <h3 className="clamp-2 text-[16px] leading-[22px] text-gray-02 transition-colors font-bold">
           {insight.title}
         </h3>
         <p className="clamp-2 mt-2 text-[14px] leading-5 text-gray-muted-light">

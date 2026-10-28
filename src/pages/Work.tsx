@@ -80,10 +80,10 @@ export default function Work() {
                   </div>
                   <div className="mt-5 flex items-start justify-between gap-4">
                     <div className="min-w-0">
-                      <p className="font-inter text-[12px] font-medium uppercase tracking-wide text-gray-495">
+                      <p className="font-inter text-[12px] font-bold uppercase tracking-wide text-gray-495">
                         {item.isConcept ? 'Concept' : 'Project'} · {item.serviceLabel} · {item.category}
                       </p>
-                      <h2 className="mt-2 font-display text-[30px] font-semibold leading-none tracking-tight text-white">
+                      <h2 className="mt-2 font-display text-[30px] font-bold leading-none tracking-tight text-white">
                         {item.name}
                       </h2>
                       <p className="mt-3 font-inter text-[15px] leading-6 text-gray-495">

@@ -212,7 +212,7 @@ export default function CaseStudy() {
         <section className="section-pad border-t border-ink-400" aria-label={`More ${study.serviceLabel} work`}>
           <div className="container-zf">
             <div className="flex items-end justify-between gap-4">
-              <h2 className="font-tight text-[28px] text-white">More {study.serviceLabel} work</h2>
+              <h2 className="font-tight text-[28px] text-white font-bold">More {study.serviceLabel} work</h2>
               <Link to={study.href} className="inline-flex min-h-6 items-center font-inter text-[14px] text-primary underline">
                 About our {study.serviceLabel} service
               </Link>
@@ -224,7 +224,7 @@ export default function CaseStudy() {
                     <div className="overflow-hidden rounded-3xl border border-ink-400 bg-ink-800 transition-colors group-hover:border-white/30">
                       <img src={m.image} alt={m.alt} width={1200} height={800} loading="lazy" decoding="async" className="aspect-[3/2] w-full object-cover object-top" />
                     </div>
-                    <h3 className="mt-4 font-display text-[24px] font-semibold text-white">{m.name}</h3>
+                    <h3 className="mt-4 font-display text-[24px] font-bold text-white">{m.name}</h3>
                     <p className="mt-1 font-inter text-[15px] text-gray-495">{m.brief}</p>
                   </Link>
                 </li>

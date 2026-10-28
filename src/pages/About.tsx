@@ -126,7 +126,7 @@ export default function About() {
               <p className="eyebrow text-gray-muted-dark">Our story</p>
               <h2
                 id="about-story-heading"
-                className="section-title section-title-md text-left text-black"
+                className="section-title section-title-md text-left text-black font-bold"
               >
                 One team for the whole *picture*
               </h2>
@@ -181,7 +181,7 @@ export default function About() {
                   className="text-primary"
                   aria-hidden="true"
                 />
-                <h3 className="mt-5 font-tight text-[22px] leading-normal text-white">
+                <h3 className="mt-5 font-tight text-[22px] leading-normal text-white font-bold">
                   {value.title}
                 </h3>
                 <p className="mt-2 font-inter text-[15px] leading-6 text-gray-495">
@@ -214,7 +214,7 @@ export default function About() {
                     className="group flex h-full flex-col rounded-2xl border border-[var(--border-light)] p-8 transition-colors duration-300 hover:bg-white"
                   >
                     <Icon size={28} className="text-black" aria-hidden="true" />
-                    <h3 className="mt-5 font-tight text-[22px] leading-normal text-black">
+                    <h3 className="mt-5 font-tight text-[22px] leading-normal text-black font-bold">
                       {group.tabLabel}
                     </h3>
                     <p className="mt-2 font-inter text-[15px] leading-6 text-gray-muted-light">
@@ -256,7 +256,7 @@ export default function About() {
                 <span className="font-display text-[14px] text-gray-200">
                   {String(i + 1).padStart(2, '0')}
                 </span>
-                <h3 className="mt-3 font-tight text-[24px] leading-normal text-white">
+                <h3 className="mt-3 font-tight text-[24px] leading-normal text-white font-bold">
                   {step.title}
                 </h3>
                 <p className="mt-2 font-inter text-[15px] leading-6 text-gray-495">

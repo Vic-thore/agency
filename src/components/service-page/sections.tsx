@@ -94,7 +94,7 @@ export function ProblemSection({
                   <item.icon size={22} aria-hidden="true" />
                 </span>
                 <div>
-                  <h3 className="font-tight text-[22px] leading-normal text-black">
+                  <h3 className="font-tight text-[22px] leading-normal text-black font-bold">
                     {item.title}
                   </h3>
                   <p className="mt-1.5 font-inter text-[15px] leading-6 text-gray-muted-light">
@@ -142,7 +142,7 @@ export function IncludesSection({
               <span className="flex h-12 w-12 items-center justify-center rounded-xl border border-ink-400 bg-ink text-white transition-colors duration-300 group-hover:bg-white group-hover:text-black">
                 <item.icon size={22} aria-hidden="true" />
               </span>
-              <h3 className="mt-6 font-tight text-[22px] leading-normal text-white">
+              <h3 className="mt-6 font-tight text-[22px] leading-normal text-white font-bold">
                 {item.title}
               </h3>
               <p className="mt-2 font-inter text-[15px] leading-6 text-gray-495">
@@ -175,7 +175,7 @@ export function ProcessSection({
             <p className="eyebrow text-gray-muted-dark">{eyebrow}</p>
             <h2
               id={`${idPrefix}-process-heading`}
-              className="section-title section-title-md mt-6 text-left text-black"
+              className="section-title section-title-md mt-6 text-left text-black font-bold"
             >
               <AccentTitle text={title} tone="light" />
             </h2>
@@ -198,7 +198,7 @@ export function ProcessSection({
                 <span className="absolute left-0 top-0 flex h-10 w-10 items-center justify-center rounded-full bg-black font-display text-[14px] font-semibold text-white">
                   {i + 1}
                 </span>
-                <h3 className="pt-1.5 font-tight text-[24px] leading-normal text-black">
+                <h3 className="pt-1.5 font-tight text-[24px] leading-normal text-black font-bold">
                   {step.title}
                 </h3>
                 <p className="mt-2 max-w-[560px] font-inter text-[15px] leading-6 text-gray-muted-light">
@@ -258,7 +258,7 @@ export function ConceptWorkSection({
                 <span className="inline-block rounded-full border border-ink-400 bg-white/5 px-3 py-1 font-inter text-[12px] font-medium uppercase tracking-wide text-gray-495">
                   Concept · {concept.category}
                 </span>
-                <h3 className="mt-5 font-display text-[40px] font-semibold leading-none tracking-tight text-white max-[575px]:text-[32px]">
+                <h3 className="mt-5 font-display text-[40px] font-bold leading-none tracking-tight text-white max-[575px]:text-[32px]">
                   {concept.name}
                 </h3>
                 <p className="mt-5 font-inter text-[16px] leading-7 text-white">
@@ -328,7 +328,7 @@ export function DeliverablesSection({
             <p className="eyebrow text-gray-muted-dark">{eyebrow}</p>
             <h2
               id={`${idPrefix}-deliverables-heading`}
-              className="section-title section-title-md mt-6 text-left text-black"
+              className="section-title section-title-md mt-6 text-left text-black font-bold"
             >
               <AccentTitle text={title} tone="light" />
             </h2>
@@ -410,7 +410,7 @@ export function PackagesSection({
                   {tier.badge}
                 </span>
               )}
-              <h3 className="font-display text-[26px] font-semibold leading-tight">
+              <h3 className="font-display text-[26px] font-bold leading-tight">
                 {tier.name}
               </h3>
               <p
@@ -498,7 +498,7 @@ export function WhySection({
               className="border-t border-black/15 pt-6"
             >
               <item.icon size={28} className="text-black" aria-hidden="true" />
-              <h3 className="mt-5 font-tight text-[22px] leading-normal text-black">
+              <h3 className="mt-5 font-tight text-[22px] leading-normal text-black font-bold">
                 {item.title}
               </h3>
               <p className="mt-2 font-inter text-[15px] leading-6 text-gray-muted-light">
@@ -589,7 +589,7 @@ export function RelatedSection({
                   className="group flex h-full flex-col rounded-2xl border border-[var(--border-light)] p-8 transition-colors duration-300 hover:bg-white"
                 >
                   <Icon size={28} className="text-black" aria-hidden="true" />
-                  <h3 className="mt-5 font-tight text-[22px] leading-normal text-black">
+                  <h3 className="mt-5 font-tight text-[22px] leading-normal text-black font-bold">
                     {group.tabLabel}
                   </h3>
                   <p className="mt-2 font-inter text-[15px] leading-6 text-gray-muted-light">
@@ -670,7 +670,7 @@ export function DeepDiveSection({
                       <Check size={14} aria-hidden="true" />
                     </span>
                     <div>
-                      <h3 className="font-tight text-[20px] leading-normal text-white">
+                      <h3 className="font-tight text-[20px] leading-normal text-white font-bold">
                         {p.title}
                       </h3>
                       <p className="mt-1 font-inter text-[15px] leading-6 text-gray-495">
@@ -854,7 +854,7 @@ export function UseCaseTabsSection({
           className="mt-10 grid grid-cols-1 gap-10 rounded-3xl border border-ink-400 bg-ink-800 p-8 lg:grid-cols-2 lg:p-12 max-[575px]:p-6"
         >
           <div>
-            <h3 className="font-tight text-[28px] leading-9 text-white">{tab.title}</h3>
+            <h3 className="font-tight text-[28px] leading-9 text-white font-bold">{tab.title}</h3>
             <p className="mt-3 font-inter text-[16px] leading-7 text-gray-495">{tab.description}</p>
             <ul className="mt-6 flex flex-col gap-3">
               {tab.points.map((p) => (
@@ -925,7 +925,7 @@ export function ToolsSection({
               {...reveal(i * 0.05)}
               className="rounded-2xl border border-ink-400 bg-ink-800 p-6"
             >
-              <h3 className="font-inter text-[13px] uppercase tracking-wide text-gray-495">{g.label}</h3>
+              <h3 className="font-inter text-[13px] uppercase tracking-wide text-gray-495 font-bold">{g.label}</h3>
               <ul className="mt-4 flex flex-wrap gap-2">
                 {g.items.map((t) => (
                   <li key={t} className="rounded-full bg-ink px-3.5 py-1.5 font-inter text-[14px] text-white">

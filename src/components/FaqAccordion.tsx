@@ -37,7 +37,7 @@ export function FaqAccordion({
     <div className="flex gap-x-12 gap-y-8 max-[768px]:flex-wrap">
       <motion.div {...reveal()} className="w-full max-w-[409px]">
         <span className="eyebrow text-primary">{eyebrow}</span>
-        <h2 className="mb-3 mt-8 font-display text-[clamp(28px,3.4vw,44px)] font-semibold capitalize leading-[1.1] tracking-[-0.03em] text-white">
+        <h2 className="mb-3 mt-8 font-display text-[clamp(28px,3.4vw,44px)] font-bold capitalize leading-[1.1] tracking-[-0.03em] text-white">
           <AccentTitle text={title} />
         </h2>
         <p className="section-sub text-gray-495">{description}</p>

@@ -33,7 +33,7 @@ export function CTASection() {
         >
           <h2
             id="cta-heading"
-            className="font-display text-[clamp(30px,4vw,48px)] font-semibold leading-[1.12] tracking-[-0.03em] text-white [text-wrap:balance]"
+            className="font-display text-[clamp(30px,4vw,48px)] font-bold leading-[1.12] tracking-[-0.03em] text-white [text-wrap:balance]"
           >
             <AccentTitle text="Your next great product decision starts with one *conversation*." />
           </h2>

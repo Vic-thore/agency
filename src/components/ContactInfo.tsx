@@ -13,7 +13,7 @@ const steps = [
 export function ContactInfo({ className = '' }: { className?: string }) {
   return (
     <div className={`testimonial-panel ${className}`}>
-      <h2 className="font-tight text-[24px] font-semibold leading-8 text-gray-800">
+      <h2 className="font-tight text-[24px] font-bold leading-8 text-gray-800">
         Prefer to talk now?
       </h2>
       <p className="mt-2 font-inter text-[15px] leading-6 text-[#52525b]">
@@ -45,7 +45,7 @@ export function ContactInfo({ className = '' }: { className?: string }) {
         )}
       </div>
 
-      <h3 className="mt-10 font-tight text-[18px] font-semibold text-gray-800">
+      <h3 className="mt-10 font-tight text-[18px] font-bold text-gray-800">
         What happens next
       </h3>
       <ol className="mt-4 flex list-none flex-col gap-4">

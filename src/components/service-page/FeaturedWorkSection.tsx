@@ -50,7 +50,7 @@ export function FeaturedWorkSection({
                 <p className="mt-5 font-inter text-[12px] font-medium uppercase tracking-wide text-gray-495">
                   {item.category}
                 </p>
-                <h3 className="mt-2 font-display text-[26px] font-semibold leading-none tracking-tight text-white">
+                <h3 className="mt-2 font-display text-[26px] font-bold leading-none tracking-tight text-white">
                   {item.name}
                 </h3>
                 <p className="mt-3 font-inter text-[15px] leading-6 text-gray-495">{item.brief}</p>

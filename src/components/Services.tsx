@@ -30,7 +30,7 @@ export function Services() {
                   <p className="service-eyebrow font-inter text-[18px] uppercase leading-[27px] text-gray-02 transition-colors duration-500 max-[575px]:text-[16px]">
                     {service.eyebrow}
                   </p>
-                  <h3 className="service-name mt-5 text-[28px] leading-normal text-gray-03 transition-colors duration-500 max-[575px]:mt-2 max-[575px]:text-[22px]">
+                  <h3 className="service-name mt-5 text-[28px] leading-normal text-gray-03 transition-colors duration-500 max-[575px]:mt-2 max-[575px]:text-[22px] font-bold">
                     {service.title}
                   </h3>
                 </div>

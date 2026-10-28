@@ -21,7 +21,7 @@ export function Contact() {
             </span>
             <h2
               id="contact-heading"
-              className="mb-3 mt-6 max-w-[510px] font-tight text-[36px] leading-normal text-white max-[575px]:mt-4 max-[575px]:text-[18px] max-[575px]:leading-7"
+              className="mb-3 mt-6 max-w-[510px] font-tight text-[36px] leading-normal text-white max-[575px]:mt-4 max-[575px]:text-[18px] max-[575px]:leading-7 font-bold"
               style={{ letterSpacing: '-0.72px' }}
             >
               Let&rsquo;s work on what you care about

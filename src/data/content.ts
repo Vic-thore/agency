@@ -243,36 +243,6 @@ export interface InsightData {
 export const insights: InsightData[] = [];
 
 
-/* ---------------- Testimonials ---------------- */
-// Placeholder copy only — no real clients yet, so these are clearly example
-// quotes (fictional names/companies) rather than attributed endorsements.
-export interface TestimonialData {
-  quote: string;
-  name: string;
-  role: string;
-}
-
-export const testimonials: TestimonialData[] = [
-  {
-    quote:
-      '"This is example testimonial copy. Swap it out for a real client quote once you have one — short, specific praise reads far better than generic marketing language."',
-    name: 'Client Name',
-    role: 'Founder, Example Co.',
-  },
-  {
-    quote:
-      '"Another placeholder quote. A good testimonial names the specific problem that got solved, not just that the team was great to work with."',
-    name: 'Client Name',
-    role: 'Product Lead, Sample Inc.',
-  },
-  {
-    quote:
-      '"Third placeholder slot, kept so the slider still has something to autoplay through before real reviews are in."',
-    name: 'Client Name',
-    role: 'CEO, Placeholder Ltd.',
-  },
-];
-
 /* ---------------- Footer ---------------- */
 export const footerColumns = [
   {
